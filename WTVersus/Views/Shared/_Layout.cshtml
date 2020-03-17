@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>WT Versus | @ViewData["Title"]</title>
+    <link rel="shortcut icon" href="~/favicon.png" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-danger fixed-top container roundedBottom">
+        <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+
+            <ul class="navbar-nav mr-auto">
+                <!-- Dropdown -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                        Compare
+                    </a>
+                    <div class="dropdown-menu">
+                        <a asp-controller="Aircrafts" asp-action="Compare" class="dropdown-item">Aircrafts</a>
+                        <a asp-controller="InDev" asp-action="Index" class="dropdown-item">Army</a>
+                        <a asp-controller="InDev" asp-action="Index" class="dropdown-item">Helicopters</a>
+                        <a asp-controller="InDev" asp-action="Index" class="dropdown-item">Fleet</a>
+                    </div>
+                </li>
+
+                <!-- Dropdown -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                        Info
+                    </a>
+                    <div class="dropdown-menu">
+                        <a asp-controller="InDev" asp-action="Index" class="dropdown-item">Aircrafts</a>
+                        <a asp-controller="InDev" asp-action="Index" class="dropdown-item">Army</a>
+                        <a asp-controller="InDev" asp-action="Index" class="dropdown-item">Helicopters</a>
+                        <a asp-controller="InDev" asp-action="Index" class="dropdown-item">Fleet</a>
+                    </div>
+                </li>
+
+                <!-- Dropdown -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                        Top
+                    </a>
+                    <div class="dropdown-menu">
+                        <a asp-controller="InDev" asp-action="Index" class="dropdown-item">Aircrafts</a>
+                        <a asp-controller="InDev" asp-action="Index" class="dropdown-item">Army</a>
+                        <a asp-controller="InDev" asp-action="Index" class="dropdown-item">Helicopters</a>
+                        <a asp-controller="InDev" asp-action="Index" class="dropdown-item">Fleet</a>
+                    </div>
+                </li>
+                <!-- Link -->
+                <li class="nav-item">
+                    <a asp-controller="InDev" asp-action="Index" class="nav-link">Statistics</a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Brand -->
+        <div class="mx-auto order-0">
+            <a class="navbar-brand mx-auto" href="">War Thunder Versus</a>
+            <!-- Menu -->
+        </div>
+
+        <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+            <ul class="navbar-nav ml-auto">
+                <!-- Link -->
+                <li class="nav-item float-right">
+                    <a asp-controller="InDev" asp-action="Index" class="nav-link">Memes</a>
+                </li>
+                <!-- Link -->
+                <li class="nav-item">
+                    <a asp-controller="InDev" asp-action="Index" class="nav-link">Feedback</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <br /><br /><br />
+    <div class="container-fluid">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container text-center">
+            &copy; 2020 - War Thunder Versus
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

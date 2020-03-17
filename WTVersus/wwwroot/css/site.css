@@ -1,0 +1,50 @@
+﻿.navbar-nav li a {
+    color: white !important;
+}
+
+.navbar .dropdown-menu {
+    background-color: #D9534F;
+}
+
+    .navbar .dropdown-menu > a:focus {
+        color: #e5dbdb;
+        background-color: #AD423F;
+    }
+
+    .navbar .dropdown-menu > a:hover {
+        color: #e5dbdb;
+        background-color: #AD423F;
+    }
+
+.roundedBottom {
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+#myInput {
+    padding: 20px;
+    margin-top: -6px;
+    border: 0;
+    border-radius: 0;
+    background: #f1f1f1;
+}
+
+.alert {
+    background-color: lightcoral;
+}
+
+.high .min {
+    background-color: #e27b7b;
+}
+
+.high .max {
+    background-color: #8bce6f;
+}
+
+.low .min {
+    background-color: #8bce6f;
+}
+
+.low .max {
+    background-color: #e27b7b;
+}
