@@ -16,9 +16,11 @@ namespace WTVersus.Models
         public double? BR { get; set; }
         public string Type { get; set; }
         public string Class { get; set; }
-        public string FirstFlyYear { get; set; }
+        public int? FirstFlyYear { get; set; }
         public int? RepairCost { get; set; } //Не реалізовано 
-        //Data Source=SQL5053.site4now.net;Initial Catalog=DB_A564A8_bo7145907;User Id=DB_A564A8_bo7145907_admin;Password=7145907bo;
+        public int? ViewCount { get; set; }
+        public string WikiLink { get; set; }
+        public string WikiDescription { get; set; }
 
         public int? MaxSpeedAt0 { get; set; }
         public int? MaxSpeedAt5000 { get; set; }
@@ -27,7 +29,7 @@ namespace WTVersus.Models
         public double? TurnAt0 { get; set; }
         public int? EnginePower { get; set; }
         public int? Weight { get; set; }
-        public int? ThrustToWeight { get; set; }
+        public double? ThrustToWeight { get; set; }
         public int? Flutter { get; set; }
         public double? BurstMass { get; set; }
         public string CourseWeapon { get; set; }

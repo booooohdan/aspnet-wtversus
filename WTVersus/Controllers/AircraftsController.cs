@@ -28,7 +28,7 @@ namespace WTVersus.Controllers
         [HttpGet]
         public IActionResult Compare(int vehicle1, int vehicle2, int vehicle3, int vehicle4)
         {
-            var planesFromDb = Context.Planes.ToList();
+            var planesFromDb = Context.Planes.OrderBy(x => x.BR).ToList();
             var selectedPlanes = new List<Plane>();
             ViewBag.AllPlanesSelected = planesFromDb;
 
@@ -36,29 +36,6 @@ namespace WTVersus.Controllers
             selectedPlanes.Add(planesFromDb.FirstOrDefault(p => p.VehicleId == vehicle2));
             selectedPlanes.Add(planesFromDb.FirstOrDefault(p => p.VehicleId == vehicle3));
             selectedPlanes.Add(planesFromDb.FirstOrDefault(p => p.VehicleId == vehicle4));
-
-            //Context.Planes.Add(
-            //    new Plane
-            //    {
-            //        VehicleId = 11501,
-            //        Name = "F-80A-5",
-            //        Rank = "V",
-            //        BR = 7.0,
-            //        MaxSpeedAt0 = 879,
-            //        MaxSpeedAt5000 = 857,
-            //        BombLoad = 879,
-            //        TurnAt0 = 23.0,
-            //        Climb = 200,
-            //        Flutter = 1030,
-            //        EnginePower = 1720,
-            //        Weight = 6500
-
-            //    }
-            //    );
-            //Context.SaveChanges();
-
-
-
 
             return View(selectedPlanes);
         }

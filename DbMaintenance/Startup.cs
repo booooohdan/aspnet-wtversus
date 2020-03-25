@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -12,7 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using WTVersus.Models;
 
-namespace WTVersus
+namespace DbMaintenance
 {
     public class Startup
     {
@@ -51,17 +50,11 @@ namespace WTVersus
 
             app.UseAuthorization();
 
-            ServicePointManager.ServerCertificateValidationCallback += (sender, cert, chain, sslPolicyErrors) => true;
-
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
-                    name: "FourParameters",
-                    pattern: "{controller=Aircrafts}/{action=Compare}/{vehicle1=11434}/{vehicle2=11419}/{vehicle3=0}/{vehicle4=0}");
-
-                endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Aircrafts}/{action=Compare}");
+                    pattern: "{controller=AircraftsParser}/{action=Index}");
             });
         }
     }

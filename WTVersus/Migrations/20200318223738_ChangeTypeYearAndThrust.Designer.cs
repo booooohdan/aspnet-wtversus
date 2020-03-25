@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WTVersus.Models;
 
 namespace WTVersus.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200318223738_ChangeTypeYearAndThrust")]
+    partial class ChangeTypeYearAndThrust
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -131,17 +133,8 @@ namespace WTVersus.Migrations
                     b.Property<int?>("VehicleId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("ViewCount")
-                        .HasColumnType("int");
-
                     b.Property<int?>("Weight")
                         .HasColumnType("int");
-
-                    b.Property<string>("WikiDescription")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("WikiLink")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("WrongMusic")
                         .HasColumnType("bit");

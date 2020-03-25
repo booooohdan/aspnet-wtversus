@@ -48,3 +48,8 @@
 .low .max {
     background-color: #e27b7b;
 }
+
+.dropdown-menu {
+    overflow-y: scroll;
+    height: 400px;
+}

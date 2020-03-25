@@ -15,7 +15,7 @@
                         <span class="caret"></span>
                     </button>
                     <ul class="dropdown-menu">
-                        <input class="form-control" id="myInput" type="text" placeholder="Search..">
+                        <input class="form-control" id="myInput1" type="text" placeholder="Search..">
                         @foreach (Plane item in ViewBag.AllPlanesSelected as IEnumerable<Plane>)
                         {
                             <li>
@@ -34,7 +34,7 @@
                         <span class="caret"></span>
                     </button>
                     <ul class="dropdown-menu">
-                        <input class="form-control" id="myInput" type="text" placeholder="Search..">
+                        <input class="form-control" id="myInput2" type="text" placeholder="Search..">
                         @foreach (Plane item in ViewBag.AllPlanesSelected as IEnumerable<Plane>)
                         {
                             <li>
@@ -53,7 +53,7 @@
                         <span class="caret"></span>
                     </button>
                     <ul class="dropdown-menu">
-                        <input class="form-control" id="myInput" type="text" placeholder="Search..">
+                        <input class="form-control" id="myInput3" type="text" placeholder="Search..">
                         @foreach (Plane item in ViewBag.AllPlanesSelected as IEnumerable<Plane>)
                         {
                             <li>
@@ -73,7 +73,7 @@
                         <span class="caret"></span>
                     </button>
                     <ul class="dropdown-menu">
-                        <input class="form-control" id="myInput" type="text" placeholder="Search..">
+                        <input class="form-control" id="myInput4" type="text" placeholder="Search..">
                         @foreach (Plane item in ViewBag.AllPlanesSelected as IEnumerable<Plane>)
                         {
                             <li>
@@ -92,32 +92,160 @@
             <td style="width: 15%">
                 <table class="table-borderless" cellspacing="0" cellpadding="0" border="0" width="100%">
                     <tr>
-                        <td width="50%">@Model.ElementAt(0).Nation</td>
-                        <td width="50%">Rank: @Model.ElementAt(0).Rank</td>
+                        <td width="50%">
+                            @{switch (Model.ElementAt(0).Nation)
+                                {
+                                    case "USA":
+                                        <img src="~/images/USA.png" class="img-fluid" width="30">
+                                        break;
+                                    case "Germany":
+                                        <img src="~/images/Germany.png" class="img-fluid" width="30">
+                                        break;
+                                    case "USSR":
+                                        <img src="~/images/USSR.png" class="img-fluid" width="30">
+                                        break;
+                                    case "Britain":
+                                        <img src="~/images/Britain.png" class="img-fluid" width="30">
+                                        break;
+                                    case "Japan":
+                                        <img src="~/images/Japan.png" class="img-fluid" width="30">
+                                        break;
+                                    case "Italy":
+                                        <img src="~/images/Italy.png" class="img-fluid" width="30">
+                                        break;
+                                    case "France":
+                                        <img src="~/images/France.png" class="img-fluid" width="30">
+                                        break;
+                                    case "China":
+                                        <img src="~/images/China.png" class="img-fluid" width="30">
+                                        break;
+                                    case "Sweden":
+                                        <img src="~/images/Sweden.png" class="img-fluid" width="30">
+                                        break;
+                                }
+                            }
+                        </td>
+                        <td width="50%">@Model.ElementAt(0).Rank</td>
                     </tr>
                 </table>
             </td>
             <td style="width: 15%">
                 <table class="table-borderless" cellspacing="0" cellpadding="0" border="0" width="100%">
                     <tr>
-                        <td width="50%">@Model.ElementAt(1).Nation</td>
-                        <td width="50%">Rank: @Model.ElementAt(1).Rank</td>
+                        <td width="50%">
+                            @{switch (Model.ElementAt(1).Nation)
+                                {
+                                    case "USA":
+                                        <img src="~/images/USA.png" class="img-fluid" width="30">
+                                        break;
+                                    case "Germany":
+                                        <img src="~/images/Germany.png" class="img-fluid" width="30">
+                                        break;
+                                    case "USSR":
+                                        <img src="~/images/USSR.png" class="img-fluid" width="30">
+                                        break;
+                                    case "Britain":
+                                        <img src="~/images/Britain.png" class="img-fluid" width="30">
+                                        break;
+                                    case "Japan":
+                                        <img src="~/images/Japan.png" class="img-fluid" width="30">
+                                        break;
+                                    case "Italy":
+                                        <img src="~/images/Italy.png" class="img-fluid" width="30">
+                                        break;
+                                    case "France":
+                                        <img src="~/images/France.png" class="img-fluid" width="30">
+                                        break;
+                                    case "China":
+                                        <img src="~/images/China.png" class="img-fluid" width="30">
+                                        break;
+                                    case "Sweden":
+                                        <img src="~/images/Sweden.png" class="img-fluid" width="30">
+                                        break;
+                                }
+                            }
+                        </td>
+                        <td width="50%">@Model.ElementAt(1).Rank</td>
                     </tr>
                 </table>
             </td>
             <td style="width: 15%">
                 <table class="table-borderless" cellspacing="0" cellpadding="0" border="0" width="100%">
                     <tr>
-                        <td width="50%">@Model.ElementAt(2).Nation</td>
-                        <td width="50%">Rank: @Model.ElementAt(2).Rank</td>
+                        <td width="50%">
+                            @{switch (Model.ElementAt(2).Nation)
+                                {
+                                    case "USA":
+                                        <img src="~/images/USA.png" class="img-fluid" width="30">
+                                        break;
+                                    case "Germany":
+                                        <img src="~/images/Germany.png" class="img-fluid" width="30">
+                                        break;
+                                    case "USSR":
+                                        <img src="~/images/USSR.png" class="img-fluid" width="30">
+                                        break;
+                                    case "Britain":
+                                        <img src="~/images/Britain.png" class="img-fluid" width="30">
+                                        break;
+                                    case "Japan":
+                                        <img src="~/images/Japan.png" class="img-fluid" width="30">
+                                        break;
+                                    case "Italy":
+                                        <img src="~/images/Italy.png" class="img-fluid" width="30">
+                                        break;
+                                    case "France":
+                                        <img src="~/images/France.png" class="img-fluid" width="30">
+                                        break;
+                                    case "China":
+                                        <img src="~/images/China.png" class="img-fluid" width="30">
+                                        break;
+                                    case "Sweden":
+                                        <img src="~/images/Sweden.png" class="img-fluid" width="30">
+                                        break;
+                                }
+                            }
+                        </td>
+                        <td width="50%">@Model.ElementAt(2).Rank</td>
                     </tr>
                 </table>
             </td>
             <td style="width: 15%">
                 <table class="table-borderless" cellspacing="0" cellpadding="0" border="0" width="100%">
                     <tr>
-                        <td width="50%">@Model.ElementAt(3).Nation</td>
-                        <td width="50%">Rank: @Model.ElementAt(3).Rank</td>
+                        <td width="50%">
+                            @{switch (Model.ElementAt(3).Nation)
+                                {
+                                    case "USA":
+                                        <img src="~/images/USA.png" class="img-fluid" width="30">
+                                        break;
+                                    case "Germany":
+                                        <img src="~/images/Germany.png" class="img-fluid" width="30">
+                                        break;
+                                    case "USSR":
+                                        <img src="~/images/USSR.png" class="img-fluid" width="30">
+                                        break;
+                                    case "Britain":
+                                        <img src="~/images/Britain.png" class="img-fluid" width="30">
+                                        break;
+                                    case "Japan":
+                                        <img src="~/images/Japan.png" class="img-fluid" width="30">
+                                        break;
+                                    case "Italy":
+                                        <img src="~/images/Italy.png" class="img-fluid" width="30">
+                                        break;
+                                    case "France":
+                                        <img src="~/images/France.png" class="img-fluid" width="30">
+                                        break;
+                                    case "China":
+                                        <img src="~/images/China.png" class="img-fluid" width="30">
+                                        break;
+                                    case "Sweden":
+                                        <img src="~/images/Sweden.png" class="img-fluid" width="30">
+                                        break;
+                                }
+                            }
+                        </td>
+                        <td width="50%">@Model.ElementAt(3).Rank</td>
                     </tr>
                 </table>
             </td>
@@ -135,6 +263,14 @@
             <td style="width: 15%">@Model.ElementAt(1).FirstFlyYear</td>
             <td style="width: 15%">@Model.ElementAt(2).FirstFlyYear</td>
             <td style="width: 15%">@Model.ElementAt(3).FirstFlyYear</td>
+        </tr>
+        <tr>
+            <td style="width: 20%">Repair cost</td>
+            <td style="width: 15%">@Model.ElementAt(0).RepairCost s.l.</td>
+            <td style="width: 15%">@Model.ElementAt(1).RepairCost s.l.</td>
+            <td style="width: 15%">@Model.ElementAt(2).RepairCost s.l.</td>
+            <td style="width: 15%">@Model.ElementAt(3).RepairCost s.l.</td>
+        </tr>
         <tr>
             <td style="width: 20%">Max speed</td>
             <td style="width: 15%">@Model.ElementAt(0).MaxSpeedAt0 km/h</td>
@@ -172,10 +308,10 @@
         </tr>
         <tr>
             <td style="width: 20%">Take-off weight</td>
-            <td style="width: 15%">@Model.ElementAt(0).Weight t</td>
-            <td style="width: 15%">@Model.ElementAt(1).Weight t</td>
-            <td style="width: 15%">@Model.ElementAt(2).Weight t</td>
-            <td style="width: 15%">@Model.ElementAt(3).Weight t</td>
+            <td style="width: 15%">@Model.ElementAt(0).Weight kg</td>
+            <td style="width: 15%">@Model.ElementAt(1).Weight kg</td>
+            <td style="width: 15%">@Model.ElementAt(2).Weight kg</td>
+            <td style="width: 15%">@Model.ElementAt(3).Weight kg</td>
         </tr>
         <tr>
             <td style="width: 20%">Speed of destruction</td>
@@ -212,6 +348,10 @@
                     {
                         <img src="~/images/HTorpedo.png" alt="" title="Just a torpedo" class="img-fluid" width="40">
                     }
+                    if (Model.ElementAt(0).WrongMusic)
+                    {
+                        <img src="~/images/WrongMusic.png" alt="" title="Schräge Musik" class="img-fluid" width="40">
+                    }
                 }
             </td>
             <td style="width: 15%">
@@ -239,6 +379,10 @@
                     if (Model.ElementAt(1).HTorpedo)
                     {
                         <img src="~/images/HTorpedo.png" alt="" title="Just a torpedo" class="img-fluid" width="40">
+                    }
+                    if (Model.ElementAt(1).WrongMusic)
+                    {
+                        <img src="~/images/WrongMusic.png" alt="" title="Schräge Musik" class="img-fluid" width="40">
                     }
                 }
             </td>
@@ -268,6 +412,10 @@
                     {
                         <img src="~/images/HTorpedo.png" alt="" title="Just a torpedo" class="img-fluid" width="40">
                     }
+                    if (Model.ElementAt(2).WrongMusic)
+                    {
+                        <img src="~/images/WrongMusic.png" alt="" title="Schräge Musik" class="img-fluid" width="40">
+                    }
                 }
             </td>
             <td style="width: 15%">
@@ -296,6 +444,10 @@
                     {
                         <img src="~/images/HTorpedo.png" alt="" title="Just a torpedo" class="img-fluid" width="40">
                     }
+                    if (Model.ElementAt(3).WrongMusic)
+                    {
+                        <img src="~/images/WrongMusic.png" alt="" title="Schräge Musik" class="img-fluid" width="40">
+                    }
                 }
             </td>
         </tr>
@@ -322,17 +474,237 @@
         </tr>
         <tr>
             <td style="width: 20%">Safety systems</td>
-            <td style="width: 15%"></td>
-            <td style="width: 15%"></td>
-            <td style="width: 15%"></td>
-            <td style="width: 15%"></td>
+            <td style="width: 15%">
+                @{
+                    if (Model.ElementAt(0).RWR)
+                    {
+                        <img src="~/images/RWR.png" alt="" title="Radar warning receiver" class="img-fluid" width="40">
+                    }
+                    if (Model.ElementAt(0).Turrel)
+                    {
+                        <img src="~/images/Turrel.png" alt="" title="Gun turret" class="img-fluid" width="40">
+                    }
+                    if (Model.ElementAt(0).Flares)
+                    {
+                        <img src="~/images/Flares.png" alt="" title="Just a flares" class="img-fluid" width="40">
+                    }
+                }
+            </td>
+            <td style="width: 15%">
+                @{
+                    if (Model.ElementAt(1).RWR)
+                    {
+                        <img src="~/images/RWR.png" alt="" title="Radar warning receiver" class="img-fluid" width="40">
+                    }
+                    if (Model.ElementAt(1).Turrel)
+                    {
+                        <img src="~/images/Turrel.png" alt="" title="Gun turret" class="img-fluid" width="40">
+                    }
+                    if (Model.ElementAt(1).Flares)
+                    {
+                        <img src="~/images/Flares.png" alt="" title="Just a flares" class="img-fluid" width="40">
+                    }
+                }
+            </td>
+            <td style="width: 15%">
+                @{
+                    if (Model.ElementAt(2).RWR)
+                    {
+                        <img src="~/images/RWR.png" alt="" title="Radar warning receiver" class="img-fluid" width="40">
+                    }
+                    if (Model.ElementAt(2).Turrel)
+                    {
+                        <img src="~/images/Turrel.png" alt="" title="Gun turret" class="img-fluid" width="40">
+                    }
+                    if (Model.ElementAt(2).Flares)
+                    {
+                        <img src="~/images/Flares.png" alt="" title="Just a flares" class="img-fluid" width="40">
+                    }
+                }
+            </td>
+            <td style="width: 15%">
+                @{
+                    if (Model.ElementAt(3).RWR)
+                    {
+                        <img src="~/images/RWR.png" alt="" title="Radar warning receiver" class="img-fluid" width="40">
+                    }
+                    if (Model.ElementAt(3).Turrel)
+                    {
+                        <img src="~/images/Turrel.png" alt="" title="Gun turret" class="img-fluid" width="40">
+                    }
+                    if (Model.ElementAt(3).Flares)
+                    {
+                        <img src="~/images/Flares.png" alt="" title="Just a flares" class="img-fluid" width="40">
+                    }
+                }
+            </td>
         </tr>
         <tr>
             <td style="width: 20%">Other systems</td>
-            <td style="width: 15%"></td>
-            <td style="width: 15%"></td>
-            <td style="width: 15%"></td>
-            <td style="width: 15%"></td>
+            <td style="width: 15%">
+                @{
+                    if (Model.ElementAt(0).Parachute)
+                    {
+                        <img src="~/images/Parachute.png" alt="" title="Brake parachute" class="img-fluid" width="40">
+                    }
+                    if (Model.ElementAt(0).AirBrake)
+                    {
+                        <img src="~/images/AirBrake.png" alt="" title="Air brake" class="img-fluid" width="40">
+                    }
+                    if (Model.ElementAt(0).AirRadar)
+                    {
+                        <img src="~/images/AirRadar.png" alt="" title="Plane radar" class="img-fluid" width="40">
+                    }
+                    if (Model.ElementAt(0).Tailhook)
+                    {
+                        <img src="~/images/TailHook.png" alt="" title="Tailhook" class="img-fluid" width="40">
+                    }
+                    if (Model.ElementAt(0).GroundRadar)
+                    {
+                        <img src="~/images/GroundRadar.png" alt="" title="Ground vehicle radar" class="img-fluid" width="40">
+                    }
+                    if (Model.ElementAt(0).CCIP)
+                    {
+                        <img src="~/images/CCIP.png" alt="" title="Constantly computed impact point" class="img-fluid" width="40">
+                    }
+                    @*if (Model.ElementAt(0).AntiLoadingSuit)
+                        {
+                            <img src="~/images/AntiLoadingSuit.png" alt="" title="Anti Loading Suit" class="img-fluid" width="40">
+                        }*@
+                }
+            </td>
+            <td style="width: 15%">
+                @{
+                    if (Model.ElementAt(1).Parachute)
+                    {
+                        <img src="~/images/Parachute.png" alt="" title="Brake parachute" class="img-fluid" width="40">
+                    }
+                    if (Model.ElementAt(1).RWR)
+                    {
+                        <img src="~/images/RWR.png" alt="" title="Radar warning receiver" class="img-fluid" width="40">
+                    }
+                    if (Model.ElementAt(1).AirBrake)
+                    {
+                        <img src="~/images/AirBrake.png" alt="" title="Air brake" class="img-fluid" width="40">
+                    }
+                    if (Model.ElementAt(1).AirRadar)
+                    {
+                        <img src="~/images/AirRadar.png" alt="" title="Plane radar" class="img-fluid" width="40">
+                    }
+                    if (Model.ElementAt(1).Turrel)
+                    {
+                        <img src="~/images/Turrel.png" alt="" title="Gun turret" class="img-fluid" width="40">
+                    }
+                    if (Model.ElementAt(1).Tailhook)
+                    {
+                        <img src="~/images/TailHook.png" alt="" title="Tailhook" class="img-fluid" width="40">
+                    }
+                    if (Model.ElementAt(1).GroundRadar)
+                    {
+                        <img src="~/images/GroundRadar.png" alt="" title="Ground vehicle radar" class="img-fluid" width="40">
+                    }
+                    if (Model.ElementAt(1).CCIP)
+                    {
+                        <img src="~/images/CCIP.png" alt="" title="Constantly computed impact point" class="img-fluid" width="40">
+                    }
+                    @*if (Model.ElementAt(1).AntiLoadingSuit)
+                        {
+                            <img src="~/images/AntiLoadingSuit.png" alt="" title="Anti Loading Suit" class="img-fluid" width="40">
+                        }*@
+                    if (Model.ElementAt(1).Flares)
+                    {
+                        <img src="~/images/Flares.png" alt="" title="Just a flares" class="img-fluid" width="40">
+                    }
+                }
+            </td>
+            <td style="width: 15%">
+                @{
+                    if (Model.ElementAt(2).Parachute)
+                    {
+                        <img src="~/images/Parachute.png" alt="" title="Brake parachute" class="img-fluid" width="40">
+                    }
+                    if (Model.ElementAt(2).RWR)
+                    {
+                        <img src="~/images/RWR.png" alt="" title="Radar warning receiver" class="img-fluid" width="40">
+                    }
+                    if (Model.ElementAt(2).AirBrake)
+                    {
+                        <img src="~/images/AirBrake.png" alt="" title="Air brake" class="img-fluid" width="40">
+                    }
+                    if (Model.ElementAt(2).AirRadar)
+                    {
+                        <img src="~/images/AirRadar.png" alt="" title="Plane radar" class="img-fluid" width="40">
+                    }
+                    if (Model.ElementAt(2).Turrel)
+                    {
+                        <img src="~/images/Turrel.png" alt="" title="Gun turret" class="img-fluid" width="40">
+                    }
+                    if (Model.ElementAt(2).Tailhook)
+                    {
+                        <img src="~/images/TailHook.png" alt="" title="Tailhook" class="img-fluid" width="40">
+                    }
+                    if (Model.ElementAt(2).GroundRadar)
+                    {
+                        <img src="~/images/GroundRadar.png" alt="" title="Ground vehicle radar" class="img-fluid" width="40">
+                    }
+                    if (Model.ElementAt(2).CCIP)
+                    {
+                        <img src="~/images/CCIP.png" alt="" title="Constantly computed impact point" class="img-fluid" width="40">
+                    }
+                    @*if (Model.ElementAt(2).AntiLoadingSuit)
+                        {
+                            <img src="~/images/AntiLoadingSuit.png" alt="" title="Anti Loading Suit" class="img-fluid" width="40">
+                        }*@
+                    if (Model.ElementAt(2).Flares)
+                    {
+                        <img src="~/images/Flares.png" alt="" title="Just a flares" class="img-fluid" width="40">
+                    }
+                }
+            </td>
+            <td style="width: 15%">
+                @{
+                    if (Model.ElementAt(3).Parachute)
+                    {
+                        <img src="~/images/Parachute.png" alt="" title="Brake parachute" class="img-fluid" width="40">
+                    }
+                    if (Model.ElementAt(3).RWR)
+                    {
+                        <img src="~/images/RWR.png" alt="" title="Radar warning receiver" class="img-fluid" width="40">
+                    }
+                    if (Model.ElementAt(3).AirBrake)
+                    {
+                        <img src="~/images/AirBrake.png" alt="" title="Air brake" class="img-fluid" width="40">
+                    }
+                    if (Model.ElementAt(3).AirRadar)
+                    {
+                        <img src="~/images/AirRadar.png" alt="" title="Plane radar" class="img-fluid" width="40">
+                    }
+                    if (Model.ElementAt(3).Turrel)
+                    {
+                        <img src="~/images/Turrel.png" alt="" title="Gun turret" class="img-fluid" width="40">
+                    }
+                    if (Model.ElementAt(3).Tailhook)
+                    {
+                        <img src="~/images/TailHook.png" alt="" title="Tailhook" class="img-fluid" width="40">
+                    }
+                    if (Model.ElementAt(3).GroundRadar)
+                    {
+                        <img src="~/images/GroundRadar.png" alt="" title="Ground vehicle radar" class="img-fluid" width="40">
+                    }
+                    if (Model.ElementAt(3).CCIP)
+                    {
+                        <img src="~/images/CCIP.png" alt="" title="Constantly computed impact point" class="img-fluid" width="40">
+                    }
+                    @*if (Model.ElementAt(3).AntiLoadingSuit)
+                        {
+                            <img src="~/images/AntiLoadingSuit.png" alt="" title="Anti Loading Suit" class="img-fluid" width="40">
+                        }*@
+                    if (Model.ElementAt(3).Flares)
+                    {
+                        <img src="~/images/Flares.png" alt="" title="Just a flares" class="img-fluid" width="40">
+                    }
+                }
+            </td>
         </tr>
     </table>
 </div>

@@ -1,5 +1,32 @@
 ﻿$(document).ready(function () {
-    $("#myInput").on("keyup", function () {
+    $("#myInput1").on("keyup", function () {
+        var value = $(this).val().toLowerCase();
+        $(".dropdown-menu li").filter(function () {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+    });
+});
+
+$(document).ready(function () {
+    $("#myInput2").on("keyup", function () {
+        var value = $(this).val().toLowerCase();
+        $(".dropdown-menu li").filter(function () {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+    });
+});
+
+$(document).ready(function () {
+    $("#myInput3").on("keyup", function () {
+        var value = $(this).val().toLowerCase();
+        $(".dropdown-menu li").filter(function () {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+    });
+});
+
+$(document).ready(function () {
+    $("#myInput4").on("keyup", function () {
         var value = $(this).val().toLowerCase();
         $(".dropdown-menu li").filter(function () {
             $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
@@ -29,23 +56,29 @@ $(function () {
         return r;
     }
 
-    $("#PlaneTable tbody tr").each(function (ind, row) {
-        var values = getRowData($(row));
-        var min = Math.min.apply(Math, values);
-        var max = Math.max.apply(Math, values);
-        console.log(values, min, max);
-        if ($("td", row).eq(0).text() == "Climb rate" | "Turn time" |"Take-off weight") {
+    $("#PlaneTable tbody tr:gt(6)").each(function (ind, row) {
+        const values = getRowData($(row)),
+            min = Math.min(...values),
+            max = Math.max(...values)
+
+        if ($("td", row).eq(0).text() == "Turn time") {
             $(row).addClass("low");
-        } else {
+        } else
+        if ($("td", row).eq(0).text() == "Course weapon") {
+        } else
+        if ($("td", row).eq(0).text() == "Repair cost") {
+        $(row).addClass("low");
+        } else
+        if ($("td", row).eq(0).text() == "Take-off weight") {
+            $(row).addClass("low");
+        } else
+        {
             $(row).addClass("high");
         }
         $("td", row).each(function (j, cell) {
-            if ($(cell).text().indexOf(min) == 0 && $(".min", row).length < 1) {
-                $(this).addClass("min");
-            }
-            if ($(cell).text().indexOf(max) == 0 && $(".max", row).length < 1) {
-                $(cell).addClass("max");
-            }
+            if (!/\d/.test($(cell).text()) && j > 0) $(cell).text('')
+            if ($(cell).text().replace(/\D/g, '') == min) $(this).addClass("min")
+            if ($(cell).text().replace(/\D/g, '') == max) $(this).addClass("max")
         });
     });
-});
+})
