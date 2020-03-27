@@ -35,50 +35,81 @@ $(document).ready(function () {
 });
 
 
-$(function () {
-    function getNum(s) {
-        var n = false;
-        if (s.length) {
-            n = parseInt(s, 10);
-        }
-        return n;
-    }
+window.onload = function () {
+    /* Тута ID таблицы */
+    /* В строках где нужно подсвечивать зелёным большее пишешь класс high, где меньшее low */
+    var table = document.getElementById('PlaneTable');
+    if (table !== null) {
+        /* Перебираю все строки */
+        var rows = table.querySelectorAll('tr');
+        rows.forEach(function (row, i, rows) {
+            var direction;
 
-    function getRowData(t) {
-        var r = [],
-            n;
-        $("td", t).each(function (i, el) {
-            n = getNum($(el).text());
-            if (i > 0 && n) {
-                r.push(n);
+            /*
+              В переменную кладу инфу меньшее или большее подсвечивать,
+            	либо завершаю итерацию, если не указан класс
+            */
+            if (row.classList.contains('high')) {
+                direction = 1;
+            } else if (row.classList.contains('low')) {
+                direction = 0;
+            } else {
+                return;
             }
+
+            /*
+              Создаю коллекцию ключ/значение. 
+              Где ключ это числовое значение, значение - массив ячеек с этим значением
+            */
+            var listItemByNumber = new Map();
+            var cells = row.querySelectorAll('td');
+
+            /*
+            	Перебираю все ячейки в этой строке, если в них есть число заношу в коллекцию
+            */
+            cells.forEach(function (cell, j, cells) {
+                var number = parseFloat(cell.innerText);
+                if (isNaN(number)) {
+                    cell.innerText = '';
+                    return;
+                }
+
+                if (!listItemByNumber.has(number)) {
+                    array = [];
+                } else {
+                    array = listItemByNumber.get(number)
+                }
+
+                array.push(cell);
+                listItemByNumber.set(number, array);
+            });
+
+            if (listItemByNumber.size <= 1) {
+                return;
+            }
+
+            /* 
+            	Достаю из коллекции ключи в виде массива
+              Получаю минимальное и максимальное (а оно же будет являться ключём в коллекции)
+              Достаю по этому ключу и добавляю в переменные greenElements и redElements массив ячеек, которые нужно подсветить
+            */
+            var keys = Array.from(listItemByNumber.keys());
+            var redElements, greenElements;
+            if (direction == 1) {
+                greenElements = listItemByNumber.get(Math.max.apply(null, keys));
+                redElements = listItemByNumber.get(Math.min.apply(null, keys));
+            } else {
+                greenElements = listItemByNumber.get(Math.min.apply(null, keys));
+                redElements = listItemByNumber.get(Math.max.apply(null, keys));
+            }
+
+            /* Прохожусь по клеткам и ставлю им соответствующие классы */
+            greenElements.forEach(function (item, j, elems) {
+                item.classList.add('green');
+            });
+            redElements.forEach(function (item, j, elems) {
+                item.classList.add('red');
+            });
         });
-        return r;
     }
-
-    $("#PlaneTable tbody tr:gt(6)").each(function (ind, row) {
-        const values = getRowData($(row)),
-            min = Math.min(...values),
-            max = Math.max(...values)
-
-        if ($("td", row).eq(0).text() == "Turn time") {
-            $(row).addClass("low");
-        } else
-        if ($("td", row).eq(0).text() == "Course weapon") {
-        } else
-        if ($("td", row).eq(0).text() == "Repair cost") {
-        $(row).addClass("low");
-        } else
-        if ($("td", row).eq(0).text() == "Take-off weight") {
-            $(row).addClass("low");
-        } else
-        {
-            $(row).addClass("high");
-        }
-        $("td", row).each(function (j, cell) {
-            if (!/\d/.test($(cell).text()) && j > 0) $(cell).text('')
-            if ($(cell).text().replace(/\D/g, '') == min) $(this).addClass("min")
-            if ($(cell).text().replace(/\D/g, '') == max) $(this).addClass("max")
-        });
-    });
-})
+}

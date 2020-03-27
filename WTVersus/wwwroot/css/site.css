@@ -33,23 +33,14 @@
     background-color: lightcoral;
 }
 
-.high .min {
-    background-color: #e27b7b;
+.green {
+    background: #8efc8e;
 }
 
-.high .max {
-    background-color: #8bce6f;
+.red {
+    background: #fc918e;
 }
 
-.low .min {
-    background-color: #8bce6f;
-}
-
-.low .max {
-    background-color: #e27b7b;
-}
-
-.dropdown-menu {
-    overflow-y: scroll;
-    height: 400px;
+th{
+    font-weight: normal;
 }

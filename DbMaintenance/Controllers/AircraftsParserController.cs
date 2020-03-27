@@ -25,13 +25,17 @@ namespace WTVersus.Controllers
 
         public IActionResult Index()
         {
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < 12; i++)
             {
                 var planess = Context.Planes.ToList(); //Отримання колекції з БД
                 string[] arrayResult = ParseImageString(planess.ElementAt(i).WikiLink).Result; //Виклик методу з параметом індекса циклу
                 var first = arrayResult[0];
                 var second = arrayResult[1];
-                var third = arrayResult[2].Replace(" ", "");
+
+                string third;
+                var arrayFromParser = arrayResult[2].Split("/");
+                var charArray = arrayResult[2].ToCharArray();
+                third = charArray.Contains('/') ? arrayFromParser[1].Replace(" ", "") : arrayFromParser[0].Replace(" ", "");
 
                 planess.ElementAt(i).Image = first;
                 planess.ElementAt(i).BR = Convert.ToDouble(second);
@@ -79,6 +83,7 @@ namespace WTVersus.Controllers
             {
                 result2 = "0";
             }
+
 
             string[] resultArray = new string[] { result, result1, result2 };
 

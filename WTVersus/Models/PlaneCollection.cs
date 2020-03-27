@@ -33,6 +33,9 @@ namespace WTVersus.Models
         public int? Flutter { get; set; }
         public double? BurstMass { get; set; }
         public string CourseWeapon { get; set; }
+        public int? OptimalAilerons { get; set; }
+        public int? OptimalElevator { get; set; }
+        public int? OptimalAlitude { get; set; }
 
         public bool ASMissile { get; set; } //НАР
         public bool AAMissile { get; set; }
@@ -52,6 +55,7 @@ namespace WTVersus.Models
         public bool AirRadar { get; set; }
         public bool GroundRadar { get; set; }
         public bool CCIP { get; set; } //Constantly Computed Impact Point (CCIP)
+        public bool GSuit { get; set; } //ППК
 
 
     }
