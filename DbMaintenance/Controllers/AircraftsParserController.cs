@@ -9,6 +9,7 @@ using AngleSharp.Html.Parser;
 using AngleSharp.Dom;
 using AngleSharp.Html.Dom;
 using WTVersus.Models;
+using System.Diagnostics;
 
 namespace WTVersus.Controllers
 {
@@ -25,7 +26,7 @@ namespace WTVersus.Controllers
 
         public IActionResult Index()
         {
-            for (int i = 0; i < 12; i++)
+            for (int i = 0; i < 640; i++)
             {
                 var planess = Context.Planes.ToList(); //Отримання колекції з БД
                 string[] arrayResult = ParseImageString(planess.ElementAt(i).WikiLink).Result; //Виклик методу з параметом індекса циклу
@@ -40,6 +41,8 @@ namespace WTVersus.Controllers
                 planess.ElementAt(i).Image = first;
                 planess.ElementAt(i).BR = Convert.ToDouble(second);
                 planess.ElementAt(i).RepairCost = Convert.ToInt32(third);
+
+                Debug.WriteLine(first);
             }
             Context.SaveChanges();
 

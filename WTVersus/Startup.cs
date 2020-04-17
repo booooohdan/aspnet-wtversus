@@ -28,6 +28,7 @@ namespace WTVersus
         {
             string connectionString = Configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer(connectionString));
+            services.AddRouting(options => options.LowercaseUrls = true);
             services.AddMvc();
         }
 
@@ -57,7 +58,7 @@ namespace WTVersus
             {
                 endpoints.MapControllerRoute(
                     name: "FourParameters",
-                    pattern: "{controller=Aircrafts}/{action=Compare}/{vehicle1=11434}/{vehicle2=11419}/{vehicle3=0}/{vehicle4=0}");
+                    pattern: "{controller=Aircrafts}/{action=Compare}/{vehicle1=11602}/{vehicle2=13603}/{vehicle3=0}/{vehicle4=0}");
 
                 endpoints.MapControllerRoute(
                     name: "default",

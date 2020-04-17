@@ -113,3 +113,23 @@ window.onload = function () {
         });
     }
 }
+
+
+//window.onload = function () {
+//    var table = document.getElementById('PlaneTable');
+//    if (table !== null) {
+//        var rows = table.querySelectorAll('.hideifempty');
+//        rows.forEach(function (row, i, rows) {
+//            var cells = row.querySelectorAll('td');
+//            var isEmpty = true;
+//            cells.forEach(function (cell, j, cells) {
+//                if (cell.innerHtml != '') {
+//                    isEmpty = false;
+//                }
+//            });
+//            if (isEmpty) {
+//                row.style.display = 'none';
+//            }
+//        });
+//    }
+//}

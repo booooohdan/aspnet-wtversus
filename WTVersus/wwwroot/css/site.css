@@ -16,17 +16,14 @@
         background-color: #AD423F;
     }
 
-.roundedBottom {
+.roundedBottom { /*Меню*/
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
 }
 
-#myInput {
-    padding: 20px;
-    margin-top: -6px;
-    border: 0;
-    border-radius: 0;
-    background: #f1f1f1;
+.dropdown-height-fix {
+    overflow-y: scroll;
+    height: 400px;
 }
 
 .alert {
@@ -44,3 +41,41 @@
 th{
     font-weight: normal;
 }
+
+.Fighter {
+    background-color: #fff5d1 !important;
+}
+
+.Attacker {
+    background-color: #caffca!important;
+}
+
+.Bomber {
+    background-color: #e4e4ff!important;
+}
+
+.Premium, .Promotional {
+    background-color: #fffe99 !important;
+}
+
+@font-face {
+    font-family: 'wt_symbols';
+    src: url('/fonts/symbols_skyquake.ttf')
+}
+
+@font-face {
+    font-family: 'roboto';
+    src: url('/fonts/Roboto.ttf')
+}
+
+body {
+    font-family: 'wt_symbols', 'roboto'!important;
+}
+
+/*#myInput {
+    padding: 20px;
+    margin-top: -6px;
+    border: 0;
+    border-radius: 0;
+    background: #f1f1f1;
+}*/
