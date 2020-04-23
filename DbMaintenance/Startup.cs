@@ -54,7 +54,7 @@ namespace DbMaintenance
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=AircraftsParser}/{action=Index}");
+                    pattern: "{controller=AircraftsParser}/{action=AddPlane}");
             });
         }
     }

@@ -20,7 +20,7 @@
                         Compare
                     </a>
                     <div class="dropdown-menu">
-                        <a asp-controller="Aircrafts" asp-action="Compare" class="dropdown-item">Aircrafts (640 units)</a>
+                        <a asp-controller="Aircrafts" asp-action="Compare" class="dropdown-item">Aircrafts (649 units)</a>
                         <a asp-controller="InDev" asp-action="Index" class="dropdown-item">Army</a>
                         <a asp-controller="InDev" asp-action="Index" class="dropdown-item">Helicopters</a>
                         <a asp-controller="InDev" asp-action="Index" class="dropdown-item">Fleet</a>
@@ -73,7 +73,7 @@
                 </li>
                 <!-- Link -->
                 <li class="nav-item">
-                    <a asp-controller="InDev" asp-action="Index" class="nav-link">Feedback</a>
+                    <a asp-controller="Feedback" asp-action="Index" class="nav-link">Feedback</a>
                 </li>
             </ul>
         </div>
@@ -93,6 +93,7 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script id="dsq-count-scr" src="//wtversus.disqus.com/count.js" async></script> //disqus
     @RenderSection("Scripts", required: false)
 </body>
 </html>

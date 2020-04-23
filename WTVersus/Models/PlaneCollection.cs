@@ -17,10 +17,10 @@ namespace WTVersus.Models
         public string Type { get; set; }
         public string Class { get; set; }
         public int? FirstFlyYear { get; set; }
-        public int? RepairCost { get; set; } //Не реалізовано 
-        public int? ViewCount { get; set; }
+        public int? RepairCost { get; set; }
+        public int? ViewCount { get; set; } //not implement
         public string WikiLink { get; set; }
-        public string WikiDescription { get; set; }
+        public string WikiDescription { get; set; } //not implement
 
         public int? MaxSpeedAt0 { get; set; }
         public int? MaxSpeedAt5000 { get; set; }
@@ -29,7 +29,7 @@ namespace WTVersus.Models
         public double? TurnAt0 { get; set; }
         public int? EnginePower { get; set; }
         public int? Weight { get; set; }
-        public double? ThrustToWeight { get; set; }
+        public double? ThrustToWeight { get; set; } //delete
         public int? Flutter { get; set; }
         public double? BurstMass { get; set; }
         public string CourseWeapon { get; set; }
