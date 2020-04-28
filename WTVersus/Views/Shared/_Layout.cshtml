@@ -20,8 +20,8 @@
                         Compare
                     </a>
                     <div class="dropdown-menu">
-                        <a asp-controller="Aircrafts" asp-action="Compare" class="dropdown-item">Aircrafts (649 units)</a>
-                        <a asp-controller="InDev" asp-action="Index" class="dropdown-item">Army</a>
+                        <a asp-controller="Aircrafts" asp-action="Compare" class="dropdown-item">Aircrafts (649 items)</a>
+                        <a asp-controller="Tanks" asp-action="Compare" class="dropdown-item">Army (566 items)</a>
                         <a asp-controller="InDev" asp-action="Index" class="dropdown-item">Helicopters</a>
                         <a asp-controller="InDev" asp-action="Index" class="dropdown-item">Fleet</a>
                     </div>
@@ -79,11 +79,18 @@
         </div>
     </nav>
     <br /><br /><br />
-    <div class="container-fluid">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
+                <div class="container-fluid">
+                    <main role="main" class="pb-3">
+                        @RenderBody()
+                    </main>
+                </div>
+
+                <div class="container">
+                    <h6 class="text-right ">
+                        Last update:
+                        <span class="alert-danger small"> April 23, 2020 </span>
+                    </h6>
+                </div>
 
     <footer class="border-top footer text-muted">
         <div class="container text-center">
