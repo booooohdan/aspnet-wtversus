@@ -10,9 +10,10 @@ namespace WTVersus.Models
     {
         public AppDbContext(DbContextOptions<AppDbContext>options):base(options)
         {
-
         }
 
         public DbSet<Plane> Planes { get; set; }
+        public DbSet<Tank> Tanks { get; set; }
+
     }
 }

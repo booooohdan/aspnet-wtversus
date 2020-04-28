@@ -42,6 +42,10 @@ th{
     font-weight: normal;
 }
 
+table {
+    width: 100%;
+}
+
 .Fighter {
     background-color: #fff5d1 !important;
 }
@@ -72,10 +76,7 @@ body {
     font-family: 'wt_symbols', 'roboto'!important;
 }
 
-/*#myInput {
-    padding: 20px;
-    margin-top: -6px;
-    border: 0;
-    border-radius: 0;
-    background: #f1f1f1;
-}*/
+.red-table-label {
+    background-color: #DC3546;
+    color:white;
+}

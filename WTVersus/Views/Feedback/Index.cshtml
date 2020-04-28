@@ -2,17 +2,20 @@
     ViewData["Title"] = "Feedback";
 }
 
-    <div class="container">
-        <div id="disqus_thread"></div>
-        <script>
-(function() { // DON'T EDIT BELOW THIS LINE
-var d = document, s = d.createElement('script');
-s.src = 'https://wtversus.disqus.com/embed.js';
-s.setAttribute('data-timestamp', +new Date());
-(d.head || d.body).appendChild(s);
-})();
+    <div class="container" style="width:500px">
+        <div id="wpac-review"></div>
+        <script type="text/javascript">
+            wpac_init = window.wpac_init || [];
+            wpac_init.push({ widget: 'Review', id: 24806 });
+            (function () {
+                if ('WIDGETPACK_LOADED' in window) return;
+                WIDGETPACK_LOADED = true;
+                var mc = document.createElement('script');
+                mc.type = 'text/javascript';
+                mc.async = true;
+                mc.src = 'https://embed.widgetpack.com/widget.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+            })();
         </script>
-        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-
     </div>
 
