@@ -1,3 +1,10 @@
 # War Thunder Versus
-My first ASP.Net Core project. It includes work with MS SQL Database (code first EF Core), MVC pattern and simple Bootstrap+JS frontend
+Versus is your real assistant in the game War Thunder
+With him you can:
+- Choose the best vehicle for research
+- Compare vehicle with each other
+- Compare player statistics
+- See a list of potential enemies and find out how much better they are.
 
+Follow the news:
+Reddit: https://www.reddit.com/r/wtversus/
