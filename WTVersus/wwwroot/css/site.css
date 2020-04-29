@@ -80,3 +80,7 @@ body {
     background-color: #DC3546;
     color:white;
 }
+
+.img-horizontal-align {
+    max-height: 40px;
+}
