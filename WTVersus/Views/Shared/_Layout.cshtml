@@ -10,87 +10,123 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
 </head>
 <body>
-    <nav class="navbar navbar-expand-md navbar-dark bg-danger fixed-top container roundedBottom">
-        <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+    <nav class="navbar navbar-expand bg-white">
+        <a class="navbar-brand" href="#">
+            <img src="~/favicon.png" alt="logo" class="img-fluid" width="40">
+        </a>
 
-            <ul class="navbar-nav mr-auto">
-                <!-- Dropdown -->
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-                        Compare
-                    </a>
-                    <div class="dropdown-menu">
-                        <a asp-controller="Aircrafts" asp-action="Compare" class="dropdown-item">Aircrafts (649 items)</a>
-                        <a asp-controller="Tanks" asp-action="Compare" class="dropdown-item">Army (566 items)</a>
-                        <a asp-controller="InDev" asp-action="Index" class="dropdown-item">Helicopters</a>
-                        <a asp-controller="InDev" asp-action="Index" class="dropdown-item">Fleet</a>
-                    </div>
-                </li>
-
-                <!-- Dropdown -->
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-                        Info
-                    </a>
-                    <div class="dropdown-menu">
-                        <a asp-controller="InDev" asp-action="Index" class="dropdown-item">Aircrafts</a>
-                        <a asp-controller="InDev" asp-action="Index" class="dropdown-item">Army</a>
-                        <a asp-controller="InDev" asp-action="Index" class="dropdown-item">Helicopters</a>
-                        <a asp-controller="InDev" asp-action="Index" class="dropdown-item">Fleet</a>
-                    </div>
-                </li>
-
-                <!-- Dropdown -->
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-                        Top
-                    </a>
-                    <div class="dropdown-menu">
-                        <a asp-controller="InDev" asp-action="Index" class="dropdown-item">Aircrafts</a>
-                        <a asp-controller="InDev" asp-action="Index" class="dropdown-item">Army</a>
-                        <a asp-controller="InDev" asp-action="Index" class="dropdown-item">Helicopters</a>
-                        <a asp-controller="InDev" asp-action="Index" class="dropdown-item">Fleet</a>
-                    </div>
-                </li>
-                <!-- Link -->
-                <li class="nav-item">
-                    <a asp-controller="InDev" asp-action="Index" class="nav-link">Statistics</a>
-                </li>
-            </ul>
-        </div>
-
-        <!-- Brand -->
-        <div class="mx-auto order-0">
-            <a class="navbar-brand mx-auto" href="">War Thunder Versus (beta)</a>
-            <!-- Menu -->
-        </div>
-
-        <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
-            <ul class="navbar-nav ml-auto">
-                <!-- Link -->
-                <li class="nav-item float-right">
-                    <a asp-controller="InDev" asp-action="Index" class="nav-link">Memes</a>
-                </li>
-                <!-- Link -->
-                <li class="nav-item">
-                    <a asp-controller="Feedback" asp-action="Index" class="nav-link">Feedback</a>
-                </li>
-            </ul>
-        </div>
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link">War Thunder Versus</a>
+            </li>
+        </ul>
     </nav>
-    <br /><br /><br />
-                <div class="container-fluid">
-                    <main role="main" class="pb-3">
-                        @RenderBody()
-                    </main>
-                </div>
 
-                <div class="container">
-                    <h6 class="text-right ">
-                        Last update:
-                        <span class="alert-danger small"> April 23, 2020 </span>
-                    </h6>
-                </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2 col-lg-2 navbar-container">
+                <!-- Вертикальне меню -->
+                <nav class="navbar navbar-expand-md navbar-light font10pt">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbar">
+
+                        @*<ul class="navbar-nav">
+                            <li class="active">
+                                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="navbar-text">Aircrafts (649 planes)</a>
+                                <ul class="collapse" id="homeSubmenu">
+                                    <li class="nav-item">
+                                        <a asp-controller="InDev" asp-action="Index" class="nav-link">
+                                            <img src="~/images/menuInfo.png" class="img-fluid menu-icon" />
+                                            Info (Dev)
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a asp-controller="Aircrafts" asp-action="Compare" class="nav-link">
+                                            <img src="~/images/menuCompare.png" class="img-fluid menu-icon" />
+                                            Comparison
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            </ul>*@
+
+                            <!-- Пункти вертикального меню -->
+                        <ul class="navbar-nav">
+
+                            <li class="navbar-text font-weight-bold">
+                                <span>Statistics</span>
+                            </li>
+                            <li class="nav-item">
+                                <a asp-controller="InDev" asp-action="Index" class="nav-link">
+                                    <img src="~/images/menuInfoStat.png" class="img-fluid menu-icon" /> Player statistics </a>
+                            </li>
+
+                            <li class="navbar-text font-weight-bold">
+                                <span>Comparison</span>
+                            </li>
+                            <li class="nav-item">
+                                <a asp-controller="Aircrafts" asp-action="Compare" class="nav-link">
+                                    <img src="~/images/menuInfo.png" class="img-fluid menu-icon" /> Aircrafts</a>
+                            </li>
+                            <li class="nav-item">
+                                <a asp-controller="Tanks" asp-action="Compare" class="nav-link">
+                                    <img src="~/images/menuCompare.png" class="img-fluid menu-icon" /> Army</a>
+                            </li>
+                            <li class="nav-item">
+                                <a asp-controller="InDev" asp-action="Index" class="nav-link">
+                                    <img src="~/images/menuInfo.png" class="img-fluid menu-icon" /> Helicopters</a>
+                            </li>
+                            <li class="nav-item">
+                                <a asp-controller="InDev" asp-action="Index" class="nav-link">
+                                    <img src="~/images/menuInfo.png" class="img-fluid menu-icon" /> Fleet</a>
+                            </li>
+
+                            <li class="navbar-text font-weight-bold">
+                                <span>Info & Reviews</span>
+                            </li>
+                            <li class="nav-item">
+                                <a asp-controller="InDev" asp-action="Index" class="nav-link">
+                                    <img src="~/images/menuInfo.png" class="img-fluid menu-icon" /> Aircrafts</a>
+                            </li>
+                            <li class="nav-item">
+                                <a asp-controller="InDev" asp-action="Index" class="nav-link">
+                                    <img src="~/images/menuCompare.png" class="img-fluid menu-icon" /> Army</a>
+                            </li>
+                            <li class="nav-item">
+                                <a asp-controller="InDev" asp-action="Index" class="nav-link">
+                                    <img src="~/images/menuInfo.png" class="img-fluid menu-icon" /> Helicopters</a>
+                            </li>
+                            <li class="nav-item">
+                                <a asp-controller="InDev" asp-action="Index" class="nav-link">
+                                    <img src="~/images/menuInfo.png" class="img-fluid menu-icon" /> Fleet</a>
+                            </li>
+
+
+                            <li class="navbar-text font-weight-bold">
+                                <span>Feedback</span>
+                            </li>
+                            <li class="nav-item">
+                                <a asp-controller="Feedback" asp-action="Index" class="nav-link">
+                                    <img src="~/images/menuFeedback.png" class="img-fluid menu-icon" /> Leave feedback</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+
+            <div class="col-md-8 col-lg-8 container-fluid pt-2">
+                <main role="main">
+                    @RenderBody()
+                </main>
+
+
+            </div>
+
+            <div class="col-md-2 col-lg-2"></div>
+        </div>
+    </div>
 
     <footer class="border-top footer text-muted">
         <div class="container text-center">

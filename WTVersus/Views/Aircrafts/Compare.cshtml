@@ -3,373 +3,373 @@
     ViewData["Title"] = "Aircrafts compare";
 }
 
-<div class="container">
-    <table class="table table-hover table-bordered table-sm text-center">
-        <tbody>
-            <tr>
-                <th style="width: 20%"></th>
-                <td style="width: 15%">
-                    <div class="dropdown @Model.ElementAt(0).Type">
-                        <button class="btn dropdown-toggle text-wrap" type="button" data-toggle="dropdown">
-                            @{string img0name = Model.ElementAt(0).Nation + ".png";}
-                            <img src="~/images/@img0name" class="img-fluid" width="25">
-                            [@String.Format("{0:F1}", Model.ElementAt(0).BR)]
-                            @Model.ElementAt(0).Name
-                            <span class="caret"></span>
-                        </button>
-                        <ul class="dropdown-menu dropdown-height-fix">
-                            <input class="form-control" id="myInput1" type="text" placeholder="Search..">
-                            @foreach (Plane item in ViewBag.AllPlanesSelected as IEnumerable<Plane>)
-                            {
-                                <li>
-                                    <a class="dropdown-item @item.Type" asp-controller="Aircrafts" asp-action="Compare"
-                                       asp-route-vehicle1="@item.VehicleId">
-                                        @{string img0item = item.Nation + ".png";}
-                                        <img src="~/images/@img0item" class="img-fluid" width="25">
-                                        [@String.Format("{0:F1}", item.BR)] @item.Name
-                                    </a>
-                                </li>
-                            }
-                        </ul>
-                    </div>
-                </td>
-                <td style="width: 15%">
-                    <div class="dropdown @Model.ElementAt(1).Type">
-                        <button class="btn dropdown-toggle  text-wrap" type="button" data-toggle="dropdown">
-                            @{string img1name = Model.ElementAt(1).Nation + ".png";}
-                            <img src="~/images/@img1name" class="img-fluid" width="25">
-                            [@String.Format("{0:F1}", Model.ElementAt(1).BR)]
-                            @Model.ElementAt(1).Name
-                            <span class="caret"></span>
-                        </button>
-                        <ul class="dropdown-menu dropdown-height-fix">
-                            <input class="form-control" id="myInput2" type="text" placeholder="Search..">
-                            @foreach (Plane item in ViewBag.AllPlanesSelected as IEnumerable<Plane>)
-                            {
-                                <li>
-                                    <a class="dropdown-item @item.Type" asp-controller="Aircrafts" asp-action="Compare"
-                                       asp-route-vehicle2="@item.VehicleId">
-                                        @{string img1item = item.Nation + ".png";}
-                                        <img src="~/images/@img1item" class="img-fluid" width="25">
-                                        [@String.Format("{0:F1}", item.BR)] @item.Name
-                                    </a>
-                                </li>
-                            }
-                        </ul>
-                    </div>
-                </td>
-                <td style="width: 15%">
-                    <div class="dropdown @Model.ElementAt(2).Type">
-                        <button class="btn dropdown-toggle  text-wrap" type="button" data-toggle="dropdown">
-                            @{string img2name = Model.ElementAt(2).Nation + ".png";}
-                            <img src="~/images/@img2name" class="img-fluid" width="25">
-                            [@String.Format("{0:F1}", Model.ElementAt(2).BR)]
-                            @Model.ElementAt(2).Name
-                            <span class="caret"></span>
-                        </button>
-                        <ul class="dropdown-menu dropdown-height-fix">
-                            <input class="form-control" id="myInput3" type="text" placeholder="Search..">
-                            @foreach (Plane item in ViewBag.AllPlanesSelected as IEnumerable<Plane>)
-                            {
-                                <li>
-                                    <a class="dropdown-item @item.Type" asp-controller="Aircrafts" asp-action="Compare"
-                                       asp-route-vehicle3="@item.VehicleId">
-                                        @{string img2item = item.Nation + ".png";}
-                                        <img src="~/images/@img2item" class="img-fluid" width="25">
-                                        [@String.Format("{0:F1}", item.BR)] @item.Name
-                                    </a>
-                                </li>
-                            }
-                        </ul>
-                    </div>
-                </td>
-                <td style="width: 15%">
-                    <div class="dropdown @Model.ElementAt(3).Type">
-                        <button class="btn dropdown-toggle  text-wrap" type="button" data-toggle="dropdown">
-                            @{string img3name = Model.ElementAt(3).Nation + ".png";}
-                            <img src="~/images/@img3name" class="img-fluid" width="25">
-                            [@String.Format("{0:F1}", Model.ElementAt(3).BR)]
-                            @Model.ElementAt(3).Name
-                            <span class="caret"></span>
-                        </button>
-                        <ul class="dropdown-menu dropdown-height-fix">
-                            <input class="form-control" id="myInput4" type="text" placeholder="Search..">
-                            @foreach (Plane item in ViewBag.AllPlanesSelected as IEnumerable<Plane>)
-                            {
-                                <li>
-                                    <a class="dropdown-item @item.Type" asp-controller="Aircrafts" asp-action="Compare"
-                                       asp-route-vehicle4="@item.VehicleId">
-                                        @{string img3item = item.Nation + ".png";}
-                                        <img src="~/images/@img3item" class="img-fluid" width="25">
-                                        [@String.Format("{0:F1}", item.BR)] @item.Name
-                                    </a>
-                                </li>
-                            }
-                        </ul>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <th style="width: 20%"></th>
-                <td style="width: 15%"><img class="img-fluid @Model.ElementAt(0).Class" src="@Model.ElementAt(0).Image" alt="Plane" /></td>
-                <td style="width: 15%"><img class="img-fluid  @Model.ElementAt(1).Class" src="@Model.ElementAt(1).Image" alt="Plane" /></td>
-                <td style="width: 15%"><img class="img-fluid  @Model.ElementAt(2).Class" src="@Model.ElementAt(2).Image" alt="Plane" /></td>
-                <td style="width: 15%"><img class="img-fluid  @Model.ElementAt(3).Class" src="@Model.ElementAt(3).Image" alt="Plane" /></td>
-            </tr>
-            <tr class="high">
-                <th style="width: 20%" title="The year when the plane take-off for the first time">First flight</th>
-                <td style="width: 15%">@Model.ElementAt(0).FirstFlyYear</td>
-                <td style="width: 15%">@Model.ElementAt(1).FirstFlyYear</td>
-                <td style="width: 15%">@Model.ElementAt(2).FirstFlyYear</td>
-                <td style="width: 15%">@Model.ElementAt(3).FirstFlyYear</td>
-            </tr>
-            <tr class="low">
-                <th style="width: 20%" title="The maximum repair cost of the spaded vehicle">Repair cost</th>
-                <td style="width: 15%">@Model.ElementAt(0).RepairCost s.l.</td>
-                <td style="width: 15%">@Model.ElementAt(1).RepairCost s.l.</td>
-                <td style="width: 15%">@Model.ElementAt(2).RepairCost s.l.</td>
-                <td style="width: 15%">@Model.ElementAt(3).RepairCost s.l.</td>
-            </tr>
-            <tr class="low">
-                <th style="width: 20%" title="The purchase cost">Purchase cost (Dev)</th>
-                <td style="width: 15%">N/A</td>
-                <td style="width: 15%">N/A</td>
-                <td style="width: 15%">N/A</td>
-                <td style="width: 15%">N/A</td>
-            </tr>
-            <tr class="high">
-                <th style="width: 20%" title="Win rate from thunderskill.com">Win rate (Dev)</th>
-                <td style="width: 15%">N/A</td>
-                <td style="width: 15%">N/A</td>
-                <td style="width: 15%">N/A</td>
-                <td style="width: 15%">N/A</td>
-            </tr>
-            <tr class="high">
-                <th style="width: 20%" title="Win rate from thunderskill.com">Review (Dev)</th>
-                <td style="width: 15%">N/A</td>
-                <td style="width: 15%">N/A</td>
-                <td style="width: 15%">N/A</td>
-                <td style="width: 15%">N/A</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <br>
-
-    <table class="table table-hover table-bordered table-sm text-center">
-        <tbody>
-            <tr class="red-table-label">
-                <td style="width: 100%" colspan="5">Weapon specifications</td>
-            </tr>
-            <tr>
-                <th style="width: 20%" title="Description of default offensive armament (without suspended armament)">Offensive armament</th>
-                <td style="width: 15%">@Html.Raw(Model.ElementAt(0).CourseWeapon)</td>
-                <td style="width: 15%">@Html.Raw(Model.ElementAt(1).CourseWeapon)</td>
-                <td style="width: 15%">@Html.Raw(Model.ElementAt(2).CourseWeapon)</td>
-                <td style="width: 15%">@Html.Raw(Model.ElementAt(3).CourseWeapon)</td>
-            </tr>
-            <tr class="high">
-                <th style="width: 20%" title="Just a burst mass (without suspended armament)">Burst mass</th>
-                <td style="width: 15%">@Model.ElementAt(0).BurstMass kg/s</td>
-                <td style="width: 15%">@Model.ElementAt(1).BurstMass kg/s</td>
-                <td style="width: 15%">@Model.ElementAt(2).BurstMass kg/s</td>
-                <td style="width: 15%">@Model.ElementAt(3).BurstMass kg/s</td>
-            </tr>
-            <tr>
-                <th style="width: 20%"  class="align-middle" title="Lethal suspended armament like a bombs, torpedo, rocket, etc">Attack systems</th>
-                @for (int i = 0; i < 4; i++)
-                {
+    <div class="container-fluid">
+        <table class="table table-hover table-bordered table-sm text-center sticky-row">
+            <tbody>
+                <tr>
+                    <th style="width: 20%"></th>
                     <td style="width: 15%">
-                        @{
-                            if (Model.ElementAt(i).ASMissile)
-                            {
-                                <img src="~/images/ASMissile.png" alt="" title="Air to surface missile" class="img-fluid" width="40">
-                            }
-                            if (Model.ElementAt(i).AAMissile)
-                            {
-                                <img src="~/images/AAMissile.png" alt="" title="Air to air missile" class="img-fluid" width="40">
-                            }
-                            if (Model.ElementAt(i).AGMissile)
-                            {
-                                <img src="~/images/AGMissile.png" alt="" title="Air-to-ground command guided missile" class="img-fluid" width="40">
-                            }
-                            if (Model.ElementAt(i).HBomb)
-                            {
-                                <img src="~/images/HBomb.png" alt="" title="Just a bomb" class="img-fluid" width="40">
-                            }
-                            if (Model.ElementAt(i).HCannon)
-                            {
-                                <img src="~/images/HCannon.png" alt="" title="Gun pod" class="img-fluid" width="40">
-                            }
-                            if (Model.ElementAt(i).HTorpedo)
-                            {
-                                <img src="~/images/HTorpedo.png" alt="" title="Just a torpedo" class="img-fluid" width="40">
-                            }
-                            if (Model.ElementAt(i).WrongMusic)
-                            {
-                                <img src="~/images/WrongMusic.png" alt="" title="Schräge Musik" class="img-fluid" width="40">
-                            }
-                        }
+                        <div class="dropdown @Model.ElementAt(0).Type">
+                            <button class="btn dropdown-toggle text-wrap font10pt" type="button" data-toggle="dropdown">
+                                @{string img0name = Model.ElementAt(0).Nation + ".png";}
+                                <img src="~/images/@img0name" class="img-fluid" width="25">
+                                [@String.Format("{0:F1}", Model.ElementAt(0).BR)]
+                                @Model.ElementAt(0).Name
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu dropdown-height-fix">
+                                <input class="form-control" id="myInput1" type="text" placeholder="Search..">
+                                @foreach (Plane item in ViewBag.AllPlanesSelected as IEnumerable<Plane>)
+                                {
+                                    <li>
+                                        <a class="dropdown-item @item.Type" asp-controller="Aircrafts" asp-action="Compare"
+                                           asp-route-vehicle1="@item.VehicleId">
+                                            @{string img0item = item.Nation + ".png";}
+                                            <img src="~/images/@img0item" class="img-fluid" width="25">
+                                            [@String.Format("{0:F1}", item.BR)] @item.Name
+                                        </a>
+                                    </li>
+                                }
+                            </ul>
+                        </div>
                     </td>
-                }
-            </tr>
-            <tr class="high">
-                <th style="width: 20%" title="Maximum payload weight">Bombs payload</th>
-                <td style="width: 15%">@Model.ElementAt(0).BombLoad kg</td>
-                <td style="width: 15%">@Model.ElementAt(1).BombLoad kg</td>
-                <td style="width: 15%">@Model.ElementAt(2).BombLoad kg</td>
-                <td style="width: 15%">@Model.ElementAt(3).BombLoad kg</td>
-            </tr>
-
-
-            <tr class="hideifempty">
-                <th style="width: 20%"  class="align-middle" title="Description of safety systems like a RWR, turrel, flares, etc">Safety systems</th>
-                @for (int i = 0; i < 4; i++)
-                {
                     <td style="width: 15%">
-                        @{
-                            if (Model.ElementAt(i).RWR)
-                            {
-                                <img src="~/images/RWR.png" alt="" title="Radar warning receiver" class="img-fluid" width="40">
-                            }
-                            if (Model.ElementAt(i).Turrel)
-                            {
-                                <img src="~/images/Turrel.png" alt="" title="Gun turret" class="img-fluid" width="40">
-                            }
-                            if (Model.ElementAt(i).Flares)
-                            {
-                                <img src="~/images/Flares.png" alt="" title="Just a flares" class="img-fluid" width="40">
-                            }
-                        }
+                        <div class="dropdown @Model.ElementAt(1).Type">
+                            <button class="btn dropdown-toggle  text-wrap font10pt" type="button" data-toggle="dropdown">
+                                @{string img1name = Model.ElementAt(1).Nation + ".png";}
+                                <img src="~/images/@img1name" class="img-fluid" width="25">
+                                [@String.Format("{0:F1}", Model.ElementAt(1).BR)]
+                                @Model.ElementAt(1).Name
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu dropdown-height-fix">
+                                <input class="form-control" id="myInput2" type="text" placeholder="Search..">
+                                @foreach (Plane item in ViewBag.AllPlanesSelected as IEnumerable<Plane>)
+                                {
+                                    <li>
+                                        <a class="dropdown-item @item.Type" asp-controller="Aircrafts" asp-action="Compare"
+                                           asp-route-vehicle2="@item.VehicleId">
+                                            @{string img1item = item.Nation + ".png";}
+                                            <img src="~/images/@img1item" class="img-fluid" width="25">
+                                            [@String.Format("{0:F1}", item.BR)] @item.Name
+                                        </a>
+                                    </li>
+                                }
+                            </ul>
+                        </div>
                     </td>
-                }
-            </tr>
-            <tr class="hideifempty">
-                <th style="width: 20%"  class="align-middle" title="Additional systems like a radar, CCIP, air brake, etc">Other systems</th>
-                @for (int i = 0; i < 4; i++)
-                {
                     <td style="width: 15%">
-                        @{
-                            if (Model.ElementAt(i).Parachute)
-                            {
-                                <img src="~/images/Parachute.png" alt="" title="Brake parachute" class="img-fluid" width="40">
-                            }
-                            if (Model.ElementAt(i).AirBrake)
-                            {
-                                <img src="~/images/AirBrake.png" alt="" title="Air brake" class="img-fluid" width="40">
-                            }
-                            if (Model.ElementAt(i).AirRadar)
-                            {
-                                <img src="~/images/AirRadar.png" alt="" title="Plane radar" class="img-fluid" width="40">
-                            }
-                            if (Model.ElementAt(i).Tailhook)
-                            {
-                                <img src="~/images/TailHook.png" alt="" title="Tailhook" class="img-fluid" width="40">
-                            }
-                            if (Model.ElementAt(i).GroundRadar)
-                            {
-                                <img src="~/images/GroundRadar.png" alt="" title="Ground vehicle radar" class="img-fluid" width="40">
-                            }
-                            if (Model.ElementAt(i).CCIP)
-                            {
-                                <img src="~/images/CCIP.png" alt="" title="Constantly computed impact point" class="img-fluid" width="40">
-                            }
-                            if (Model.ElementAt(i).GSuit)
-                            {
-                                <img src="~/images/AntiLoadingSuit.png" alt="" title="Anti Loading Suit" class="img-fluid" width="40">
-                            }
-                        }
+                        <div class="dropdown @Model.ElementAt(2).Type">
+                            <button class="btn dropdown-toggle  text-wrap font10pt" type="button" data-toggle="dropdown">
+                                @{string img2name = Model.ElementAt(2).Nation + ".png";}
+                                <img src="~/images/@img2name" class="img-fluid" width="25">
+                                [@String.Format("{0:F1}", Model.ElementAt(2).BR)]
+                                @Model.ElementAt(2).Name
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu dropdown-height-fix">
+                                <input class="form-control" id="myInput3" type="text" placeholder="Search..">
+                                @foreach (Plane item in ViewBag.AllPlanesSelected as IEnumerable<Plane>)
+                                {
+                                    <li>
+                                        <a class="dropdown-item @item.Type" asp-controller="Aircrafts" asp-action="Compare"
+                                           asp-route-vehicle3="@item.VehicleId">
+                                            @{string img2item = item.Nation + ".png";}
+                                            <img src="~/images/@img2item" class="img-fluid" width="25">
+                                            [@String.Format("{0:F1}", item.BR)] @item.Name
+                                        </a>
+                                    </li>
+                                }
+                            </ul>
+                        </div>
                     </td>
-                }
-            </tr>
-        </tbody>
-    </table>
+                    <td style="width: 15%">
+                        <div class="dropdown @Model.ElementAt(3).Type">
+                            <button class="btn dropdown-toggle  text-wrap font10pt" type="button" data-toggle="dropdown">
+                                @{string img3name = Model.ElementAt(3).Nation + ".png";}
+                                <img src="~/images/@img3name" class="img-fluid" width="25">
+                                [@String.Format("{0:F1}", Model.ElementAt(3).BR)]
+                                @Model.ElementAt(3).Name
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu dropdown-height-fix">
+                                <input class="form-control" id="myInput4" type="text" placeholder="Search..">
+                                @foreach (Plane item in ViewBag.AllPlanesSelected as IEnumerable<Plane>)
+                                {
+                                    <li>
+                                        <a class="dropdown-item @item.Type" asp-controller="Aircrafts" asp-action="Compare"
+                                           asp-route-vehicle4="@item.VehicleId">
+                                            @{string img3item = item.Nation + ".png";}
+                                            <img src="~/images/@img3item" class="img-fluid" width="25">
+                                            [@String.Format("{0:F1}", item.BR)] @item.Name
+                                        </a>
+                                    </li>
+                                }
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
 
-    <br>
+        <table class="table table-hover table-bordered table-sm text-center">
+            <tbody>
+                <tr>
+                    <th style="width: 20%"></th>
+                    <td style="width: 15%"><img class="img-fluid @Model.ElementAt(0).Class" src="@Model.ElementAt(0).Image" alt="Plane" /></td>
+                    <td style="width: 15%"><img class="img-fluid  @Model.ElementAt(1).Class" src="@Model.ElementAt(1).Image" alt="Plane" /></td>
+                    <td style="width: 15%"><img class="img-fluid  @Model.ElementAt(2).Class" src="@Model.ElementAt(2).Image" alt="Plane" /></td>
+                    <td style="width: 15%"><img class="img-fluid  @Model.ElementAt(3).Class" src="@Model.ElementAt(3).Image" alt="Plane" /></td>
+                </tr>
+                <tr class="high">
+                    <th style="width: 20%" title="The year when the plane take-off for the first time">First flight</th>
+                    <td style="width: 15%">@Model.ElementAt(0).FirstFlyYear</td>
+                    <td style="width: 15%">@Model.ElementAt(1).FirstFlyYear</td>
+                    <td style="width: 15%">@Model.ElementAt(2).FirstFlyYear</td>
+                    <td style="width: 15%">@Model.ElementAt(3).FirstFlyYear</td>
+                </tr>
+                <tr class="low">
+                    <th style="width: 20%" title="The maximum repair cost of the spaded vehicle">Repair cost</th>
+                    <td style="width: 15%">@Model.ElementAt(0).RepairCost s.l.</td>
+                    <td style="width: 15%">@Model.ElementAt(1).RepairCost s.l.</td>
+                    <td style="width: 15%">@Model.ElementAt(2).RepairCost s.l.</td>
+                    <td style="width: 15%">@Model.ElementAt(3).RepairCost s.l.</td>
+                </tr>
+                <tr class="low">
+                    <th style="width: 20%" title="The purchase cost">Purchase cost (Dev)</th>
+                    <td style="width: 15%">N/A</td>
+                    <td style="width: 15%">N/A</td>
+                    <td style="width: 15%">N/A</td>
+                    <td style="width: 15%">N/A</td>
+                </tr>
+                <tr class="high">
+                    <th style="width: 20%" title="Win rate from thunderskill.com">Win rate (Dev)</th>
+                    <td style="width: 15%">N/A</td>
+                    <td style="width: 15%">N/A</td>
+                    <td style="width: 15%">N/A</td>
+                    <td style="width: 15%">N/A</td>
+                </tr>
+                <tr class="high">
+                    <th style="width: 20%" title="Win rate from thunderskill.com">Review (Dev)</th>
+                    <td style="width: 15%">N/A</td>
+                    <td style="width: 15%">N/A</td>
+                    <td style="width: 15%">N/A</td>
+                    <td style="width: 15%">N/A</td>
+                </tr>
+            </tbody>
+        </table>
 
-    <table class="table table-hover table-bordered table-sm text-center">
-        <tbody>
-            <tr class="red-table-label">
-                <td style="width: 100%" colspan="5">Flight specifications</td>
-            </tr>
-            <tr class="high">
-                <th style="width: 20%" title="Speed as real SPD (TAS - true air speed) on sea level">Max speed at 0 m</th>
-                <td style="width: 15%">@Model.ElementAt(0).MaxSpeedAt0 km/h</td>
-                <td style="width: 15%">@Model.ElementAt(1).MaxSpeedAt0 km/h</td>
-                <td style="width: 15%">@Model.ElementAt(2).MaxSpeedAt0 km/h</td>
-                <td style="width: 15%">@Model.ElementAt(3).MaxSpeedAt0 km/h</td>
-            </tr>
-            <tr class="high">
-                <th style="width: 20%" title="Speed as real SPD (TAS - true air speed) on 5000 meters">Max speed at 5000 m</th>
-                <td style="width: 15%">@Model.ElementAt(0).MaxSpeedAt5000 km/h</td>
-                <td style="width: 15%">@Model.ElementAt(1).MaxSpeedAt5000 km/h</td>
-                <td style="width: 15%">@Model.ElementAt(2).MaxSpeedAt5000 km/h</td>
-                <td style="width: 15%">@Model.ElementAt(3).MaxSpeedAt5000 km/h</td>
-            </tr>
-            <tr class="low">
-                <th style="width: 20%" title="For 1-4 tier planes: Initial speed 400 km/h. The angle should always be in range of 15 to 20 degrees. Angle of climb in priority.
+        <table class="table table-hover table-bordered table-sm text-center">
+            <tbody>
+                <tr class="red-table-label">
+                    <td style="width: 100%" colspan="5">Weapon specifications</td>
+                </tr>
+                <tr>
+                    <th style="width: 20%" title="Description of default offensive armament (without suspended armament)">Offensive armament</th>
+                    <td style="width: 15%">@Html.Raw(Model.ElementAt(0).CourseWeapon)</td>
+                    <td style="width: 15%">@Html.Raw(Model.ElementAt(1).CourseWeapon)</td>
+                    <td style="width: 15%">@Html.Raw(Model.ElementAt(2).CourseWeapon)</td>
+                    <td style="width: 15%">@Html.Raw(Model.ElementAt(3).CourseWeapon)</td>
+                </tr>
+                <tr class="high">
+                    <th style="width: 20%" title="Just a burst mass (without suspended armament)">Burst mass</th>
+                    <td style="width: 15%">@Model.ElementAt(0).BurstMass kg/s</td>
+                    <td style="width: 15%">@Model.ElementAt(1).BurstMass kg/s</td>
+                    <td style="width: 15%">@Model.ElementAt(2).BurstMass kg/s</td>
+                    <td style="width: 15%">@Model.ElementAt(3).BurstMass kg/s</td>
+                </tr>
+                <tr>
+                    <th style="width: 20%" class="align-middle" title="Lethal suspended armament like a bombs, torpedo, rocket, etc">Attack systems</th>
+                    @for (int i = 0; i < 4; i++)
+                    {
+                        <td style="width: 15%">
+                            @{
+                                if (Model.ElementAt(i).ASMissile)
+                                {
+                                    <img src="~/images/ASMissile.png" alt="" title="Air to surface missile" class="img-fluid" width="40">
+                                }
+                                if (Model.ElementAt(i).AAMissile)
+                                {
+                                    <img src="~/images/AAMissile.png" alt="" title="Air to air missile" class="img-fluid" width="40">
+                                }
+                                if (Model.ElementAt(i).AGMissile)
+                                {
+                                    <img src="~/images/AGMissile.png" alt="" title="Air-to-ground command guided missile" class="img-fluid" width="40">
+                                }
+                                if (Model.ElementAt(i).HBomb)
+                                {
+                                    <img src="~/images/HBomb.png" alt="" title="Just a bomb" class="img-fluid" width="40">
+                                }
+                                if (Model.ElementAt(i).HCannon)
+                                {
+                                    <img src="~/images/HCannon.png" alt="" title="Gun pod" class="img-fluid" width="40">
+                                }
+                                if (Model.ElementAt(i).HTorpedo)
+                                {
+                                    <img src="~/images/HTorpedo.png" alt="" title="Just a torpedo" class="img-fluid" width="40">
+                                }
+                                if (Model.ElementAt(i).WrongMusic)
+                                {
+                                    <img src="~/images/WrongMusic.png" alt="" title="Schräge Musik" class="img-fluid" width="40">
+                                }
+                            }
+                        </td>
+                    }
+                </tr>
+                <tr class="high">
+                    <th style="width: 20%" title="Maximum payload weight">Bombs payload</th>
+                    <td style="width: 15%">@Model.ElementAt(0).BombLoad kg</td>
+                    <td style="width: 15%">@Model.ElementAt(1).BombLoad kg</td>
+                    <td style="width: 15%">@Model.ElementAt(2).BombLoad kg</td>
+                    <td style="width: 15%">@Model.ElementAt(3).BombLoad kg</td>
+                </tr>
+
+
+                <tr class="hideifempty">
+                    <th style="width: 20%" class="align-middle" title="Description of safety systems like a RWR, turrel, flares, etc">Safety systems</th>
+                    @for (int i = 0; i < 4; i++)
+                    {
+                        <td style="width: 15%">
+                            @{
+                                if (Model.ElementAt(i).RWR)
+                                {
+                                    <img src="~/images/RWR.png" alt="" title="Radar warning receiver" class="img-fluid" width="40">
+                                }
+                                if (Model.ElementAt(i).Turrel)
+                                {
+                                    <img src="~/images/Turrel.png" alt="" title="Gun turret" class="img-fluid" width="40">
+                                }
+                                if (Model.ElementAt(i).Flares)
+                                {
+                                    <img src="~/images/Flares.png" alt="" title="Just a flares" class="img-fluid" width="40">
+                                }
+                            }
+                        </td>
+                    }
+                </tr>
+                <tr class="hideifempty">
+                    <th style="width: 20%" class="align-middle" title="Additional systems like a radar, CCIP, air brake, etc">Other systems</th>
+                    @for (int i = 0; i < 4; i++)
+                    {
+                        <td style="width: 15%">
+                            @{
+                                if (Model.ElementAt(i).Parachute)
+                                {
+                                    <img src="~/images/Parachute.png" alt="" title="Brake parachute" class="img-fluid" width="40">
+                                }
+                                if (Model.ElementAt(i).AirBrake)
+                                {
+                                    <img src="~/images/AirBrake.png" alt="" title="Air brake" class="img-fluid" width="40">
+                                }
+                                if (Model.ElementAt(i).AirRadar)
+                                {
+                                    <img src="~/images/AirRadar.png" alt="" title="Plane radar" class="img-fluid" width="40">
+                                }
+                                if (Model.ElementAt(i).Tailhook)
+                                {
+                                    <img src="~/images/TailHook.png" alt="" title="Tailhook" class="img-fluid" width="40">
+                                }
+                                if (Model.ElementAt(i).GroundRadar)
+                                {
+                                    <img src="~/images/GroundRadar.png" alt="" title="Ground vehicle radar" class="img-fluid" width="40">
+                                }
+                                if (Model.ElementAt(i).CCIP)
+                                {
+                                    <img src="~/images/CCIP.png" alt="" title="Constantly computed impact point" class="img-fluid" width="40">
+                                }
+                                if (Model.ElementAt(i).GSuit)
+                                {
+                                    <img src="~/images/AntiLoadingSuit.png" alt="" title="Anti Loading Suit" class="img-fluid" width="40">
+                                }
+                            }
+                        </td>
+                    }
+                </tr>
+            </tbody>
+        </table>
+
+        <table class="table table-hover table-bordered table-sm text-center">
+            <tbody>
+                <tr class="red-table-label">
+                    <td style="width: 100%" colspan="5">Flight specifications</td>
+                </tr>
+                <tr class="high">
+                    <th style="width: 20%" title="Speed as real SPD (TAS - true air speed) on sea level">Max speed at 0 m</th>
+                    <td style="width: 15%">@Model.ElementAt(0).MaxSpeedAt0 km/h</td>
+                    <td style="width: 15%">@Model.ElementAt(1).MaxSpeedAt0 km/h</td>
+                    <td style="width: 15%">@Model.ElementAt(2).MaxSpeedAt0 km/h</td>
+                    <td style="width: 15%">@Model.ElementAt(3).MaxSpeedAt0 km/h</td>
+                </tr>
+                <tr class="high">
+                    <th style="width: 20%" title="Speed as real SPD (TAS - true air speed) on 5000 meters">Max speed at 5000 m</th>
+                    <td style="width: 15%">@Model.ElementAt(0).MaxSpeedAt5000 km/h</td>
+                    <td style="width: 15%">@Model.ElementAt(1).MaxSpeedAt5000 km/h</td>
+                    <td style="width: 15%">@Model.ElementAt(2).MaxSpeedAt5000 km/h</td>
+                    <td style="width: 15%">@Model.ElementAt(3).MaxSpeedAt5000 km/h</td>
+                </tr>
+                <tr class="low">
+                    <th style="width: 20%" title="For 1-4 tier planes: Initial speed 400 km/h. The angle should always be in range of 15 to 20 degrees. Angle of climb in priority.
 For 1-4 tier bombers: Initial speed 300 km/h. The angle should always be in range of 10 to 15 degrees. Angle of climb in priority.
 For 5 tier planes: Initial speed 600 km/h. The angle should always be in range of 10 to 15 degrees. Angle of climb in priority.
 For 6 tier planes: Initial speed 1000 km/h. The angle should always be in range of 20 to 25 degrees. Angle of climb in priority.">Climb rate (0-5000 m)</th>
-                <td style="width: 15%">@Model.ElementAt(0).Climb s</td>
-                <td style="width: 15%">@Model.ElementAt(1).Climb s</td>
-                <td style="width: 15%">@Model.ElementAt(2).Climb s</td>
-                <td style="width: 15%">@Model.ElementAt(3).Climb s</td>
-            </tr>
-            <tr class="low">
-                <th style="width: 20%" title="Turnaround time in stable turn. Was taken from the client and shows maneuverability of the aircraft in most generalized way">Turn time</th>
-                <td style="width: 15%">@Model.ElementAt(0).TurnAt0 s</td>
-                <td style="width: 15%">@Model.ElementAt(1).TurnAt0 s</td>
-                <td style="width: 15%">@Model.ElementAt(2).TurnAt0 s</td>
-                <td style="width: 15%">@Model.ElementAt(3).TurnAt0 s</td>
-            </tr>
-            <tr class="high">
-                <th style="width: 20%" title="The maximum possible engine power of the spaded vehicle.">Engine power</th>
-                <td style="width: 15%">@Model.ElementAt(0).EnginePower</td>
-                <td style="width: 15%">@Model.ElementAt(1).EnginePower</td>
-                <td style="width: 15%">@Model.ElementAt(2).EnginePower</td>
-                <td style="width: 15%">@Model.ElementAt(3).EnginePower</td>
-            </tr>
-            <tr class="low">
-                <th style="width: 20%" title="The normal take-off weight used in the game, without suspended armament. 20 minutes of fuel or the maximum possible approximate amount">Take-off weight</th>
-                <td style="width: 15%">@Model.ElementAt(0).Weight kg</td>
-                <td style="width: 15%">@Model.ElementAt(1).Weight kg</td>
-                <td style="width: 15%">@Model.ElementAt(2).Weight kg</td>
-                <td style="width: 15%">@Model.ElementAt(3).Weight kg</td>
-            </tr>
-            <tr class="high">
-                <th style="width: 20%" title="Air speed which causes unturnable fatal damages to the plane 's hull and wing airframe structure">Speed of destruction</th>
-                <td style="width: 15%">@Model.ElementAt(0).Flutter km/h</td>
-                <td style="width: 15%">@Model.ElementAt(1).Flutter km/h</td>
-                <td style="width: 15%">@Model.ElementAt(2).Flutter km/h</td>
-                <td style="width: 15%">@Model.ElementAt(3).Flutter km/h</td>
-            </tr>
-            <tr class="high">
-                <th style="width: 20%" title="Experimental parameters, altitude when the engine and compressor are operating at maximum power">Optimal altitude</th>
-                <td style="width: 15%">@Model.ElementAt(0).OptimalAlitude m</td>
-                <td style="width: 15%">@Model.ElementAt(1).OptimalAlitude m</td>
-                <td style="width: 15%">@Model.ElementAt(2).OptimalAlitude m</td>
-                <td style="width: 15%">@Model.ElementAt(3).OptimalAlitude m</td>
-            </tr>
-            <tr class="high">
-                <th style="width: 20%" title="Experimental parameters, when elevator is more efficient">Optimal velocities (Elevator)</th>
-                <td style="width: 15%">@Model.ElementAt(0).OptimalElevator km/h</td>
-                <td style="width: 15%">@Model.ElementAt(1).OptimalElevator km/h</td>
-                <td style="width: 15%">@Model.ElementAt(2).OptimalElevator km/h</td>
-                <td style="width: 15%">@Model.ElementAt(3).OptimalElevator km/h</td>
-            </tr>
-            <tr class="high">
-                <th style="width: 20%" title="Experimental parameters, when ailerons is more efficient">Optimal velocities (Ailerons)</th>
-                <td style="width: 15%">@Model.ElementAt(0).OptimalAilerons km/h</td>
-                <td style="width: 15%">@Model.ElementAt(1).OptimalAilerons km/h</td>
-                <td style="width: 15%">@Model.ElementAt(2).OptimalAilerons km/h</td>
-                <td style="width: 15%">@Model.ElementAt(3).OptimalAilerons km/h</td>
-            </tr>
-        </tbody>
-    </table>
+                    <td style="width: 15%">@Model.ElementAt(0).Climb s</td>
+                    <td style="width: 15%">@Model.ElementAt(1).Climb s</td>
+                    <td style="width: 15%">@Model.ElementAt(2).Climb s</td>
+                    <td style="width: 15%">@Model.ElementAt(3).Climb s</td>
+                </tr>
+                <tr class="low">
+                    <th style="width: 20%" title="Turnaround time in stable turn. Was taken from the client and shows maneuverability of the aircraft in most generalized way">Turn time</th>
+                    <td style="width: 15%">@Model.ElementAt(0).TurnAt0 s</td>
+                    <td style="width: 15%">@Model.ElementAt(1).TurnAt0 s</td>
+                    <td style="width: 15%">@Model.ElementAt(2).TurnAt0 s</td>
+                    <td style="width: 15%">@Model.ElementAt(3).TurnAt0 s</td>
+                </tr>
+                <tr class="high">
+                    <th style="width: 20%" title="The maximum possible engine power of the spaded vehicle.">Engine power</th>
+                    <td style="width: 15%">@Model.ElementAt(0).EnginePower</td>
+                    <td style="width: 15%">@Model.ElementAt(1).EnginePower</td>
+                    <td style="width: 15%">@Model.ElementAt(2).EnginePower</td>
+                    <td style="width: 15%">@Model.ElementAt(3).EnginePower</td>
+                </tr>
+                <tr class="low">
+                    <th style="width: 20%" title="The normal take-off weight used in the game, without suspended armament. 20 minutes of fuel or the maximum possible approximate amount">Take-off weight</th>
+                    <td style="width: 15%">@Model.ElementAt(0).Weight kg</td>
+                    <td style="width: 15%">@Model.ElementAt(1).Weight kg</td>
+                    <td style="width: 15%">@Model.ElementAt(2).Weight kg</td>
+                    <td style="width: 15%">@Model.ElementAt(3).Weight kg</td>
+                </tr>
+                <tr class="high">
+                    <th style="width: 20%" title="Air speed which causes unturnable fatal damages to the plane 's hull and wing airframe structure">Speed of destruction</th>
+                    <td style="width: 15%">@Model.ElementAt(0).Flutter km/h</td>
+                    <td style="width: 15%">@Model.ElementAt(1).Flutter km/h</td>
+                    <td style="width: 15%">@Model.ElementAt(2).Flutter km/h</td>
+                    <td style="width: 15%">@Model.ElementAt(3).Flutter km/h</td>
+                </tr>
+                <tr class="high">
+                    <th style="width: 20%" title="Experimental parameters, altitude when the engine and compressor are operating at maximum power">Optimal altitude</th>
+                    <td style="width: 15%">@Model.ElementAt(0).OptimalAlitude m</td>
+                    <td style="width: 15%">@Model.ElementAt(1).OptimalAlitude m</td>
+                    <td style="width: 15%">@Model.ElementAt(2).OptimalAlitude m</td>
+                    <td style="width: 15%">@Model.ElementAt(3).OptimalAlitude m</td>
+                </tr>
+                <tr class="high">
+                    <th style="width: 20%" title="Experimental parameters, when elevator is more efficient">Optimal velocities (Elevator)</th>
+                    <td style="width: 15%">@Model.ElementAt(0).OptimalElevator km/h</td>
+                    <td style="width: 15%">@Model.ElementAt(1).OptimalElevator km/h</td>
+                    <td style="width: 15%">@Model.ElementAt(2).OptimalElevator km/h</td>
+                    <td style="width: 15%">@Model.ElementAt(3).OptimalElevator km/h</td>
+                </tr>
+                <tr class="high">
+                    <th style="width: 20%" title="Experimental parameters, when ailerons is more efficient">Optimal velocities (Ailerons)</th>
+                    <td style="width: 15%">@Model.ElementAt(0).OptimalAilerons km/h</td>
+                    <td style="width: 15%">@Model.ElementAt(1).OptimalAilerons km/h</td>
+                    <td style="width: 15%">@Model.ElementAt(2).OptimalAilerons km/h</td>
+                    <td style="width: 15%">@Model.ElementAt(3).OptimalAilerons km/h</td>
+                </tr>
+            </tbody>
+        </table>
 
-
-    <h6 class="text-right ">
-        <span class="alert-light small">1-4 tier bombers not added yet</span>
-    </h6>
-</div>
+        <h6 class="text-right ">
+            <span class="alert-light small">1-4 tier bombers not added yet</span>
+        </h6>
+    </div>

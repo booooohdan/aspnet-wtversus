@@ -58,11 +58,11 @@ namespace WTVersus
             {
                 endpoints.MapControllerRoute(
                     name: "FourParameters",
-                    pattern: "{controller=Aircrafts}/{action=Compare}/{vehicle1=1}/{vehicle2=2}/{vehicle3=0}/{vehicle4=0}");
+                    pattern: "{controller=Tanks}/{action=Compare}/{vehicle1=1}/{vehicle2=2}/{vehicle3=0}/{vehicle4=0}");
 
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Aircrafts}/{action=Compare}");
+                    pattern: "{controller=Tanks}/{action=Compare}");
             });
         }
     }

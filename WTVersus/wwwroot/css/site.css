@@ -1,86 +1,108 @@
-﻿.navbar-nav li a {
-    color: white !important;
-}
-
-.navbar .dropdown-menu {
-    background-color: #D9534F;
-}
-
-    .navbar .dropdown-menu > a:focus {
-        color: #e5dbdb;
-        background-color: #AD423F;
+﻿    .green {
+        background: #8efc8e;
     }
 
-    .navbar .dropdown-menu > a:hover {
-        color: #e5dbdb;
-        background-color: #AD423F;
+    .red {
+        background: #fc918e;
     }
 
-.roundedBottom { /*Меню*/
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
+    .Fighter {
+        background-color: #fff5d1 !important;
+    }
+
+    .Attacker {
+        background-color: #caffca !important;
+    }
+
+    .Bomber {
+        background-color: #e4e4ff !important;
+    }
+
+    .Premium, .Promotional {
+        background-color: #fffe99 !important;
+    }
+
+    @font-face {
+        font-family: 'wt_symbols';
+        src: url('/fonts/symbols_skyquake.ttf')
+    }
+
+    @font-face {
+        font-family: 'roboto';
+        src: url('/fonts/Roboto.ttf')
+    }
+
+body {
+    font-family: 'wt_symbols', 'roboto' !important;
+    background: #eff0f2 !important;
 }
+
+th {
+    font-weight: normal;
+}
+
+table {
+    width: 100%;
+    font-size: 10pt !important;
+    background: white !important;
+}
+
+.font10pt {
+    font-size: 10pt !important;
+}
+
+    .red-table-label {
+        background-color: #DC3546;
+        color: white;
+    }
+
+    .img-horizontal-align {
+        max-height: 40px;
+    }
 
 .dropdown-height-fix {
     overflow-y: scroll;
     height: 400px;
 }
 
-.alert {
-    background-color: lightcoral;
+.sticky-row {
+    background: white;
+    position: sticky;
+    top: 0;
 }
 
-.green {
-    background: #8efc8e;
+.menu-icon {
+    width: 18px;
+    opacity: 0.6;
 }
 
-.red {
-    background: #fc918e;
-}
+/*Меню*/
+@media (min-width: 768px) {
+    .navbar-container {
+        position: sticky;
+        top: 0;
+        overflow-y: auto;
+        height: 100vh;
+    }
 
-th{
-    font-weight: normal;
-}
+        .navbar-container .navbar {
+            align-items: flex-start;
+            justify-content: flex-start;
+            flex-wrap: nowrap;
+            flex-direction: column;
+            height: 100%;
+        }
 
-table {
-    width: 100%;
-}
+        .navbar-container .navbar-collapse {
+            align-items: flex-start;
+        }
 
-.Fighter {
-    background-color: #fff5d1 !important;
-}
+        .navbar-container .nav {
+            flex-direction: column;
+            flex-wrap: nowrap;
+        }
 
-.Attacker {
-    background-color: #caffca!important;
-}
-
-.Bomber {
-    background-color: #e4e4ff!important;
-}
-
-.Premium, .Promotional {
-    background-color: #fffe99 !important;
-}
-
-@font-face {
-    font-family: 'wt_symbols';
-    src: url('/fonts/symbols_skyquake.ttf')
-}
-
-@font-face {
-    font-family: 'roboto';
-    src: url('/fonts/Roboto.ttf')
-}
-
-body {
-    font-family: 'wt_symbols', 'roboto'!important;
-}
-
-.red-table-label {
-    background-color: #DC3546;
-    color:white;
-}
-
-.img-horizontal-align {
-    max-height: 40px;
+        .navbar-container .navbar-nav {
+            flex-direction: column !important;
+        }
 }
