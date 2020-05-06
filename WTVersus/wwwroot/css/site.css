@@ -1,36 +1,46 @@
-﻿    .green {
-        background: #8efc8e;
-    }
+﻿.green {
+    background: #8efc8e;
+}
 
-    .red {
-        background: #fc918e;
-    }
+.red {
+    background: #fc918e;
+}
 
-    .Fighter {
-        background-color: #fff5d1 !important;
-    }
+.Fighter {
+    background-color: #fff5d1 !important;
+}
 
-    .Attacker {
-        background-color: #caffca !important;
-    }
+.Attacker {
+    background-color: #caffca !important;
+}
 
-    .Bomber {
-        background-color: #e4e4ff !important;
-    }
+.Bomber {
+    background-color: #e4e4ff !important;
+}
 
-    .Premium, .Promotional {
-        background-color: #fffe99 !important;
-    }
+.Premium, .Promotional {
+    background-color: #fffe99 !important;
+}
 
-    @font-face {
-        font-family: 'wt_symbols';
-        src: url('/fonts/symbols_skyquake.ttf')
-    }
+@font-face {
+    font-family: 'wt_symbols';
+    src: url('/fonts/symbols_skyquake.ttf')
+}
 
-    @font-face {
-        font-family: 'roboto';
-        src: url('/fonts/Roboto.ttf')
-    }
+@font-face {
+    font-family: 'roboto';
+    src: url('/fonts/Roboto.ttf')
+}
+
+@font-face {
+    font-family: 'robotoBold';
+    src: url('/fonts/RobotoBold.ttf')
+}
+
+.bold-font {
+    font-family: 'robotoBold';
+    font-size: 22px;
+}
 
 body {
     font-family: 'wt_symbols', 'roboto' !important;
@@ -51,14 +61,15 @@ table {
     font-size: 10pt !important;
 }
 
-    .red-table-label {
-        background-color: #DC3546;
-        color: white;
-    }
+.red-table-label {
+    background-color: #DC3546;
+    color: white;
+    text-transform:uppercase;
+}
 
-    .img-horizontal-align {
-        max-height: 40px;
-    }
+.img-horizontal-align {
+    max-height: 40px;
+}
 
 .dropdown-height-fix {
     overflow-y: scroll;
@@ -69,6 +80,11 @@ table {
     background: white;
     position: sticky;
     top: 0;
+}
+
+.table-hover > tbody > tr.no-hover:hover {
+    background-color: #DC3546;
+    color: white;
 }
 
 .menu-icon {
