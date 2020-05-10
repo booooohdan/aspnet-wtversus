@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.29806.167
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WTVersus", "WTVersus\WTVersus.csproj", "{2A931F16-2DE7-40B4-BF5D-1C3DD79A6AC5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DbMaintenance", "DbMaintenance\DbMaintenance.csproj", "{5462F0D6-7441-431B-8418-3BCDDC4B0738}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DbMaintenance", "DbMaintenance\DbMaintenance.csproj", "{5462F0D6-7441-431B-8418-3BCDDC4B0738}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WTVersus.Tests", "WTVersus.Tests\WTVersus.Tests.csproj", "{98ED5BC8-6D50-40E9-9898-3F1E2FC9C769}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{5462F0D6-7441-431B-8418-3BCDDC4B0738}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5462F0D6-7441-431B-8418-3BCDDC4B0738}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5462F0D6-7441-431B-8418-3BCDDC4B0738}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98ED5BC8-6D50-40E9-9898-3F1E2FC9C769}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98ED5BC8-6D50-40E9-9898-3F1E2FC9C769}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98ED5BC8-6D50-40E9-9898-3F1E2FC9C769}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98ED5BC8-6D50-40E9-9898-3F1E2FC9C769}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

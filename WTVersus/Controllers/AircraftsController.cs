@@ -25,6 +25,16 @@ namespace WTVersus.Controllers
         }
         #endregion
 
+        #region Logger
+        private readonly ILogger<AircraftsController> _logger;
+
+        public AircraftsController(ILogger<AircraftsController> logger)
+        {
+            _logger = logger;
+            _logger.LogDebug(1, "NLog injected into Controller");
+        }
+        #endregion
+
         [HttpGet]
         public IActionResult Compare(int vehicle1, int vehicle2, int vehicle3, int vehicle4)
         {
@@ -37,6 +47,8 @@ namespace WTVersus.Controllers
             selectedPlanes.Add(planesFromDb.FirstOrDefault(p => p.VehicleId == vehicle2));
             selectedPlanes.Add(planesFromDb.FirstOrDefault(p => p.VehicleId == vehicle3));
             selectedPlanes.Add(planesFromDb.FirstOrDefault(p => p.VehicleId == vehicle4));
+
+            _logger.LogInformation("Log Message");
 
             return View(selectedPlanes);
         }

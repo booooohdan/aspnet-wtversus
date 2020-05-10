@@ -124,7 +124,8 @@ namespace WTVersus.Controllers
                 //    HBomb = true,
                 //    HTorpedo = false
                 //},
-
+    
+                
                 );
             Context.SaveChanges();
 
