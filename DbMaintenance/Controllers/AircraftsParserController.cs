@@ -26,7 +26,7 @@ namespace WTVersus.Controllers
 
         public IActionResult Index()
         {
-            for (int i = 640; i < 649; i++)
+            for (int i = 449; i < Context.Planes.Count(); i++) //650
             {
                 var planess = Context.Planes.ToList(); //Отримання колекції з БД
                 string[] arrayResult = ParseImageString(planess.ElementAt(i).WikiLink).Result; //Виклик методу з параметом індекса циклу

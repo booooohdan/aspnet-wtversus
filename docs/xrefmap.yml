@@ -1,0 +1,54 @@
+### YamlMime:XRefMap
+sorted: true
+references:
+- uid: WTVersus.Tests
+  name: WTVersus.Tests
+  href: api/WTVersus.Tests.html
+  commentId: N:WTVersus.Tests
+  fullName: WTVersus.Tests
+  nameWithType: WTVersus.Tests
+- uid: WTVersus.Tests.AircraftsControllerTests
+  name: AircraftsControllerTests
+  href: api/WTVersus.Tests.AircraftsControllerTests.html
+  commentId: T:WTVersus.Tests.AircraftsControllerTests
+  fullName: WTVersus.Tests.AircraftsControllerTests
+  nameWithType: AircraftsControllerTests
+- uid: WTVersus.Tests.AircraftsControllerTests.AplusB(System.Int32,System.Int32)
+  name: AplusB(Int32, Int32)
+  href: api/WTVersus.Tests.AircraftsControllerTests.html#WTVersus_Tests_AircraftsControllerTests_AplusB_System_Int32_System_Int32_
+  commentId: M:WTVersus.Tests.AircraftsControllerTests.AplusB(System.Int32,System.Int32)
+  fullName: WTVersus.Tests.AircraftsControllerTests.AplusB(System.Int32, System.Int32)
+  nameWithType: AircraftsControllerTests.AplusB(Int32, Int32)
+- uid: WTVersus.Tests.AircraftsControllerTests.AplusB*
+  name: AplusB
+  href: api/WTVersus.Tests.AircraftsControllerTests.html#WTVersus_Tests_AircraftsControllerTests_AplusB_
+  commentId: Overload:WTVersus.Tests.AircraftsControllerTests.AplusB
+  isSpec: "True"
+  fullName: WTVersus.Tests.AircraftsControllerTests.AplusB
+  nameWithType: AircraftsControllerTests.AplusB
+- uid: WTVersus.Tests.AircraftsControllerTests.IndexReturnsAViewResultWithAListOfUsers
+  name: IndexReturnsAViewResultWithAListOfUsers()
+  href: api/WTVersus.Tests.AircraftsControllerTests.html#WTVersus_Tests_AircraftsControllerTests_IndexReturnsAViewResultWithAListOfUsers
+  commentId: M:WTVersus.Tests.AircraftsControllerTests.IndexReturnsAViewResultWithAListOfUsers
+  fullName: WTVersus.Tests.AircraftsControllerTests.IndexReturnsAViewResultWithAListOfUsers()
+  nameWithType: AircraftsControllerTests.IndexReturnsAViewResultWithAListOfUsers()
+- uid: WTVersus.Tests.AircraftsControllerTests.IndexReturnsAViewResultWithAListOfUsers*
+  name: IndexReturnsAViewResultWithAListOfUsers
+  href: api/WTVersus.Tests.AircraftsControllerTests.html#WTVersus_Tests_AircraftsControllerTests_IndexReturnsAViewResultWithAListOfUsers_
+  commentId: Overload:WTVersus.Tests.AircraftsControllerTests.IndexReturnsAViewResultWithAListOfUsers
+  isSpec: "True"
+  fullName: WTVersus.Tests.AircraftsControllerTests.IndexReturnsAViewResultWithAListOfUsers
+  nameWithType: AircraftsControllerTests.IndexReturnsAViewResultWithAListOfUsers
+- uid: WTVersus.Tests.AircraftsControllerTests.themethod2(System.Int32)
+  name: themethod2(Int32)
+  href: api/WTVersus.Tests.AircraftsControllerTests.html#WTVersus_Tests_AircraftsControllerTests_themethod2_System_Int32_
+  commentId: M:WTVersus.Tests.AircraftsControllerTests.themethod2(System.Int32)
+  fullName: WTVersus.Tests.AircraftsControllerTests.themethod2(System.Int32)
+  nameWithType: AircraftsControllerTests.themethod2(Int32)
+- uid: WTVersus.Tests.AircraftsControllerTests.themethod2*
+  name: themethod2
+  href: api/WTVersus.Tests.AircraftsControllerTests.html#WTVersus_Tests_AircraftsControllerTests_themethod2_
+  commentId: Overload:WTVersus.Tests.AircraftsControllerTests.themethod2
+  isSpec: "True"
+  fullName: WTVersus.Tests.AircraftsControllerTests.themethod2
+  nameWithType: AircraftsControllerTests.themethod2

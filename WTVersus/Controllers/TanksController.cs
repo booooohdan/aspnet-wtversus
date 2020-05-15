@@ -16,12 +16,17 @@ namespace WTVersus.Controllers
 {
     public class TanksController : Controller
     {
-        #region DbContext
+        #region DbContext, Logger
         public AppDbContext Context { get; }
-        public TanksController(AppDbContext context)
+        private readonly ILogger<TanksController> _logger;
+
+        public TanksController(AppDbContext context, ILogger<TanksController> logger)
         {
             Context = context;
             System.Threading.Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("en-US");
+
+            _logger = logger;
+            _logger.LogDebug(1, "NLog injected into Controller");
         }
         #endregion
 

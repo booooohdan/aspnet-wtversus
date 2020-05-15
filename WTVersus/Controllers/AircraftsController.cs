@@ -16,24 +16,21 @@ namespace WTVersus.Controllers
 {
     public class AircraftsController : Controller
     {
-        #region DbContext
+        #region DbContext, Logger
         public AppDbContext Context { get; }
-        public AircraftsController(AppDbContext context)
+        private readonly ILogger<AircraftsController> _logger;
+
+        public AircraftsController(AppDbContext context, ILogger<AircraftsController> logger)
         {
             Context = context;
             System.Threading.Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("en-US");
-        }
-        #endregion
-
-        #region Logger
-        private readonly ILogger<AircraftsController> _logger;
-
-        public AircraftsController(ILogger<AircraftsController> logger)
-        {
+           
             _logger = logger;
             _logger.LogDebug(1, "NLog injected into Controller");
         }
         #endregion
+
+
 
         [HttpGet]
         public IActionResult Compare(int vehicle1, int vehicle2, int vehicle3, int vehicle4)
