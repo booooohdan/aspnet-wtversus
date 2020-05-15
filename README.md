@@ -14,3 +14,6 @@ You can run this project locally just do:
 - cd wtversus
 - npm install
 - npm start
+
+Documentation:
+https://booooooogdan.github.io/wtversus/api/index.html
