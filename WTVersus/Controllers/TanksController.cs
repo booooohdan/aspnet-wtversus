@@ -22,6 +22,14 @@ namespace WTVersus.Controllers
         }
         #endregion
 
+        /// <summary>
+        /// Controllers, takes 4 parameters. Default value in Startup.cs
+        /// </summary>
+        /// <param name="vehicle1">Id for first vehicle</param>
+        /// <param name="vehicle2">Id for second vehicle</param>
+        /// <param name="vehicle3">Id for third vehicle</param>
+        /// <param name="vehicle4">Id for fourth vehicle</param>
+        /// <returns>Return vehicle collection from DB to View</returns>
         [HttpGet]
         public IActionResult Compare(int vehicle1, int vehicle2, int vehicle3, int vehicle4)
         {
