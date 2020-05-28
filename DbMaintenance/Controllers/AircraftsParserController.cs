@@ -1,98 +1,61 @@
 ﻿using System;
 using System.Linq;
-using System.Threading.Tasks;
-using AngleSharp;
 using Microsoft.AspNetCore.Mvc;
 using AngleSharp.Dom;
 using WTVersus.Models;
 using System.Diagnostics;
+using DbMaintenance.ParserHelpers;
 
-namespace WTVersus.Controllers
+namespace DbMaintenance.Controllers
 {
+    /// <summary>Controller for writing plane data to the database</summary>
     public class AircraftsParserController : Controller
     {
+        #region Creating needed instances
+        WikiParserHelper aircraftsParserHelper = new WikiParserHelper();
+        #endregion
+
         #region DbContext
         public AppDbContext Context { get; }
         public AircraftsParserController(AppDbContext context)
         {
             Context = context;
-            System.Threading.Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("en-US");
+            System.Threading.Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("en-US"); //fix point and comma conflict in DB
         }
         #endregion
 
-        public IActionResult Index()
+        /// <summary>Load aircrafts parses page</summary>
+        /// <returns>View</returns>
+        public IActionResult ParsePlane()
         {
-            for (int i = 449; i < Context.Planes.Count(); i++) //650
+            var planesCollection = Context.Planes.ToList(); //Get colllection from DB
+
+            for (int i = 449; i < Context.Planes.Count(); i++)
             {
-                var planess = Context.Planes.ToList(); //Отримання колекції з БД
-                string[] arrayResult = ParseImageString(planess.ElementAt(i).WikiLink).Result; //Виклик методу з параметом індекса циклу
-                var first = arrayResult[0];
-                var second = arrayResult[1];
+                string wikiLink = planesCollection.ElementAt(i).WikiLink;
+                string[] arrayResult = aircraftsParserHelper.WikiPageParser(wikiLink).Result; //Call parser method who's take loop index as parameter
 
-                string third;
-                var arrayFromParser = arrayResult[2].Split("/");
-                var charArray = arrayResult[2].ToCharArray();
-                third = charArray.Contains('/') ? arrayFromParser[1].Replace(" ", "") : arrayFromParser[0].Replace(" ", "");
+                //Splitting raw string and get needed value
+                string rawRepairCosе = arrayResult[2].ToCharArray().Contains('/') ? arrayResult[2].Split("/")[1].Replace(" ", "") : arrayResult[2].Split("/")[0].Replace(" ", "");
 
-                planess.ElementAt(i).Image = first;
-                planess.ElementAt(i).BR = Convert.ToDouble(second);
-                planess.ElementAt(i).RepairCost = Convert.ToInt32(third);
+                planesCollection.ElementAt(i).Image = arrayResult[0];
+                planesCollection.ElementAt(i).BR = Convert.ToDouble(arrayResult[1]);
+                planesCollection.ElementAt(i).RepairCost = Convert.ToInt32(rawRepairCosе);
 
-                Debug.WriteLine(first);
+                Debug.WriteLine(arrayResult[0]);
+                Debug.WriteLine(arrayResult[1]);
+                Debug.WriteLine(arrayResult[2]);
             }
-            Context.SaveChanges();
 
+            Context.SaveChanges();
             return View();
         }
 
-        [NonAction]
-        public async Task<string[]> ParseImageString(string wikiLink)
-        {
-            string adress = wikiLink;
-            string[] srcStartAt = { "https://encyclopedia.warthunder.com" }; //початок посилання зображення
 
-            ////////Ініціалізація і передача адреси////////
-            var config = Configuration.Default.WithDefaultLoader();
-            var document = await BrowsingContext.New(config).OpenAsync(adress);
-
-            ////////Парсинг картинки////////
-            var resultImage = from element in document.All
-                              from attribute in element.Attributes
-                              where srcStartAt.Any(e => attribute.Value.StartsWith(e))
-                              select attribute;
-            string result = resultImage.FirstOrDefault().Value.ToString();
-
-            ////////Парсинг БР////////
-            var result1 = document.All.Where(m =>
-           m.LocalName == "span" &&
-           m.HasAttribute("class") &&
-           m.GetAttribute("class").Contains("ttx-rb ttx-value")
-                       ).ElementAt(0).TextContent.ToString();
-            ////////Парсинг ремонту////////
-            string result2;
-            try
-            {
-                result2 = document.All.Where(m =>
-                m.LocalName == "span" &&
-                m.HasAttribute("class") &&
-                m.GetAttribute("class").Contains("ttx-rb ttx-value")
-                            ).ElementAt(1).TextContent.ToString();
-            }
-            catch (ArgumentOutOfRangeException)
-            {
-                result2 = "0";
-            }
-
-
-            string[] resultArray = new string[] { result, result1, result2 };
-
-            return resultArray;
-        }
-
+        /// <summary>Add aircrafts from collection range to Db</summary>
+        /// <returns>View</returns>
         public IActionResult AddPlane()
         {
-
-
             Context.Planes.AddRange
                 (
                 //new Plane
@@ -120,15 +83,11 @@ namespace WTVersus.Controllers
                 //    HBomb = true,
                 //    HTorpedo = false
                 //},
-    
-                
+
+
                 );
             Context.SaveChanges();
-
-
             return View();
         }
-
-
     }
 }

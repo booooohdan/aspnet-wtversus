@@ -1,0 +1,25 @@
+﻿@{
+    ViewData["Title"] = "Main menu";
+}
+    <div class="container">
+        <div class="mt-3">
+            <a class="btn btn-danger" asp-controller="AircraftsParser" asp-action="ParsePlane">Parse Plane</a>
+            <a class="btn btn-danger" asp-controller="AircraftsParser" asp-action="AddPlane">Add Plane</a>
+        </div>
+
+        <div class="mt-3">
+            <a class="btn btn-success" asp-controller="TanksParser" asp-action="ParseTank">Parse Tank</a>
+            <a class="btn btn-success" asp-controller="TanksParser" asp-action="AddTank">Add Tank</a>
+        </div>
+
+        <div class="mt-3">
+            <a class="btn btn-warning" asp-controller="HelisParser" asp-action="ParseHeli">Parse Heli</a>
+            <a class="btn btn-warning" asp-controller="HelisParser" asp-action="AddHeli">Add Heli</a>
+        </div>
+
+        <div class="mt-3">
+            <a class="btn btn-primary" asp-controller="ShipsParser" asp-action="ParseShip">Parse Ship</a>
+            <a class="btn btn-primary" asp-controller="ShipsParser" asp-action="AddShip">Add Ship</a>
+        </div>
+
+    </div>
