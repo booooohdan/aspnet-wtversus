@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AngleSharp;
 using Microsoft.AspNetCore.Mvc;
-using System.Net.Http;
-using AngleSharp.Html.Parser;
 using AngleSharp.Dom;
-using AngleSharp.Html.Dom;
 using WTVersus.Models;
 using System.Diagnostics;
 

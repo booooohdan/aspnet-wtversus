@@ -27,7 +27,7 @@ namespace DbMaintenance.Controllers
 
         public IActionResult Index()
         {
-            for (int i = 0; i <Context.Tanks.Count(); i++)
+            for (int i = 500; i < Context.Tanks.Count(); i++)
             {
                 var tankss = Context.Tanks.ToList(); //Отримання колекції з БД
                 string[] arrayResult = ParseImageString(tankss.ElementAt(i).WikiLink).Result; //Виклик методу з параметом індекса циклу
@@ -132,6 +132,7 @@ namespace DbMaintenance.Controllers
             //    ReducedArmorTopSheet = 30,
             //    ReducedArmorBottomSheet = 50,
             //},
+
 
                 );
             Context.SaveChanges();
