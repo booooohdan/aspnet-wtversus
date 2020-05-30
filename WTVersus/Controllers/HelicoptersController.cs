@@ -6,17 +6,17 @@ using WTVersus.Models;
 
 namespace WTVersus.Controllers
 {
-    public class AircraftsController : Controller
+    public class HelicoptersController : Controller
     {
         #region DbContext, Logger
         public AppDbContext Context { get; }
-        private readonly ILogger<AircraftsController> _logger;
+        private readonly ILogger<HelicoptersController> _logger;
 
-        public AircraftsController(AppDbContext context, ILogger<AircraftsController> logger)
+        public HelicoptersController(AppDbContext context, ILogger<HelicoptersController> logger)
         {
             Context = context;
             System.Threading.Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("en-US");
-           
+
             _logger = logger;
             _logger.LogDebug(1, "NLog injected into Controller");
         }
@@ -33,19 +33,19 @@ namespace WTVersus.Controllers
         [HttpGet]
         public IActionResult Compare(int vehicle1, int vehicle2, int vehicle3, int vehicle4)
         {
-            var planesFromDb = Context.Planes.OrderBy(x => x.BR).ToList();
-            planesFromDb.Insert(0, new Plane { Image = "http://wtversus.com/images/EmptyPlane.png", Nation = "EmptyFlag", Name = "Select aircraft", VehicleId=0 }); //Перший пустий елемент, щоб не засмічувати БД
-            var selectedPlanes = new List<Plane>();
-            ViewBag.AllPlanesSelected = planesFromDb;
+            var helisFromDb = Context.Helis.OrderBy(x => x.BR).ToList();
+            helisFromDb.Insert(0, new Heli { Image = "http://wtversus.com/images/EmptyHeli.png", Nation = "EmptyFlag", Name = "Select aircraft", VehicleId=0 }); //Перший пустий елемент, щоб не засмічувати БД
+            var selectedHelis = new List<Heli>();
+            ViewBag.AllHelisSelected = helisFromDb;
 
-            selectedPlanes.Add(planesFromDb.FirstOrDefault(p => p.VehicleId == vehicle1));
-            selectedPlanes.Add(planesFromDb.FirstOrDefault(p => p.VehicleId == vehicle2));
-            selectedPlanes.Add(planesFromDb.FirstOrDefault(p => p.VehicleId == vehicle3));
-            selectedPlanes.Add(planesFromDb.FirstOrDefault(p => p.VehicleId == vehicle4));
+            selectedHelis.Add(helisFromDb.FirstOrDefault(p => p.VehicleId == vehicle1));
+            selectedHelis.Add(helisFromDb.FirstOrDefault(p => p.VehicleId == vehicle2));
+            selectedHelis.Add(helisFromDb.FirstOrDefault(p => p.VehicleId == vehicle3));
+            selectedHelis.Add(helisFromDb.FirstOrDefault(p => p.VehicleId == vehicle4));
 
             _logger.LogInformation("Log Message");
 
-            return View(selectedPlanes);
+            return View(selectedHelis);
         }
     }
 }

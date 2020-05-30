@@ -10,6 +10,7 @@ namespace WTVersus.Models
 
         public DbSet<Plane> Planes { get; set; }
         public DbSet<Tank> Tanks { get; set; }
+        public DbSet<Heli> Helis { get; set; }
 
     }
 }
