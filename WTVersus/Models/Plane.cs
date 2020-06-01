@@ -24,7 +24,6 @@
         public double? TurnAt0 { get; set; }
         public int? EnginePower { get; set; }
         public int? Weight { get; set; }
-        public double? ThrustToWeight { get; set; } //delete
         public int? Flutter { get; set; }
         public double? BurstMass { get; set; }
         public string CourseWeapon { get; set; }

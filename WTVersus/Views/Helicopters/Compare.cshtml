@@ -281,30 +281,34 @@
                 <th style="width: 20%" class="align-middle" title="Additional systems like a radar, CCIP, air brake, etc">Other systems</th>
                 @for (int i = 0; i < 4; i++)
                 {
-                    <td style="width: 15%">
-                        @{
-                            if (Model.ElementAt(i).LaserDesignator)
-                            {
-                                <img src="~/images/CCIP.png" alt="" title="Laser Designator" class="img-fluid" width="40">
-                            }
-                            if (Model.ElementAt(i).CCIP)
-                            {
-                                <img src="~/images/CCIP.png" alt="" title="Constantly computed impact point" class="img-fluid" width="40">
-                            }
-                            if (Model.ElementAt(i).AirRadar)
-                            {
-                                <img src="~/images/AirRadar.png" alt="" title="Avia radar" class="img-fluid" width="40">
-                            }
-                            if (Model.ElementAt(i).ThermalGunner)
-                            {
-                                <img src="~/images/ThermalCommander.png" alt="" title="Thermal sight" class="img-fluid" width="40">
-                            }
-                            if (Model.ElementAt(i).GroundRadar)
-                            {
-                                <img src="~/images/GroundRadar.png" alt="" title="Ground vehicle radar" class="img-fluid" width="40">
-                            }
-                        }
-                    </td>
+            <td style="width: 15%">
+                @{
+                    if (Model.ElementAt(i).LaserDesignator)
+                    {
+                        <img src="~/images/CCIP.png" alt="" title="Laser Designator" class="img-fluid" width="40">
+                    }
+                    if (Model.ElementAt(i).OpticalTracking)
+                    {
+                        <img src="~/images/AirLockRadar.png" alt="" title="Optical tracking device" class="img-fluid" width="40">
+                    }
+                    if (Model.ElementAt(i).CCIP)
+                    {
+                        <img src="~/images/CCIP.png" alt="" title="Constantly computed impact point" class="img-fluid" width="40">
+                    }
+                    if (Model.ElementAt(i).AirRadar)
+                    {
+                        <img src="~/images/AirRadar.png" alt="" title="Avia radar" class="img-fluid" width="40">
+                    }
+                    if (Model.ElementAt(i).ThermalGunner)
+                    {
+                        <img src="~/images/ThermalCommander.png" alt="" title="Thermal sight" class="img-fluid" width="40">
+                    }
+                    if (Model.ElementAt(i).GroundRadar)
+                    {
+                        <img src="~/images/GroundRadar.png" alt="" title="Ground vehicle radar" class="img-fluid" width="40">
+                    }
+                }
+            </td>
                 }
             </tr>
         </tbody>

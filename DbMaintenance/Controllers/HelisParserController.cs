@@ -58,6 +58,35 @@ namespace DbMaintenance.Controllers
             Context.Helis.AddRange
                 (
 
+            //new Heli
+            //{
+            //    VehicleId = 37701,
+            //    Name = "EC-665 Tiger HAD",
+            //    Nation = "France",
+            //    Rank = "VII",
+            //    BR = 10.3,
+            //    Class = "AttackHelicopter",
+            //    Type = "Usual",
+            //    FirstFlyYear = 1991,
+            //    MaxSpeed = 331,
+            //    ClimbTo1000 = 93,
+            //    Turn360 = 7,
+            //    EnginePower = 2934,
+            //    Weight = 6000,
+            //    AGMCount = 8,
+            //    AGMArmorPenetration = 1100,
+            //    AGMSpeed = 475,
+            //    AGMRange = 8000,
+            //    ASMCount = 68,
+            //    BombLoad = 0,
+            //    AGMissile = true,
+            //    ASMissile = true,
+            //    AAMissile = true,
+            //    Bomb = false,
+            //    Flares = true,
+            //}
+
+
                 );
             Context.SaveChanges();
             return View();

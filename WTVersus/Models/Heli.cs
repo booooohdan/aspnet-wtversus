@@ -45,10 +45,11 @@
         public bool Flares { get; set; } //ЛТЦ
         public bool RWR { get; set; } //СПО
 
-        public bool LaserDesignator { get; set; } //СПО
-        public bool CCIP { get; set; } //СПО
-        public bool ThermalGunner { get; set; } //СПО
+        public bool LaserDesignator { get; set; } //ЛЦУ
+        public bool CCIP { get; set; } 
+        public bool ThermalGunner { get; set; } 
         public bool AirRadar { get; set; }
         public bool GroundRadar { get; set; }
+        public bool OpticalTracking { get; set; } //Телеавтомат
     }
 }
