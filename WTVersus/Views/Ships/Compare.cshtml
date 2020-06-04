@@ -1,0 +1,411 @@
+﻿@model IEnumerable<WTVersus.Models.Ship>;
+@{
+    ViewData["Title"] = "Fleet compare";
+}
+
+<div class="container-fluid">
+    <table class="table table-hover table-bordered table-sm text-center sticky-row">
+        <tbody>
+            <tr>
+                <th style="width: 20%"></th>
+                <td style="width: 15%">
+                    <div class="dropdown @Model.ElementAt(0).Type">
+                        <button class="btn dropdown-toggle text-wrap font10pt" type="button" data-toggle="dropdown">
+                            @{string img0name = Model.ElementAt(0).Nation + ".png";}
+                            <img src="~/images/@img0name" class="img-fluid" width="25">
+                            [@String.Format("{0:F1}", Model.ElementAt(0).BR)]
+                            @Model.ElementAt(0).Name
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-height-fix">
+                            <input class="form-control" id="myInput1" type="text" placeholder="Search..">
+                            @foreach (Ship item in ViewBag.AllShipsSelected as IEnumerable<Ship>)
+                            {
+                                <li>
+                                    <a class="dropdown-item @item.Type" asp-controller="Ships" asp-action="Compare"
+                                       asp-route-vehicle1="@item.VehicleId">
+                                        @{string img0item = item.Nation + ".png";}
+                                        <img src="~/images/@img0item" class="img-fluid" width="25">
+                                        [@String.Format("{0:F1}", item.BR)] @item.Name
+                                    </a>
+                                </li>
+                            }
+                        </ul>
+                    </div>
+                </td>
+                <td style="width: 15%">
+                    <div class="dropdown @Model.ElementAt(1).Type">
+                        <button class="btn dropdown-toggle  text-wrap font10pt" type="button" data-toggle="dropdown">
+                            @{string img1name = Model.ElementAt(1).Nation + ".png";}
+                            <img src="~/images/@img1name" class="img-fluid" width="25">
+                            [@String.Format("{0:F1}", Model.ElementAt(1).BR)]
+                            @Model.ElementAt(1).Name
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-height-fix">
+                            <input class="form-control" id="myInput2" type="text" placeholder="Search..">
+                            @foreach (Ship item in ViewBag.AllShipsSelected as IEnumerable<Ship>)
+                            {
+                                <li>
+                                    <a class="dropdown-item @item.Type" asp-controller="Ships" asp-action="Compare"
+                                       asp-route-vehicle2="@item.VehicleId">
+                                        @{string img1item = item.Nation + ".png";}
+                                        <img src="~/images/@img1item" class="img-fluid" width="25">
+                                        [@String.Format("{0:F1}", item.BR)] @item.Name
+                                    </a>
+                                </li>
+                            }
+                        </ul>
+                    </div>
+                </td>
+                <td style="width: 15%">
+                    <div class="dropdown @Model.ElementAt(2).Type">
+                        <button class="btn dropdown-toggle  text-wrap font10pt" type="button" data-toggle="dropdown">
+                            @{string img2name = Model.ElementAt(2).Nation + ".png";}
+                            <img src="~/images/@img2name" class="img-fluid" width="25">
+                            [@String.Format("{0:F1}", Model.ElementAt(2).BR)]
+                            @Model.ElementAt(2).Name
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-height-fix">
+                            <input class="form-control" id="myInput3" type="text" placeholder="Search..">
+                            @foreach (Ship item in ViewBag.AllShipsSelected as IEnumerable<Ship>)
+                            {
+                                <li>
+                                    <a class="dropdown-item @item.Type" asp-controller="Ships" asp-action="Compare"
+                                       asp-route-vehicle3="@item.VehicleId">
+                                        @{string img2item = item.Nation + ".png";}
+                                        <img src="~/images/@img2item" class="img-fluid" width="25">
+                                        [@String.Format("{0:F1}", item.BR)] @item.Name
+                                    </a>
+                                </li>
+                            }
+                        </ul>
+                    </div>
+                </td>
+                <td style="width: 15%">
+                    <div class="dropdown @Model.ElementAt(3).Type">
+                        <button class="btn dropdown-toggle  text-wrap font10pt" type="button" data-toggle="dropdown">
+                            @{string img3name = Model.ElementAt(3).Nation + ".png";}
+                            <img src="~/images/@img3name" class="img-fluid" width="25">
+                            [@String.Format("{0:F1}", Model.ElementAt(3).BR)]
+                            @Model.ElementAt(3).Name
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-height-fix">
+                            <input class="form-control" id="myInput4" type="text" placeholder="Search..">
+                            @foreach (Ship item in ViewBag.AllShipsSelected as IEnumerable<Ship>)
+                            {
+                                <li>
+                                    <a class="dropdown-item @item.Type" asp-controller="Ships" asp-action="Compare"
+                                       asp-route-vehicle4="@item.VehicleId">
+                                        @{string img3item = item.Nation + ".png";}
+                                        <img src="~/images/@img3item" class="img-fluid" width="25">
+                                        [@String.Format("{0:F1}", item.BR)] @item.Name
+                                    </a>
+                                </li>
+                            }
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table class="table table-hover table-bordered table-sm text-center">
+        <tbody>
+            <tr>
+                <th style="width: 20%"></th>
+                <td style="width: 15%"><img class="img-fluid @Model.ElementAt(0).Class" src="@Model.ElementAt(0).Image" alt="Ship" /></td>
+                <td style="width: 15%"><img class="img-fluid  @Model.ElementAt(1).Class" src="@Model.ElementAt(1).Image" alt="Ship" /></td>
+                <td style="width: 15%"><img class="img-fluid  @Model.ElementAt(2).Class" src="@Model.ElementAt(2).Image" alt="Ship" /></td>
+                <td style="width: 15%"><img class="img-fluid  @Model.ElementAt(3).Class" src="@Model.ElementAt(3).Image" alt="Ship" /></td>
+            </tr>
+            <tr class="high">
+                <th style="width: 20%" title="The year when the ship was launched for the first time">First flight</th>
+                <td style="width: 15%">@Model.ElementAt(0).FirstLaunchYear</td>
+                <td style="width: 15%">@Model.ElementAt(1).FirstLaunchYear</td>
+                <td style="width: 15%">@Model.ElementAt(2).FirstLaunchYear</td>
+                <td style="width: 15%">@Model.ElementAt(3).FirstLaunchYear</td>
+            </tr>
+            <tr class="low">
+                <th style="width: 20%" title="The maximum repair cost of the spaded vehicle">Repair cost</th>
+                <td style="width: 15%">@Model.ElementAt(0).RepairCost s.l.</td>
+                <td style="width: 15%">@Model.ElementAt(1).RepairCost s.l.</td>
+                <td style="width: 15%">@Model.ElementAt(2).RepairCost s.l.</td>
+                <td style="width: 15%">@Model.ElementAt(3).RepairCost s.l.</td>
+            </tr>
+            <tr class="high">
+                <th style="width: 20%" title="Win rate from thunderskill.com">Win rate (Dev)</th>
+                <td style="width: 15%">N/A</td>
+                <td style="width: 15%">N/A</td>
+                <td style="width: 15%">N/A</td>
+                <td style="width: 15%">N/A</td>
+            </tr>
+            <tr class="high">
+                <th style="width: 20%" title="Vehicle user review">Review (Dev)</th>
+                <td style="width: 15%">N/A</td>
+                <td style="width: 15%">N/A</td>
+                <td style="width: 15%">N/A</td>
+                <td style="width: 15%">N/A</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table class="table table-hover table-bordered table-sm text-center">
+        <tbody>
+            <tr class="red-table-label no-hover">
+                <td style="width: 100%" colspan="5">Weapon specifications</td>
+            </tr>
+            <tr>
+                <th style="width: 20%" title="Description of primary armament">Main caliber</th>
+                <td style="width: 15%">@Html.Raw(Model.ElementAt(0).MainCaliberName)</td>
+                <td style="width: 15%">@Html.Raw(Model.ElementAt(1).MainCaliberName)</td>
+                <td style="width: 15%">@Html.Raw(Model.ElementAt(2).MainCaliberName)</td>
+                <td style="width: 15%">@Html.Raw(Model.ElementAt(3).MainCaliberName)</td>
+            </tr>
+            <tr>
+                <th style="width: 20%" class="align-middle" title="Available shell type for primary armament">Main caliber shell type</th>
+                @for (int i = 0; i < 4; i++)
+                {
+                    <td style="width: 15%">
+                        @{
+                            if (Model.ElementAt(i).MC_AP)
+                            {
+                                <img src="~/images/ShellAP.png" alt="" title="Armour-Piercing and othet variations like a APC, APCBC, APBC" class="img-fluid img-horizontal-align">
+                            }
+                            if (Model.ElementAt(i).MC_APHE)
+                            {
+                                <img src="~/images/ShellAPHE.png" alt="" title="Armour-Piercing High-Explosive and othet variations like a APHEC, APHECBC, APHEBC" class="img-fluid img-horizontal-align">
+                            }
+                            if (Model.ElementAt(i).MC_HE)
+                            {
+                                <img src="~/images/ShellHE.png" alt="" title="High-Explosive" class="img-fluid img-horizontal-align">
+                            }
+                            if (Model.ElementAt(i).MC_SAP)
+                            {
+                                <img src="~/images/ShellHE.png" alt="" title="Semi armour-Piercing" class="img-fluid img-horizontal-align">
+                            }
+                            if (Model.ElementAt(i).MC_APCR)
+                            {
+                                <img src="~/images/ShellAPCR.png" alt="" title="Armour-Piercing Composite Rigid" class="img-fluid img-horizontal-align">
+                            }
+                            if (Model.ElementAt(i).MC_HEVT)
+                            {
+                                <img src="~/images/ShellHEVT.png" alt="" title="High-Explosive variable time fuze shell (self-destroying)" class="img-fluid img-horizontal-align">
+                            }
+                            if (Model.ElementAt(i).MC_HEDF)
+                            {
+                                <img src="~/images/ShellHEVT.png" alt="" title="High-Explosive distanse fuze shell (self-destroying)" class="img-fluid img-horizontal-align">
+                            }
+                            if (Model.ElementAt(i).MC_Shrapnel)
+                            {
+                                <img src="~/images/ShellShrapnel.png" alt="" title="Rare Shrapnel shell" class="img-fluid img-horizontal-align">
+                            }
+                        }
+                    </td>
+                }
+            </tr>
+            <tr class="low">
+                <th style="width: 20%" title="Main caliber reload time">Main caliber reload time</th>
+                <td style="width: 15%">@Model.ElementAt(0).MainCaliberReload s</td>
+                <td style="width: 15%">@Model.ElementAt(1).MainCaliberReload s</td>
+                <td style="width: 15%">@Model.ElementAt(2).MainCaliberReload s</td>
+                <td style="width: 15%">@Model.ElementAt(3).MainCaliberReload s</td>
+            </tr>
+
+            <tr>
+                <th style="width: 20%" title="Description of secondary armament">Auxiliary caliber</th>
+                <td style="width: 15%">@Html.Raw(Model.ElementAt(0).AUCaliberName)</td>
+                <td style="width: 15%">@Html.Raw(Model.ElementAt(1).AUCaliberName)</td>
+                <td style="width: 15%">@Html.Raw(Model.ElementAt(2).AUCaliberName)</td>
+                <td style="width: 15%">@Html.Raw(Model.ElementAt(3).AUCaliberName)</td>
+            </tr>
+
+            <tr>
+                <th style="width: 20%" class="align-middle" title="Available shell type for auxiliary armament">Auxiliary shell type</th>
+                @for (int i = 0; i < 4; i++)
+                {
+                    <td style="width: 15%">
+                        @{
+                            if (Model.ElementAt(i).AU_AP)
+                            {
+                                <img src="~/images/ShellAP.png" alt="" title="Armour-Piercing and othet variations like a APC, APCBC, APBC" class="img-fluid img-horizontal-align">
+                            }
+                            if (Model.ElementAt(i).AU_APHE)
+                            {
+                                <img src="~/images/ShellAPHE.png" alt="" title="Armour-Piercing High-Explosive and othet variations like a APHEC, APHECBC, APHEBC" class="img-fluid img-horizontal-align">
+                            }
+                            if (Model.ElementAt(i).AU_HE)
+                            {
+                                <img src="~/images/ShellHE.png" alt="" title="High-Explosive" class="img-fluid img-horizontal-align">
+                            }
+                            if (Model.ElementAt(i).AU_SAP)
+                            {
+                                <img src="~/images/ShellHE.png" alt="" title="Semi armour-Piercing" class="img-fluid img-horizontal-align">
+                            }
+                            if (Model.ElementAt(i).AU_APCR)
+                            {
+                                <img src="~/images/ShellAPCR.png" alt="" title="Armour-Piercing Composite Rigid" class="img-fluid img-horizontal-align">
+                            }
+                            if (Model.ElementAt(i).AU_HEVT)
+                            {
+                                <img src="~/images/ShellHEVT.png" alt="" title="High-Explosive variable time fuze shell (self-destroying)" class="img-fluid img-horizontal-align">
+                            }
+                            if (Model.ElementAt(i).AU_HEDF)
+                            {
+                                <img src="~/images/ShellHEVT.png" alt="" title="High-Explosive distanse fuze shell (self-destroying)" class="img-fluid img-horizontal-align">
+                            }
+                            if (Model.ElementAt(i).AU_Shrapnel)
+                            {
+                                <img src="~/images/ShellShrapnel.png" alt="" title="Rare Shrapnel shell" class="img-fluid img-horizontal-align">
+                            }
+                        }
+                    </td>
+                }
+            </tr>
+            <tr>
+                <th style="width: 20%" title="Description of anti-aircraft armament">Anti-aircraft caliber</th>
+                <td style="width: 15%">@Html.Raw(Model.ElementAt(0).AACaliberName)</td>
+                <td style="width: 15%">@Html.Raw(Model.ElementAt(1).AACaliberName)</td>
+                <td style="width: 15%">@Html.Raw(Model.ElementAt(2).AACaliberName)</td>
+                <td style="width: 15%">@Html.Raw(Model.ElementAt(3).AACaliberName)</td>
+            </tr>
+            <tr>
+                <th style="width: 20%" class="align-middle" title="Available shell type for anti-aircraft armament">Anti-aircraft shell type</th>
+                @for (int i = 0; i < 4; i++)
+                {
+                    <td style="width: 15%">
+                        @{
+                            if (Model.ElementAt(i).AAA_AP)
+                            {
+                                <img src="~/images/ShellAP.png" alt="" title="Armour-Piercing and othet variations like a APC, APCBC, APBC" class="img-fluid img-horizontal-align">
+                            }
+                            if (Model.ElementAt(i).AAA_APHE)
+                            {
+                                <img src="~/images/ShellAPHE.png" alt="" title="Armour-Piercing High-Explosive and othet variations like a APHEC, APHECBC, APHEBC" class="img-fluid img-horizontal-align">
+                            }
+                            if (Model.ElementAt(i).AAA_HE)
+                            {
+                                <img src="~/images/ShellHE.png" alt="" title="High-Explosive" class="img-fluid img-horizontal-align">
+                            }
+                            if (Model.ElementAt(i).AAA_SAP)
+                            {
+                                <img src="~/images/ShellHE.png" alt="" title="Semi armour-Piercing" class="img-fluid img-horizontal-align">
+                            }
+                            if (Model.ElementAt(i).AAA_APCR)
+                            {
+                                <img src="~/images/ShellAPCR.png" alt="" title="Armour-Piercing Composite Rigid" class="img-fluid img-horizontal-align">
+                            }
+                            if (Model.ElementAt(i).AAA_HEVT)
+                            {
+                                <img src="~/images/ShellHEVT.png" alt="" title="High-Explosive variable time fuze shell (self-destroying)" class="img-fluid img-horizontal-align">
+                            }
+                            if (Model.ElementAt(i).AAA_HEDF)
+                            {
+                                <img src="~/images/ShellHEVT.png" alt="" title="High-Explosive distanse fuze shell (self-destroying)" class="img-fluid img-horizontal-align">
+                            }
+                            if (Model.ElementAt(i).AAA_Shrapnel)
+                            {
+                                <img src="~/images/ShellShrapnel.png" alt="" title="Rare Shrapnel shell" class="img-fluid img-horizontal-align">
+                            }
+                        }
+                    </td>
+                }
+            </tr>
+
+            <tr class="high">
+                <th style="width: 20%" title="Torpedo max count">Torpedo count</th>
+                <td style="width: 15%">@Model.ElementAt(0).TorpedoItem items</td>
+                <td style="width: 15%">@Model.ElementAt(1).TorpedoItem items</td>
+                <td style="width: 15%">@Model.ElementAt(2).TorpedoItem items</td>
+                <td style="width: 15%">@Model.ElementAt(3).TorpedoItem items</td>
+            </tr>
+            <tr class="high">
+                <th style="width: 20%" title="Torpedo max speed">Torpedo max speed</th>
+                <td style="width: 15%">@Model.ElementAt(0).TorpedoMaxSpeed km/h</td>
+                <td style="width: 15%">@Model.ElementAt(1).TorpedoMaxSpeed km/h</td>
+                <td style="width: 15%">@Model.ElementAt(2).TorpedoMaxSpeed km/h</td>
+                <td style="width: 15%">@Model.ElementAt(3).TorpedoMaxSpeed km/h</td>
+            </tr>
+            <tr class="high">
+                <th style="width: 20%" title="Torpedo explosive mass (TNT equivalent)">Torpedo explosive mass</th>
+                <td style="width: 15%">@Model.ElementAt(0).TorpedoTNT kg</td>
+                <td style="width: 15%">@Model.ElementAt(1).TorpedoTNT kg</td>
+                <td style="width: 15%">@Model.ElementAt(2).TorpedoTNT kg</td>
+                <td style="width: 15%">@Model.ElementAt(3).TorpedoTNT kg</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table class="table table-hover table-bordered table-sm text-center">
+        <tbody>
+            <tr class="red-table-label no-hover">
+                <td style="width: 100%" colspan="5">Floating specifications</td>
+            </tr>
+            <tr class="high">
+                <th style="width: 20%" title="Front panel tower armor">Tower armor</th>
+                <td style="width: 15%">@Model.ElementAt(0).ArmorTower mm</td>
+                <td style="width: 15%">@Model.ElementAt(1).ArmorTower mm</td>
+                <td style="width: 15%">@Model.ElementAt(2).ArmorTower mm</td>
+                <td style="width: 15%">@Model.ElementAt(3).ArmorTower mm</td>
+            </tr>
+            <tr class="high">
+                <th style="width: 20%" title="Citadel side armor">Citadel armor</th>
+                <td style="width: 15%">@Model.ElementAt(0).ArmorTower mm</td>
+                <td style="width: 15%">@Model.ElementAt(1).ArmorTower mm</td>
+                <td style="width: 15%">@Model.ElementAt(2).ArmorTower mm</td>
+                <td style="width: 15%">@Model.ElementAt(3).ArmorTower mm</td>
+            </tr>
+            <tr class="high">
+                <th style="width: 20%" title="Full speed speed in calm weather">Max speed</th>
+                <td style="width: 15%">@Model.ElementAt(0).MaxSpeed km/h</td>
+                <td style="width: 15%">@Model.ElementAt(1).MaxSpeed km/h</td>
+                <td style="width: 15%">@Model.ElementAt(2).MaxSpeed km/h</td>
+                <td style="width: 15%">@Model.ElementAt(3).MaxSpeed km/h</td>
+            </tr>
+            <tr class="high">
+                <th style="width: 20%" title="Maximum reversing speed in calm weather">Reverse speed</th>
+                <td style="width: 15%">@Model.ElementAt(0).ReverseSpeed km/h</td>
+                <td style="width: 15%">@Model.ElementAt(1).ReverseSpeed km/h</td>
+                <td style="width: 15%">@Model.ElementAt(2).ReverseSpeed km/h</td>
+                <td style="width: 15%">@Model.ElementAt(3).ReverseSpeed km/h</td>
+            </tr>
+            <tr class="low">
+                <th style="width: 20%" title="Time for speed increase from zero to maximum">Acceleration</th>
+                <td style="width: 15%">@Model.ElementAt(0).Acceleration s</td>
+                <td style="width: 15%">@Model.ElementAt(1).Acceleration s</td>
+                <td style="width: 15%">@Model.ElementAt(2).Acceleration s</td>
+                <td style="width: 15%">@Model.ElementAt(3).Acceleration s</td>
+            </tr>
+            <tr class="low">
+                <th style="width: 20%" title="Time of a full stop">Braking Time</th>
+                <td style="width: 15%">@Model.ElementAt(0).BrakingTime s</td>
+                <td style="width: 15%">@Model.ElementAt(1).BrakingTime s</td>
+                <td style="width: 15%">@Model.ElementAt(2).BrakingTime s</td>
+                <td style="width: 15%">@Model.ElementAt(3).BrakingTime s</td>
+            </tr>
+            <tr class="low">
+                <th style="width: 20%" title="Time for which the vehicle will make a full circle">Turnaround</th>
+                <td style="width: 15%">@Model.ElementAt(0).Turn360 s</td>
+                <td style="width: 15%">@Model.ElementAt(1).Turn360 s</td>
+                <td style="width: 15%">@Model.ElementAt(2).Turn360 s</td>
+                <td style="width: 15%">@Model.ElementAt(3).Turn360 s</td>
+            </tr>
+            <tr class="high">
+                <th style="width: 20%" title="The total amount of water displaced by vehicle. Used as a characteristic of ship volume">Displacement</th>
+                <td style="width: 15%">@Model.ElementAt(0).Displacement t</td>
+                <td style="width: 15%">@Model.ElementAt(1).Displacement t</td>
+                <td style="width: 15%">@Model.ElementAt(2).Displacement t</td>
+                <td style="width: 15%">@Model.ElementAt(3).Displacement t</td>
+            </tr>
+            <tr class="high">
+                <th style="width: 20%" title="Number of people servicing the vehicle">Crew</th>
+                <td style="width: 15%">@Model.ElementAt(0).CrewCount item</td>
+                <td style="width: 15%">@Model.ElementAt(1).CrewCount item</td>
+                <td style="width: 15%">@Model.ElementAt(2).CrewCount item</td>
+                <td style="width: 15%">@Model.ElementAt(3).CrewCount item</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
