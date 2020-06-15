@@ -51,6 +51,11 @@
         public bool ShellHEVT { get; set; }
         public bool ShellSAM { get; set; }
         public bool ShellSmoke { get; set; }
+        public bool ShellATGMHE { get; set; }
+        public bool ShellATGMTandem { get; set; }
+        public bool ShellATGMHEVT { get; set; }
+        public bool ShellVOG { get; set; }
+
 
         public bool AddOnArmor { get; set; }
         public bool ReactiveArmor { get; set; }
@@ -58,6 +63,7 @@
         public bool IRSpotlight { get; set; }
         public bool AirSearchRadar { get; set; }
         public bool AirLockRadar { get; set; }
+        public bool TankSearchRadar { get; set; }
         public bool GrenadeSmoke { get; set; }
         public bool ExhaustSmoke { get; set; }
         public bool Amphibious { get; set; }

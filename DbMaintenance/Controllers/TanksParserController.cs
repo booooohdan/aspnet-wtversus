@@ -30,7 +30,7 @@ namespace DbMaintenance.Controllers
         {
             var tanksCollection = Context.Tanks.ToList(); //Get colllection from DB
 
-            for (int i = 500; i < Context.Tanks.Count(); i++)
+            for (int i = 600; i < Context.Tanks.Count(); i++)
             {
                 string wikiLink = tanksCollection.ElementAt(i).WikiLink;
                 string[] arrayResult = aircraftsParserHelper.WikiPageParser(wikiLink).Result; //Call parser method who's take loop index as parameter
@@ -57,41 +57,9 @@ namespace DbMaintenance.Controllers
         {
             Context.Tanks.AddRange
              (
-            //new Tank
-            //{
-            //    VehicleId = 29201,
-            //    Name = "SAV 20.12.48",
-            //    Nation = "Sweden",
-            //    Rank = "II",
-            //    Class = "DestroyerTank",
-            //    Type = "Premium",
-            //    FirstRideYear = 1948,
-            //    MaxSpeedAtRoad = 48,
-            //    MaxSpeedAtTerrain = 47,
-            //    MaxReverseSpeed = 18,
-            //    AccelerationTo100 = 14,
-            //    TurnTurretTime = 0,
-            //    TurnHullTime = 19,
-            //    EnginePower = 400,
-            //    Weight = 20,
-            //    Penetration = 95,
-            //    ShellSpeed = 525,
-            //    ReloadTime = 1.2,
-            //    UpAimAngle = 25,
-            //    DownAimAngle = -10,
-            //    Stabilizer = false,
-            //    AAMachineGun = false,
-            //    ShellAP = false,
-            //    ShellHE = true,
-            //    ShellAPHE = true,
-            //    ShellAPCR = false,
-            //    ReducedArmorFrontTurret = 0,
-            //    ReducedArmorTopSheet = 30,
-            //    ReducedArmorBottomSheet = 50,
-            //},
 
 
-                );
+              );
             Context.SaveChanges();
 
             return View();

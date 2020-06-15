@@ -50,5 +50,6 @@
         public bool GroundRadar { get; set; }
         public bool CCIP { get; set; } //Constantly Computed Impact Point (CCIP)
         public bool GSuit { get; set; } //ППК
+        public bool CCRP { get; set; } //ППК
     }
 }

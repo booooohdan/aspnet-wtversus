@@ -244,38 +244,42 @@
                     <th style="width: 20%" class="align-middle" title="Additional systems like a radar, CCIP, air brake, etc">Other systems</th>
                     @for (int i = 0; i < 4; i++)
                     {
-                        <td style="width: 15%">
-                            @{
-                                if (Model.ElementAt(i).Parachute)
-                                {
-                                    <img src="~/images/Parachute.png" alt="" title="Brake parachute" class="img-fluid" width="40">
-                                }
-                                if (Model.ElementAt(i).AirBrake)
-                                {
-                                    <img src="~/images/AirBrake.png" alt="" title="Air brake" class="img-fluid" width="40">
-                                }
-                                if (Model.ElementAt(i).AirRadar)
-                                {
-                                    <img src="~/images/AirRadar.png" alt="" title="Plane radar" class="img-fluid" width="40">
-                                }
-                                if (Model.ElementAt(i).Tailhook)
-                                {
-                                    <img src="~/images/TailHook.png" alt="" title="Tailhook" class="img-fluid" width="40">
-                                }
-                                if (Model.ElementAt(i).GroundRadar)
-                                {
-                                    <img src="~/images/GroundRadar.png" alt="" title="Ground vehicle radar" class="img-fluid" width="40">
-                                }
-                                if (Model.ElementAt(i).CCIP)
-                                {
-                                    <img src="~/images/CCIP.png" alt="" title="Constantly computed impact point" class="img-fluid" width="40">
-                                }
-                                if (Model.ElementAt(i).GSuit)
-                                {
-                                    <img src="~/images/AntiLoadingSuit.png" alt="" title="Anti Loading Suit" class="img-fluid" width="40">
-                                }
-                            }
-                        </td>
+                <td style="width: 15%">
+                    @{
+                        if (Model.ElementAt(i).Parachute)
+                        {
+                            <img src="~/images/Parachute.png" alt="" title="Brake parachute" class="img-fluid" width="40">
+                        }
+                        if (Model.ElementAt(i).AirBrake)
+                        {
+                            <img src="~/images/AirBrake.png" alt="" title="Air brake" class="img-fluid" width="40">
+                        }
+                        if (Model.ElementAt(i).AirRadar)
+                        {
+                            <img src="~/images/AirToAirRadar.png" alt="" title="Plane radar" class="img-fluid" width="40"> 
+                        }
+                        if (Model.ElementAt(i).Tailhook)
+                        {
+                            <img src="~/images/TailHook.png" alt="" title="Tailhook" class="img-fluid" width="40">
+                        }
+                        if (Model.ElementAt(i).GroundRadar)
+                        {
+                            <img src="~/images/AirToTankRadar.png" alt="" title="Ground vehicle radar" class="img-fluid" width="40">
+                        }
+                        if (Model.ElementAt(i).CCIP)
+                        {
+                            <img src="~/images/CCIP.png" alt="" title="Constantly computed impact point" class="img-fluid" width="40">
+                        }
+                        if (Model.ElementAt(i).CCRP)
+                        {
+                            <img src="~/images/CCRP.png" alt="" title="Constantly computed impact point" class="img-fluid" width="40">
+                        }
+                        if (Model.ElementAt(i).GSuit)
+                        {
+                            <img src="~/images/AntiLoadingSuit.png" alt="" title="Anti Loading Suit" class="img-fluid" width="40">
+                        }
+                    }
+                </td>
                     }
                 </tr>
             </tbody>

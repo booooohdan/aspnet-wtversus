@@ -30,7 +30,7 @@ namespace DbMaintenance.Controllers
         {
             var planesCollection = Context.Planes.ToList(); //Get colllection from DB
 
-            for (int i = 449; i < Context.Planes.Count(); i++)
+            for (int i = 600; i < Context.Planes.Count(); i++)
             {
                 string wikiLink = planesCollection.ElementAt(i).WikiLink;
                 string[] arrayResult = aircraftsParserHelper.WikiPageParser(wikiLink).Result; //Call parser method who's take loop index as parameter
@@ -58,32 +58,6 @@ namespace DbMaintenance.Controllers
         {
             Context.Planes.AddRange
                 (
-                //new Plane
-                //{
-                //    VehicleId = 11101,
-                //    Name = "P-26A-34 M2",
-                //    Nation = "USA",
-                //    Rank = "I",
-                //    BR = 1.0,
-                //    Class = "Fighter",
-                //    Type = "Usual",
-                //    FirstFlyYear = 1932,
-                //    MaxSpeedAt0 = 362,
-                //    MaxSpeedAt5000 = 365,
-                //    BombLoad = 92,
-                //    TurnAt0 = 18,
-                //    Climb = 419,
-                //    Flutter = 510,
-                //    EnginePower = 611,
-                //    Weight = 1600,
-                //    ThrustToWeight = 0.38,
-                //    BurstMass = 0.71,
-                //    ASMissile = false,
-                //    HCannon = false,
-                //    HBomb = true,
-                //    HTorpedo = false
-                //},
-
 
                 );
             Context.SaveChanges();

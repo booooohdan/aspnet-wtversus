@@ -176,7 +176,7 @@
                             }
                             if (Model.ElementAt(i).AutoAGMissile)
                             {
-                                <img src="~/images/AGMissile.png" alt="" title="Air-to-Ground auto aim missile" class="img-fluid" width="40">
+                                <img src="~/images/AutoAGMissile.png" alt="" title="Air-to-Ground auto aim missile" class="img-fluid" width="40">
                             }
                             if (Model.ElementAt(i).AAMissile)
                             {
@@ -259,7 +259,7 @@
                 @{
                     if (Model.ElementAt(i).RWR)
                     {
-                        <img src="~/images/RWR.png" alt="" title="Radar warning receiver" class="img-fluid" width="40">
+                        <img src="~/images/RWRHeli.png" alt="" title="Radar warning receiver" class="img-fluid" width="40">
                     }
                     if (Model.ElementAt(i).IRCM)
                     {
@@ -278,26 +278,26 @@
                 }
             </tr>
             <tr class="hideifempty">
-                <th style="width: 20%" class="align-middle" title="Additional systems like a radar, CCIP, air brake, etc">Other systems</th>
+                <th style="width: 20%" class="align-middle" title="Additional systems like a radar, CCIP, etc">Other systems</th>
                 @for (int i = 0; i < 4; i++)
                 {
             <td style="width: 15%">
                 @{
                     if (Model.ElementAt(i).LaserDesignator)
                     {
-                        <img src="~/images/CCIP.png" alt="" title="Laser Designator" class="img-fluid" width="40">
+                        <img src="~/images/LaserDesignator.png" alt="" title="Laser Designator" class="img-fluid" width="40">
                     }
                     if (Model.ElementAt(i).OpticalTracking)
                     {
-                        <img src="~/images/AirLockRadar.png" alt="" title="Optical tracking device" class="img-fluid" width="40">
+                        <img src="~/images/LockTank.png" alt="" title="Optical tracking device" class="img-fluid" width="40">
                     }
                     if (Model.ElementAt(i).CCIP)
                     {
-                        <img src="~/images/CCIP.png" alt="" title="Constantly computed impact point" class="img-fluid" width="40">
+                        <img src="~/images/CCIPHeli.png" alt="" title="Constantly computed impact point" class="img-fluid" width="40">
                     }
                     if (Model.ElementAt(i).AirRadar)
                     {
-                        <img src="~/images/AirRadar.png" alt="" title="Avia radar" class="img-fluid" width="40">
+                        <img src="~/images/AirToAirRadar.png" alt="" title="Avia search radar" class="img-fluid" width="40">
                     }
                     if (Model.ElementAt(i).ThermalGunner)
                     {
@@ -305,7 +305,7 @@
                     }
                     if (Model.ElementAt(i).GroundRadar)
                     {
-                        <img src="~/images/GroundRadar.png" alt="" title="Ground vehicle radar" class="img-fluid" width="40">
+                        <img src="~/images/AirToTankRadar.png" alt="" title="Ground vehicle search radar" class="img-fluid" width="40">
                     }
                 }
             </td>

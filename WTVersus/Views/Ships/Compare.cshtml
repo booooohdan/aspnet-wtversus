@@ -122,7 +122,7 @@
                 <td style="width: 15%"><img class="img-fluid  @Model.ElementAt(3).Class" src="@Model.ElementAt(3).Image" alt="Ship" /></td>
             </tr>
             <tr class="high">
-                <th style="width: 20%" title="The year when the ship was launched for the first time">First flight</th>
+                <th style="width: 20%" title="The year when the ship was launched for the first time">Launched</th>
                 <td style="width: 15%">@Model.ElementAt(0).FirstLaunchYear</td>
                 <td style="width: 15%">@Model.ElementAt(1).FirstLaunchYear</td>
                 <td style="width: 15%">@Model.ElementAt(2).FirstLaunchYear</td>
@@ -157,7 +157,7 @@
             <tr class="red-table-label no-hover">
                 <td style="width: 100%" colspan="5">Weapon specifications</td>
             </tr>
-            <tr>
+            <tr class="high">
                 <th style="width: 20%" title="Description of primary armament">Main caliber</th>
                 <td style="width: 15%">@Html.Raw(Model.ElementAt(0).MainCaliberName)</td>
                 <td style="width: 15%">@Html.Raw(Model.ElementAt(1).MainCaliberName)</td>
@@ -184,7 +184,7 @@
                             }
                             if (Model.ElementAt(i).MC_SAP)
                             {
-                                <img src="~/images/ShellHE.png" alt="" title="Semi armour-Piercing" class="img-fluid img-horizontal-align">
+                                <img src="~/images/ShellSAP.png" alt="" title="Semi armour-Piercing" class="img-fluid img-horizontal-align">
                             }
                             if (Model.ElementAt(i).MC_APCR)
                             {
@@ -214,8 +214,8 @@
                 <td style="width: 15%">@Model.ElementAt(3).MainCaliberReload s</td>
             </tr>
 
-            <tr>
-                <th style="width: 20%" title="Description of secondary armament">Auxiliary caliber</th>
+            <tr class="high">
+                <th style="width: 20%" title="Auxiliary caliber is all cannons that are larger than 50 mm, but smaller than the main caliber">Auxiliary caliber</th>
                 <td style="width: 15%">@Html.Raw(Model.ElementAt(0).AUCaliberName)</td>
                 <td style="width: 15%">@Html.Raw(Model.ElementAt(1).AUCaliberName)</td>
                 <td style="width: 15%">@Html.Raw(Model.ElementAt(2).AUCaliberName)</td>
@@ -242,7 +242,7 @@
                             }
                             if (Model.ElementAt(i).AU_SAP)
                             {
-                                <img src="~/images/ShellHE.png" alt="" title="Semi armour-Piercing" class="img-fluid img-horizontal-align">
+                                <img src="~/images/ShellSAP.png" alt="" title="Semi armour-Piercing" class="img-fluid img-horizontal-align">
                             }
                             if (Model.ElementAt(i).AU_APCR)
                             {
@@ -264,8 +264,8 @@
                     </td>
                 }
             </tr>
-            <tr>
-                <th style="width: 20%" title="Description of anti-aircraft armament">Anti-aircraft caliber</th>
+            <tr class="high">
+                <th style="width: 20%" title="Anti-aircraft caliber is all guns that are smaller than 50 mm">Anti-aircraft caliber</th>
                 <td style="width: 15%">@Html.Raw(Model.ElementAt(0).AACaliberName)</td>
                 <td style="width: 15%">@Html.Raw(Model.ElementAt(1).AACaliberName)</td>
                 <td style="width: 15%">@Html.Raw(Model.ElementAt(2).AACaliberName)</td>
@@ -291,7 +291,7 @@
                             }
                             if (Model.ElementAt(i).AAA_SAP)
                             {
-                                <img src="~/images/ShellHE.png" alt="" title="Semi armour-Piercing" class="img-fluid img-horizontal-align">
+                                <img src="~/images/ShellSAP.png" alt="" title="Semi armour-Piercing" class="img-fluid img-horizontal-align">
                             }
                             if (Model.ElementAt(i).AAA_APCR)
                             {
@@ -335,6 +335,41 @@
                 <td style="width: 15%">@Model.ElementAt(2).TorpedoTNT kg</td>
                 <td style="width: 15%">@Model.ElementAt(3).TorpedoTNT kg</td>
             </tr>
+            <tr>
+                <th style="width: 20%" class="align-middle" title="Radars, mine, torpedo and other">Other weapon and systems</th>
+                @for (int i = 0; i < 4; i++)
+                {
+                    <td style="width: 15%">
+                        @{
+                            if (Model.ElementAt(i).IsHaveAirRadar)
+                            {
+                                <img src="~/images/GroundToAirRadar.png" alt="" title="Aircraft searching radar" class="img-fluid img-horizontal-align">
+                            }
+                            if (Model.ElementAt(i).IsHaveShipRadar)
+                            {
+                                <img src="~/images/GroundToShipRadar.png" alt="" title="Ship searching radar" class="img-fluid img-horizontal-align">
+                            }
+                            if (Model.ElementAt(i).IsHaveDepthCharge)
+                            {
+                                <img src="~/images/DepthCharge.png" alt="" title="Depth charge" class="img-fluid img-horizontal-align">
+                            }
+                            if (Model.ElementAt(i).IsHaveMine)
+                            {
+                                <img src="~/images/Mine.png" alt="" title="Mine" class="img-fluid img-horizontal-align">
+                            }
+                            if (Model.ElementAt(i).IsHaveRocket)
+                            {
+                                <img src="~/images/ASMissile.png" alt="" title="Unguided missile" class="img-fluid img-horizontal-align">
+                            }
+                            if (Model.ElementAt(i).IsHaveTorpedo)
+                            {
+                                <img src="~/images/HTorpedo.png" alt="" title="Just a torpedo" class="img-fluid img-horizontal-align">
+                            }
+                        }
+                    </td>
+                }
+            </tr>
+
         </tbody>
     </table>
 
@@ -352,10 +387,10 @@
             </tr>
             <tr class="high">
                 <th style="width: 20%" title="Citadel side armor">Citadel armor</th>
-                <td style="width: 15%">@Model.ElementAt(0).ArmorTower mm</td>
-                <td style="width: 15%">@Model.ElementAt(1).ArmorTower mm</td>
-                <td style="width: 15%">@Model.ElementAt(2).ArmorTower mm</td>
-                <td style="width: 15%">@Model.ElementAt(3).ArmorTower mm</td>
+                <td style="width: 15%">@Model.ElementAt(0).ArmorHull mm</td>
+                <td style="width: 15%">@Model.ElementAt(1).ArmorHull mm</td>
+                <td style="width: 15%">@Model.ElementAt(2).ArmorHull mm</td>
+                <td style="width: 15%">@Model.ElementAt(3).ArmorHull mm</td>
             </tr>
             <tr class="high">
                 <th style="width: 20%" title="Full speed speed in calm weather">Max speed</th>

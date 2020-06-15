@@ -33,8 +33,8 @@ namespace WTVersus.Controllers
         [HttpGet]
         public IActionResult Compare(int vehicle1, int vehicle2, int vehicle3, int vehicle4)
         {
-            var helisFromDb = Context.Helis.OrderBy(x => x.BR).ToList();
-            helisFromDb.Insert(0, new Heli { Image = "http://wtversus.com/images/EmptyHeli.png", Nation = "EmptyFlag", Name = "Select aircraft", VehicleId=0 }); //Перший пустий елемент, щоб не засмічувати БД
+            var helisFromDb = Context.Helis.OrderBy(x => x.VehicleId).ThenBy(x => x.BR).ToList();
+            helisFromDb.Insert(0, new Heli { Image = "http://wtversus.com/images/EmptyHeli.png", Nation = "EmptyFlag", Name = "Select helicopter", VehicleId=0 }); //Перший пустий елемент, щоб не засмічувати БД
             var selectedHelis = new List<Heli>();
             ViewBag.AllHelisSelected = helisFromDb;
 

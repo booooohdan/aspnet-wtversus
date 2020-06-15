@@ -33,7 +33,7 @@ namespace WTVersus.Controllers
         [HttpGet]
         public IActionResult Compare(int vehicle1, int vehicle2, int vehicle3, int vehicle4)
         {
-            var tankssFromDb = Context.Tanks.OrderBy(x => x.BR).ToList();
+            var tankssFromDb = Context.Tanks.OrderBy(x => x.VehicleId).ThenBy(x=>x.BR).ToList();
             tankssFromDb.Insert(0, new Tank { Image = "http://wtversus.com/images/EmptyTank.png", Nation = "EmptyFlag", Name = "Select vehicle", VehicleId = 0 }); //Перший пустий елемент, щоб не засмічувати БД
             var selectedTanks = new List<Tank>();
             ViewBag.AllTanksSelected = tankssFromDb;
