@@ -47,5 +47,13 @@ namespace WTVersus.Controllers
 
             return View(selectedPlanes);
         }
+    
+    
+        public IActionResult Tree()
+        {
+            var planesFromDb = Context.Planes.OrderByDescending(x => x.Type).ThenBy(t => t.BR);
+
+            return View(planesFromDb);
+        }
     }
 }

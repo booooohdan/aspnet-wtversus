@@ -1,0 +1,13 @@
+﻿@model IEnumerable<WTVersus.Models.Plane>;
+   
+ @foreach (Plane item in Model)
+     {
+    <div class="@item.Type">
+        <a class="text-dark" asp-controller="Aircrafts" asp-action="Compare"
+           asp-route-vehicle1="@item.VehicleId" asp-route-vehicle2="0">
+            @String.Format("[{0:F1}] ", item.BR)
+            @item.Name
+        </a>
+        <br />
+    </div>
+    }
