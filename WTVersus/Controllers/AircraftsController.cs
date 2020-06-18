@@ -23,7 +23,7 @@ namespace WTVersus.Controllers
         #endregion
 
         /// <summary>
-        /// Controllers, takes 4 parameters. Default value in Startup.cs
+        /// Controller, takes 4 parameters. Default value in Startup.cs
         /// </summary>
         /// <param name="vehicle1">Id for first vehicle</param>
         /// <param name="vehicle2">Id for second vehicle</param>
@@ -34,7 +34,7 @@ namespace WTVersus.Controllers
         public IActionResult Compare(int vehicle1, int vehicle2, int vehicle3, int vehicle4)
         {
             var planesFromDb = Context.Planes.OrderBy(x => x.VehicleId).ThenBy(x => x.BR).ToList();
-            planesFromDb.Insert(0, new Plane { Image = "http://wtversus.com/images/EmptyPlane.png", Nation = "EmptyFlag", Name = "Select aircraft", VehicleId=0 }); //Перший пустий елемент, щоб не засмічувати БД
+            planesFromDb.Insert(0, new Plane { Image = "https://wtversus.com/images/EmptyPlane.png", Nation = "EmptyFlag", Name = "Select aircraft", VehicleId=0 }); //Перший пустий елемент, щоб не засмічувати БД
             var selectedPlanes = new List<Plane>();
             ViewBag.AllPlanesSelected = planesFromDb;
 
@@ -47,8 +47,11 @@ namespace WTVersus.Controllers
 
             return View(selectedPlanes);
         }
-    
-    
+
+        /// <summary>
+        /// Controller show list ofal vehicles
+        /// </summary>
+        /// <returns>Return vehicle collection from DB to View</returns>
         public IActionResult Tree()
         {
             var planesFromDb = Context.Planes.OrderByDescending(x => x.Type).ThenBy(t => t.BR);

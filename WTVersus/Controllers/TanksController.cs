@@ -34,7 +34,7 @@ namespace WTVersus.Controllers
         public IActionResult Compare(int vehicle1, int vehicle2, int vehicle3, int vehicle4)
         {
             var tankssFromDb = Context.Tanks.OrderBy(x => x.VehicleId).ThenBy(x=>x.BR).ToList();
-            tankssFromDb.Insert(0, new Tank { Image = "http://wtversus.com/images/EmptyTank.png", Nation = "EmptyFlag", Name = "Select vehicle", VehicleId = 0 }); //Перший пустий елемент, щоб не засмічувати БД
+            tankssFromDb.Insert(0, new Tank { Image = "https://wtversus.com/images/EmptyTank.png", Nation = "EmptyFlag", Name = "Select vehicle", VehicleId = 0 }); //Перший пустий елемент, щоб не засмічувати БД
             var selectedTanks = new List<Tank>();
             ViewBag.AllTanksSelected = tankssFromDb;
 
@@ -44,6 +44,17 @@ namespace WTVersus.Controllers
             selectedTanks.Add(tankssFromDb.FirstOrDefault(p => p.VehicleId == vehicle4));
 
             return View(selectedTanks);
+        }
+
+        /// <summary>
+        /// Controller show list of all ground vehicles
+        /// </summary>
+        /// <returns>Return vehicle collection from DB to View</returns>
+        public IActionResult Tree()
+        {
+            var tanksFromDb = Context.Tanks.OrderByDescending(x => x.Type).ThenBy(t => t.BR);
+
+            return View(tanksFromDb);
         }
 
     }

@@ -34,7 +34,7 @@ namespace WTVersus.Controllers
         public IActionResult Compare(int vehicle1, int vehicle2, int vehicle3, int vehicle4)
         {
             var helisFromDb = Context.Helis.OrderBy(x => x.VehicleId).ThenBy(x => x.BR).ToList();
-            helisFromDb.Insert(0, new Heli { Image = "http://wtversus.com/images/EmptyHeli.png", Nation = "EmptyFlag", Name = "Select helicopter", VehicleId=0 }); //Перший пустий елемент, щоб не засмічувати БД
+            helisFromDb.Insert(0, new Heli { Image = "https://wtversus.com/images/EmptyHeli.png", Nation = "EmptyFlag", Name = "Select helicopter", VehicleId=0 }); //Перший пустий елемент, щоб не засмічувати БД
             var selectedHelis = new List<Heli>();
             ViewBag.AllHelisSelected = helisFromDb;
 
@@ -46,6 +46,17 @@ namespace WTVersus.Controllers
             _logger.LogInformation("Log Message");
 
             return View(selectedHelis);
+        }
+
+        /// <summary>
+        /// Controller show list of all helicopters
+        /// </summary>
+        /// <returns>Return vehicle collection from DB to View</returns>
+        public IActionResult Tree()
+        {
+            var helisFromDb = Context.Helis.OrderByDescending(x => x.Type).ThenBy(t => t.BR);
+
+            return View(helisFromDb);
         }
     }
 }

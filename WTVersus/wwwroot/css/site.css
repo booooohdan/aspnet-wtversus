@@ -64,7 +64,7 @@ table {
 .red-table-label {
     background-color: #DC3546;
     color: white;
-    text-transform:uppercase;
+    text-transform: uppercase;
 }
 
 .img-horizontal-align {
@@ -121,4 +121,10 @@ table {
         .navbar-container .navbar-nav {
             flex-direction: column !important;
         }
+
+    .div-hover:hover {
+        background-color: lightgray;
+    }
+
+
 }

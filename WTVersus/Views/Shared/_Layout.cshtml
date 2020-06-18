@@ -7,12 +7,25 @@
     <link rel="shortcut icon" href="~/favicon.png" />
     <link rel="stylesheet" href="~/css/site.css" />
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/lib/font-awesome/css/all.min.css" />
-    <link rel="stylesheet" href="~/lib/font-awesome/css/font-awesome.css" />
-    <link rel="stylesheet" href="~/lib/font-awesome/css/font-awesome.min.css" />
+    <!-- Google Tag Manager -->
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-5299DPF');</script>
+    <!-- End Google Tag Manager -->
 </head>
 <body>
-
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5299DPF"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <nav class="navbar navbar-expand-sm red-table-label" style="font-size:22px;">
         <div class="navbar-collapse w-100">
             <a asp-controller="Aircrafts" asp-action="Compare" class="nav-link navbar-brand">
@@ -29,7 +42,7 @@
         <div class="navbar-collapse w-100">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link font10pt" title="Date when we updated the vehicle database">Data updated: June ,4 2020</a>
+                    <a class="nav-link font10pt" title="Date when we updated the vehicle database">Data updated: June ,19 2020. Update v 1.99.x.xx</a>
                 </li>
             </ul>
         </div>
@@ -44,7 +57,7 @@
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <div class="collapse navbar-collapse" id="navbar"> 
+                    <div class="collapse navbar-collapse" id="navbar">
                         <ul class="navbar-nav">
 
                             <li class="navbar-text font-weight-bold">
@@ -121,16 +134,57 @@
                 <main role="main">
                     @RenderBody()
                 </main>
-
-
             </div>
 
             <div class="col-md-2 col-lg-2"></div>
         </div>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container text-center">
+    <footer class="footer border-top">
+        <div class="container-fluid py-4 font10pt" style="background-color:lightgray">
+            <div class="row">
+                <div class="col ml-3">
+                    <h5>Site map</h5>
+                    <div class="list-group">
+                        <a class="text-dark" asp-controller="Aircrafts" asp-action="Tree">List of aircrafts</a>
+                        <a class="text-dark" asp-controller="Tanks" asp-action="Tree">List of  tanks</a>
+                        <a class="text-dark" asp-controller="Helicopters" asp-action="Tree">List of helicopters</a>
+                        <a class="text-dark" asp-controller="Ships" asp-action="Tree">List of ships</a>
+                    </div>
+                </div>
+                <div class="col">
+                    <h5>Authors</h5>
+                    <div class="list-group">
+                        Bogdan - developer<br />Nickname: [WAVE]_____BO_____<br />
+                        Dmitriy - designer<br />Nickname: [WAVE]Aerovenom<br />
+                    </div>
+                </div>
+                <div class="col">
+                    <h5>Follow us:</h5>
+                    <p class="lead center">
+                        <a href="https://www.reddit.com/r/wtversus/" class="fa fa-reddit fa-2x " style="color:orangered; text-decoration: none;"></a>
+                        <a href="https://vk.com/wtversus" class="fa fa-vk fa-2x" style="color:royalblue; text-decoration: none;"></a>
+                    </p>
+                </div>
+
+                <div class="col">
+                    <h5>Report an error:</h5>
+                    <div class="list-group">
+                        <u><a href="https://vk.com/wtversus" class="font10pt text-dark" ">Leave a comment</a></u>
+                        <div class="font10pt">Or mail us: waveappfeedback@gmail.com</div>
+                    </div>
+                </div>
+                <div class="col">
+                    <h5>Support us:</h5>
+                    <div class="list-group">
+                        <u><b><a href="https://www.patreon.com/wtversus" class="font10pt text-dark">Patreon</a></u></b>
+                        <div class="font10pt">Also you can help us by telling your friends about this site or use information on your youtube channel</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid text-center" style="background-color:lightgray">
             &copy; 2020 - War Thunder Versus
         </div>
     </footer>

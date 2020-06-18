@@ -3,206 +3,421 @@
     ViewData["Title"] = "List of aircrafts";
 }
 
-<div class="container-fluid">
-    <table class="table table-hover table-bordered table-sm text-left">
-        <tbody>
-            <tr>
-                <td style="width: 20%">
-                    @{
-                        var usaFirstTierPlane = Model.Where(n => n.Nation == "USA" && n.Rank == "I");
-                        @await Html.PartialAsync("_AircraftsTree", usaFirstTierPlane)
-                    }
-                </td>
-                <td style="width: 20%">
-                    @{
-                        var germanyFirstTierPlane = Model.Where(n => n.Nation == "Germany" && n.Rank == "I");
-                        @await Html.PartialAsync("_AircraftsTree", germanyFirstTierPlane)
-                    }
-                </td>
-                <td style="width: 20%">
-                    @{
-                        var ussrFirstTierPlane = Model.Where(n => n.Nation == "USSR" && n.Rank == "I");
-                        @await Html.PartialAsync("_AircraftsTree", ussrFirstTierPlane)
-                    }
-                </td>
-                <td style="width: 20%">
-                    @{
-                        var britainFirstTierPlane = Model.Where(n => n.Nation == "Britain" && n.Rank == "I");
-                        @await Html.PartialAsync("_AircraftsTree", britainFirstTierPlane)
-                    }
-                </td>
-                <td style="width: 20%">
-                    @{
-                        var japanFirstTierPlane = Model.Where(n => n.Nation == "Japan" && n.Rank == "I");
-                        @await Html.PartialAsync("_AircraftsTree", japanFirstTierPlane)
-                    }
-                </td>
-            </tr>
+    <div class="container-fluid">
 
-            <tr>
-                <td style="width: 20%">
-                    @{
-                        var usaSecondTierPlane = Model.Where(n => n.Nation == "USA" && n.Rank == "II");
-                        @await Html.PartialAsync("_AircraftsTree", usaSecondTierPlane)
-                    }
-                </td>
-                <td style="width: 20%">
-                    @{
-                        var germanySecondTierPlane = Model.Where(n => n.Nation == "Germany" && n.Rank == "II");
-                        @await Html.PartialAsync("_AircraftsTree", germanySecondTierPlane)
-                    }
-                </td>
-                <td style="width: 20%">
-                    @{
-                        var ussrSecondTierPlane = Model.Where(n => n.Nation == "USSR" && n.Rank == "II");
-                        @await Html.PartialAsync("_AircraftsTree", ussrSecondTierPlane)
-                    }
-                </td>
-                <td style="width: 20%">
-                    @{
-                        var britainSecondTierPlane = Model.Where(n => n.Nation == "Britain" && n.Rank == "II");
-                        @await Html.PartialAsync("_AircraftsTree", britainSecondTierPlane)
-                    }
-                </td>
-                <td style="width: 20%">
-                    @{
-                        var japanSecondTierPlane = Model.Where(n => n.Nation == "Japan" && n.Rank == "II");
-                        @await Html.PartialAsync("_AircraftsTree", japanSecondTierPlane)
-                    }
-                </td>
-            </tr>
+        <table class="table table-bordered table-sm sticky-row">
+            <tbody>
+                <tr>
+                    <td style="width: 20%">
+                        <img class="mx-auto d-block" src="~/images/USA.png" alt="" title="USA" width="40">
+                    </td>
+                    <td style="width: 20%">
+                        <img class="mx-auto d-block" src="~/images/Germany.png" alt="" title="Germany" width="40">
+                    </td>
+                    <td style="width: 20%">
+                        <img class="mx-auto d-block" src="~/images/USSR.png" alt="" title="USSR" width="40">
+                    </td>
+                    <td style="width: 20%">
+                        <img class="mx-auto d-block" src="~/images/Britain.png" alt="" title="Britain" width="40">
+                    </td>
+                    <td style="width: 20%">
+                        <img class="mx-auto d-block" src="~/images/Japan.png" alt="" title="Japan" width="40">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
 
-            <tr>
-                <td style="width: 20%">
-                    @{
-                        var usaThirdTierPlane = Model.Where(n => n.Nation == "USA" && n.Rank == "III");
-                        @await Html.PartialAsync("_AircraftsTree", usaThirdTierPlane)
-                    }
-                </td>
-                <td style="width: 20%">
-                    @{
-                        var germanyThirdTierPlane = Model.Where(n => n.Nation == "Germany" && n.Rank == "III");
-                        @await Html.PartialAsync("_AircraftsTree", germanyThirdTierPlane)
-                    }
-                </td>
-                <td style="width: 20%">
-                    @{
-                        var ussrThirdTierPlane = Model.Where(n => n.Nation == "USSR" && n.Rank == "III");
-                        @await Html.PartialAsync("_AircraftsTree", ussrThirdTierPlane)
-                    }
-                </td>
-                <td style="width: 20%">
-                    @{
-                        var britainThirdTierPlane = Model.Where(n => n.Nation == "Britain" && n.Rank == "III");
-                        @await Html.PartialAsync("_AircraftsTree", britainThirdTierPlane)
-                    }
-                </td>
-                <td style="width: 20%">
-                    @{
-                        var japanThirdTierPlane = Model.Where(n => n.Nation == "Japan" && n.Rank == "III");
-                        @await Html.PartialAsync("_AircraftsTree", japanThirdTierPlane)
-                    }
-                </td>
-            </tr>
+        <table class="table table-bordered table-sm text-left">
+            <tbody>
+                <tr>
+                    <td style="width: 20%">
+                        @{
+                            var usaFirstTierPlane = Model.Where(n => n.Nation == "USA" && n.Rank == "I");
+                            @await Html.PartialAsync("_AircraftsTree", usaFirstTierPlane)
+                        }
+                    </td>
+                    <td style="width: 20%">
+                        @{
+                            var germanyFirstTierPlane = Model.Where(n => n.Nation == "Germany" && n.Rank == "I");
+                            @await Html.PartialAsync("_AircraftsTree", germanyFirstTierPlane)
+                        }
+                    </td>
+                    <td style="width: 20%">
+                        @{
+                            var ussrFirstTierPlane = Model.Where(n => n.Nation == "USSR" && n.Rank == "I");
+                            @await Html.PartialAsync("_AircraftsTree", ussrFirstTierPlane)
+                        }
+                    </td>
+                    <td style="width: 20%">
+                        @{
+                            var britainFirstTierPlane = Model.Where(n => n.Nation == "Britain" && n.Rank == "I");
+                            @await Html.PartialAsync("_AircraftsTree", britainFirstTierPlane)
+                        }
+                    </td>
+                    <td style="width: 20%">
+                        @{
+                            var japanFirstTierPlane = Model.Where(n => n.Nation == "Japan" && n.Rank == "I");
+                            @await Html.PartialAsync("_AircraftsTree", japanFirstTierPlane)
+                        }
+                    </td>
+                </tr>
 
-            <tr>
-                <td style="width: 20%">
-                    @{
-                        var usaFourthTierPlane = Model.Where(n => n.Nation == "USA" && n.Rank == "IV");
-                        @await Html.PartialAsync("_AircraftsTree", usaFourthTierPlane)
-                    }
-                </td>
-                <td style="width: 20%">
-                    @{
-                        var germanyFourthTierPlane = Model.Where(n => n.Nation == "Germany" && n.Rank == "IV");
-                        @await Html.PartialAsync("_AircraftsTree", germanyFourthTierPlane)
-                    }
-                </td>
-                <td style="width: 20%">
-                    @{
-                        var ussrFourthTierPlane = Model.Where(n => n.Nation == "USSR" && n.Rank == "IV");
-                        @await Html.PartialAsync("_AircraftsTree", ussrFourthTierPlane)
-                    }
-                </td>
-                <td style="width: 20%">
-                    @{
-                        var britainFourthTierPlane = Model.Where(n => n.Nation == "Britain" && n.Rank == "IV");
-                        @await Html.PartialAsync("_AircraftsTree", britainFourthTierPlane)
-                    }
-                </td>
-                <td style="width: 20%">
-                    @{
-                        var japanFourthTierPlane = Model.Where(n => n.Nation == "Japan" && n.Rank == "IV");
-                        @await Html.PartialAsync("_AircraftsTree", japanFourthTierPlane)
-                    }
-                </td>
-            </tr>
+                <tr>
+                    <td style="width: 20%">
+                        @{
+                            var usaSecondTierPlane = Model.Where(n => n.Nation == "USA" && n.Rank == "II");
+                            @await Html.PartialAsync("_AircraftsTree", usaSecondTierPlane)
+                        }
+                    </td>
+                    <td style="width: 20%">
+                        @{
+                            var germanySecondTierPlane = Model.Where(n => n.Nation == "Germany" && n.Rank == "II");
+                            @await Html.PartialAsync("_AircraftsTree", germanySecondTierPlane)
+                        }
+                    </td>
+                    <td style="width: 20%">
+                        @{
+                            var ussrSecondTierPlane = Model.Where(n => n.Nation == "USSR" && n.Rank == "II");
+                            @await Html.PartialAsync("_AircraftsTree", ussrSecondTierPlane)
+                        }
+                    </td>
+                    <td style="width: 20%">
+                        @{
+                            var britainSecondTierPlane = Model.Where(n => n.Nation == "Britain" && n.Rank == "II");
+                            @await Html.PartialAsync("_AircraftsTree", britainSecondTierPlane)
+                        }
+                    </td>
+                    <td style="width: 20%">
+                        @{
+                            var japanSecondTierPlane = Model.Where(n => n.Nation == "Japan" && n.Rank == "II");
+                            @await Html.PartialAsync("_AircraftsTree", japanSecondTierPlane)
+                        }
+                    </td>
+                </tr>
 
-            <tr>
-                <td style="width: 20%">
-                    @{
-                        var usaFifthTierPlane = Model.Where(n => n.Nation == "USA" && n.Rank == "V");
-                        @await Html.PartialAsync("_AircraftsTree", usaFifthTierPlane)
-                    }
-                </td>
-                <td style="width: 20%">
-                    @{
-                        var germanyFifthTierPlane = Model.Where(n => n.Nation == "Germany" && n.Rank == "V");
-                        @await Html.PartialAsync("_AircraftsTree", germanyFifthTierPlane)
-                    }
-                </td>
-                <td style="width: 20%">
-                    @{
-                        var ussrFifthTierPlane = Model.Where(n => n.Nation == "USSR" && n.Rank == "V");
-                        @await Html.PartialAsync("_AircraftsTree", ussrFifthTierPlane)
-                    }
-                </td>
-                <td style="width: 20%">
-                    @{
-                        var britainFifthTierPlane = Model.Where(n => n.Nation == "Britain" && n.Rank == "V");
-                        @await Html.PartialAsync("_AircraftsTree", britainFifthTierPlane)
-                    }
-                </td>
-                <td style="width: 20%">
-                    @{
-                        var japanFifthTierPlane = Model.Where(n => n.Nation == "Japan" && n.Rank == "V");
-                        @await Html.PartialAsync("_AircraftsTree", japanFifthTierPlane)
-                    }
-                </td>
-            </tr>
+                <tr>
+                    <td style="width: 20%">
+                        @{
+                            var usaThirdTierPlane = Model.Where(n => n.Nation == "USA" && n.Rank == "III");
+                            @await Html.PartialAsync("_AircraftsTree", usaThirdTierPlane)
+                        }
+                    </td>
+                    <td style="width: 20%">
+                        @{
+                            var germanyThirdTierPlane = Model.Where(n => n.Nation == "Germany" && n.Rank == "III");
+                            @await Html.PartialAsync("_AircraftsTree", germanyThirdTierPlane)
+                        }
+                    </td>
+                    <td style="width: 20%">
+                        @{
+                            var ussrThirdTierPlane = Model.Where(n => n.Nation == "USSR" && n.Rank == "III");
+                            @await Html.PartialAsync("_AircraftsTree", ussrThirdTierPlane)
+                        }
+                    </td>
+                    <td style="width: 20%">
+                        @{
+                            var britainThirdTierPlane = Model.Where(n => n.Nation == "Britain" && n.Rank == "III");
+                            @await Html.PartialAsync("_AircraftsTree", britainThirdTierPlane)
+                        }
+                    </td>
+                    <td style="width: 20%">
+                        @{
+                            var japanThirdTierPlane = Model.Where(n => n.Nation == "Japan" && n.Rank == "III");
+                            @await Html.PartialAsync("_AircraftsTree", japanThirdTierPlane)
+                        }
+                    </td>
+                </tr>
 
-                        <tr>
-                <td style="width: 20%">
-                    @{
-                        var usaSixthTierPlane = Model.Where(n => n.Nation == "USA" && n.Rank == "VI");
-                        @await Html.PartialAsync("_AircraftsTree", usaSixthTierPlane)
-                    }
-                </td>
-                <td style="width: 20%">
-                    @{
-                        var germanySixthTierPlane = Model.Where(n => n.Nation == "Germany" && n.Rank == "VI");
-                        @await Html.PartialAsync("_AircraftsTree", germanySixthTierPlane)
-                    }
-                </td>
-                <td style="width: 20%">
-                    @{
-                        var ussrSixthTierPlane = Model.Where(n => n.Nation == "USSR" && n.Rank == "VI");
-                        @await Html.PartialAsync("_AircraftsTree", ussrSixthTierPlane)
-                    }
-                </td>
-                <td style="width: 20%">
-                    @{
-                        var britainSixthTierPlane = Model.Where(n => n.Nation == "Britain" && n.Rank == "VI");
-                        @await Html.PartialAsync("_AircraftsTree", britainSixthTierPlane)
-                    }
-                </td>
-                <td style="width: 20%">
-                    @{
-                        var japanSixthTierPlane = Model.Where(n => n.Nation == "Japan" && n.Rank == "VI");
-                        @await Html.PartialAsync("_AircraftsTree", japanSixthTierPlane)
-                    }
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+                <tr>
+                    <td style="width: 20%">
+                        @{
+                            var usaFourthTierPlane = Model.Where(n => n.Nation == "USA" && n.Rank == "IV");
+                            @await Html.PartialAsync("_AircraftsTree", usaFourthTierPlane)
+                        }
+                    </td>
+                    <td style="width: 20%">
+                        @{
+                            var germanyFourthTierPlane = Model.Where(n => n.Nation == "Germany" && n.Rank == "IV");
+                            @await Html.PartialAsync("_AircraftsTree", germanyFourthTierPlane)
+                        }
+                    </td>
+                    <td style="width: 20%">
+                        @{
+                            var ussrFourthTierPlane = Model.Where(n => n.Nation == "USSR" && n.Rank == "IV");
+                            @await Html.PartialAsync("_AircraftsTree", ussrFourthTierPlane)
+                        }
+                    </td>
+                    <td style="width: 20%">
+                        @{
+                            var britainFourthTierPlane = Model.Where(n => n.Nation == "Britain" && n.Rank == "IV");
+                            @await Html.PartialAsync("_AircraftsTree", britainFourthTierPlane)
+                        }
+                    </td>
+                    <td style="width: 20%">
+                        @{
+                            var japanFourthTierPlane = Model.Where(n => n.Nation == "Japan" && n.Rank == "IV");
+                            @await Html.PartialAsync("_AircraftsTree", japanFourthTierPlane)
+                        }
+                    </td>
+                </tr>
+
+                <tr>
+                    <td style="width: 20%">
+                        @{
+                            var usaFifthTierPlane = Model.Where(n => n.Nation == "USA" && n.Rank == "V");
+                            @await Html.PartialAsync("_AircraftsTree", usaFifthTierPlane)
+                        }
+                    </td>
+                    <td style="width: 20%">
+                        @{
+                            var germanyFifthTierPlane = Model.Where(n => n.Nation == "Germany" && n.Rank == "V");
+                            @await Html.PartialAsync("_AircraftsTree", germanyFifthTierPlane)
+                        }
+                    </td>
+                    <td style="width: 20%">
+                        @{
+                            var ussrFifthTierPlane = Model.Where(n => n.Nation == "USSR" && n.Rank == "V");
+                            @await Html.PartialAsync("_AircraftsTree", ussrFifthTierPlane)
+                        }
+                    </td>
+                    <td style="width: 20%">
+                        @{
+                            var britainFifthTierPlane = Model.Where(n => n.Nation == "Britain" && n.Rank == "V");
+                            @await Html.PartialAsync("_AircraftsTree", britainFifthTierPlane)
+                        }
+                    </td>
+                    <td style="width: 20%">
+                        @{
+                            var japanFifthTierPlane = Model.Where(n => n.Nation == "Japan" && n.Rank == "V");
+                            @await Html.PartialAsync("_AircraftsTree", japanFifthTierPlane)
+                        }
+                    </td>
+                </tr>
+
+                <tr>
+                    <td style="width: 20%">
+                        @{
+                            var usaSixthTierPlane = Model.Where(n => n.Nation == "USA" && n.Rank == "VI");
+                            @await Html.PartialAsync("_AircraftsTree", usaSixthTierPlane)
+                        }
+                    </td>
+                    <td style="width: 20%">
+                        @{
+                            var germanySixthTierPlane = Model.Where(n => n.Nation == "Germany" && n.Rank == "VI");
+                            @await Html.PartialAsync("_AircraftsTree", germanySixthTierPlane)
+                        }
+                    </td>
+                    <td style="width: 20%">
+                        @{
+                            var ussrSixthTierPlane = Model.Where(n => n.Nation == "USSR" && n.Rank == "VI");
+                            @await Html.PartialAsync("_AircraftsTree", ussrSixthTierPlane)
+                        }
+                    </td>
+                    <td style="width: 20%">
+                        @{
+                            var britainSixthTierPlane = Model.Where(n => n.Nation == "Britain" && n.Rank == "VI");
+                            @await Html.PartialAsync("_AircraftsTree", britainSixthTierPlane)
+                        }
+                    </td>
+                    <td style="width: 20%">
+                        @{
+                            var japanSixthTierPlane = Model.Where(n => n.Nation == "Japan" && n.Rank == "VI");
+                            @await Html.PartialAsync("_AircraftsTree", japanSixthTierPlane)
+                        }
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+       
+        <table class="table table-bordered table-sm sticky-row">
+            <tbody>
+                <tr>
+                    <td style="width: 20%">
+                        <img class="mx-auto d-block" src="~/images/China.png" alt="" title="China" width="40">
+                    </td>
+                    <td style="width: 20%">
+                        <img class="mx-auto d-block" src="~/images/Italy.png" alt="" title="Italy" width="40">
+                    </td>
+                    <td style="width: 20%">
+                        <img class="mx-auto d-block" src="~/images/France.png" alt="" title="France" width="40">
+                    </td>
+                    <td style="width: 20%">
+                        <img class="mx-auto d-block" src="~/images/Sweden.png" alt="" title="Sweden" width="40">
+                    </td>
+                    <td style="width: 20%"></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table class="table table-bordered table-sm text-left">
+            <tbody>
+                <tr>
+                    <td style="width: 20%">
+                        @{
+                            var chinaFirstTierPlane = Model.Where(n => n.Nation == "China" && n.Rank == "I");
+                            @await Html.PartialAsync("_AircraftsTree", chinaFirstTierPlane)
+                        }
+                    </td>
+                    <td style="width: 20%">
+                        @{
+                            var italyFirstTierPlane = Model.Where(n => n.Nation == "Italy" && n.Rank == "I");
+                            @await Html.PartialAsync("_AircraftsTree", italyFirstTierPlane)
+                        }
+                    </td>
+                    <td style="width: 20%">
+                        @{
+                            var franceFirstTierPlane = Model.Where(n => n.Nation == "France" && n.Rank == "I");
+                            @await Html.PartialAsync("_AircraftsTree", franceFirstTierPlane)
+                        }
+                    </td>
+                    <td style="width: 20%">
+                        @{
+                            var swedenFirstTierPlane = Model.Where(n => n.Nation == "Sweden" && n.Rank == "I");
+                            @await Html.PartialAsync("_AircraftsTree", swedenFirstTierPlane)
+                        }
+                    </td>
+                    <td style="width: 20%"></td>
+                </tr>
+
+                <tr>
+                    <td style="width: 20%">
+                        @{
+                            var chinaSecondTierPlane = Model.Where(n => n.Nation == "China" && n.Rank == "II");
+                            @await Html.PartialAsync("_AircraftsTree", chinaSecondTierPlane)
+                        }
+                    </td>
+                    <td style="width: 20%">
+                        @{
+                            var italySecondTierPlane = Model.Where(n => n.Nation == "Italy" && n.Rank == "II");
+                            @await Html.PartialAsync("_AircraftsTree", italySecondTierPlane)
+                        }
+                    </td>
+                    <td style="width: 20%">
+                        @{
+                            var franceSecondTierPlane = Model.Where(n => n.Nation == "France" && n.Rank == "II");
+                            @await Html.PartialAsync("_AircraftsTree", franceSecondTierPlane)
+                        }
+                    </td>
+                    <td style="width: 20%">
+                        @{
+                            var swedenSecondTierPlane = Model.Where(n => n.Nation == "Sweden" && n.Rank == "II");
+                            @await Html.PartialAsync("_AircraftsTree", swedenSecondTierPlane)
+                        }
+                    </td>
+                    <td style="width: 20%"></td>
+                </tr>
+
+                <tr>
+                    <td style="width: 20%">
+                        @{
+                            var chinaThirdTierPlane = Model.Where(n => n.Nation == "China" && n.Rank == "III");
+                            @await Html.PartialAsync("_AircraftsTree", chinaThirdTierPlane)
+                        }
+                    </td>
+                    <td style="width: 20%">
+                        @{
+                            var italyThirdTierPlane = Model.Where(n => n.Nation == "Italy" && n.Rank == "III");
+                            @await Html.PartialAsync("_AircraftsTree", italyThirdTierPlane)
+                        }
+                    </td>
+                    <td style="width: 20%">
+                        @{
+                            var franceThirdTierPlane = Model.Where(n => n.Nation == "France" && n.Rank == "III");
+                            @await Html.PartialAsync("_AircraftsTree", franceThirdTierPlane)
+                        }
+                    </td>
+                    <td style="width: 20%">
+                        @{
+                            var swedenThirdTierPlane = Model.Where(n => n.Nation == "Sweden" && n.Rank == "III");
+                            @await Html.PartialAsync("_AircraftsTree", swedenThirdTierPlane)
+                        }
+                    </td>
+                </tr>
+
+                <tr>
+                    <td style="width: 20%">
+                        @{
+                            var chinaFourthTierPlane = Model.Where(n => n.Nation == "China" && n.Rank == "IV");
+                            @await Html.PartialAsync("_AircraftsTree", chinaFourthTierPlane)
+                        }
+                    </td>
+                    <td style="width: 20%">
+                        @{
+                            var italyFourthTierPlane = Model.Where(n => n.Nation == "Italy" && n.Rank == "IV");
+                            @await Html.PartialAsync("_AircraftsTree", italyFourthTierPlane)
+                        }
+                    </td>
+                    <td style="width: 20%">
+                        @{
+                            var franceFourthTierPlane = Model.Where(n => n.Nation == "France" && n.Rank == "IV");
+                            @await Html.PartialAsync("_AircraftsTree", franceFourthTierPlane)
+                        }
+                    </td>
+                    <td style="width: 20%">
+                        @{
+                            var swedenFourthTierPlane = Model.Where(n => n.Nation == "Sweden" && n.Rank == "IV");
+                            @await Html.PartialAsync("_AircraftsTree", swedenFourthTierPlane)
+                        }
+                    </td>
+                    <td style="width: 20%"></td>
+                </tr>
+
+                <tr>
+                    <td style="width: 20%">
+                        @{
+                            var chinaFifthTierPlane = Model.Where(n => n.Nation == "China" && n.Rank == "V");
+                            @await Html.PartialAsync("_AircraftsTree", chinaFifthTierPlane)
+                        }
+                    </td>
+                    <td style="width: 20%">
+                        @{
+                            var italyFifthTierPlane = Model.Where(n => n.Nation == "Italy" && n.Rank == "V");
+                            @await Html.PartialAsync("_AircraftsTree", italyFifthTierPlane)
+                        }
+                    </td>
+                    <td style="width: 20%">
+                        @{
+                            var franceFifthTierPlane = Model.Where(n => n.Nation == "France" && n.Rank == "V");
+                            @await Html.PartialAsync("_AircraftsTree", franceFifthTierPlane)
+                        }
+                    </td>
+                    <td style="width: 20%">
+                        @{
+                            var swedenFifthTierPlane = Model.Where(n => n.Nation == "Sweden" && n.Rank == "V");
+                            @await Html.PartialAsync("_AircraftsTree", swedenFifthTierPlane)
+                        }
+                    </td>
+                    <td style="width: 20%"></td>
+                </tr>
+
+                <tr>
+                    <td style="width: 20%">
+                        @{
+                            var chinaSixthTierPlane = Model.Where(n => n.Nation == "China" && n.Rank == "VI");
+                            @await Html.PartialAsync("_AircraftsTree", chinaSixthTierPlane)
+                        }
+                    </td>
+                    <td style="width: 20%">
+                        @{
+                            var italySixthTierPlane = Model.Where(n => n.Nation == "Italy" && n.Rank == "VI");
+                            @await Html.PartialAsync("_AircraftsTree", italySixthTierPlane)
+                        }
+                    </td>
+                    <td style="width: 20%">
+                        @{
+                            var franceSixthTierPlane = Model.Where(n => n.Nation == "France" && n.Rank == "VI");
+                            @await Html.PartialAsync("_AircraftsTree", franceSixthTierPlane)
+                        }
+                    </td>
+                    <td style="width: 20%">
+                        @{
+                            var swedenSixthTierPlane = Model.Where(n => n.Nation == "Sweden" && n.Rank == "VI");
+                            @await Html.PartialAsync("_AircraftsTree", swedenSixthTierPlane)
+                        }
+                    </td>
+                    <td style="width: 20%"></td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>

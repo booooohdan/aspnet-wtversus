@@ -1,10 +1,10 @@
-﻿@model IEnumerable<WTVersus.Models.Plane>;
+﻿@model IEnumerable<WTVersus.Models.Ship>;
    
- @foreach (Plane item in Model)
+ @foreach (Ship item in Model)
      {
     <div class="@item.Type div-hover">
         @String.Format("[{0:F1}] ", item.BR)
-        <a class="text-dark" asp-controller="Aircrafts" asp-action="Compare"
+        <a class="text-dark" asp-controller="Ships" asp-action="Compare"
            asp-route-vehicle1="@item.VehicleId" asp-route-vehicle2="0">
             @item.Name
         </a>
