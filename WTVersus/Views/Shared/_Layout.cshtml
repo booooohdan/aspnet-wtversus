@@ -18,6 +18,9 @@
                     'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
         })(window, document, 'script', 'dataLayer', 'GTM-5299DPF');</script>
     <!-- End Google Tag Manager -->
+    <!--GoogleAds-->
+    <script data-ad-client="ca-pub-8211072909515345" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!--End GoogleAds-->
 </head>
 <body>
     <!-- Google Tag Manager (noscript) -->
@@ -144,12 +147,12 @@
         <div class="container-fluid py-4 font10pt" style="background-color:lightgray">
             <div class="row">
                 <div class="col ml-3">
-                    <h5>Site map</h5>
+                    <h5>List of vehicles</h5>
                     <div class="list-group">
-                        <a class="text-dark" asp-controller="Aircrafts" asp-action="Tree">List of aircrafts</a>
-                        <a class="text-dark" asp-controller="Tanks" asp-action="Tree">List of  tanks</a>
-                        <a class="text-dark" asp-controller="Helicopters" asp-action="Tree">List of helicopters</a>
-                        <a class="text-dark" asp-controller="Ships" asp-action="Tree">List of ships</a>
+                        <a class="text-dark" asp-controller="Aircrafts" asp-action="Tree">Aircrafts</a>
+                        <a class="text-dark" asp-controller="Tanks" asp-action="Tree">Tanks</a>
+                        <a class="text-dark" asp-controller="Helicopters" asp-action="Tree">Helicopters</a>
+                        <a class="text-dark" asp-controller="Ships" asp-action="Tree">Ships</a>
                     </div>
                 </div>
                 <div class="col">
@@ -170,14 +173,14 @@
                 <div class="col">
                     <h5>Report an error:</h5>
                     <div class="list-group">
-                        <u><a href="https://vk.com/wtversus" class="font10pt text-dark" ">Leave a comment</a></u>
-                        <div class="font10pt">Or mail us: waveappfeedback@gmail.com</div>
+                            <u><a  asp-controller="Feedback" asp-action="Index" class="font10pt text-dark">Leave a comment</a></u>
+                            <div class="font10pt">Or mail us: waveappfeedback@gmail.com</div>
                     </div>
                 </div>
                 <div class="col">
-                    <h5>Support us:</h5>
+                    <h5 class="text-danger">Support us:</h5>
                     <div class="list-group">
-                        <u><b><a href="https://www.patreon.com/wtversus" class="font10pt text-dark">Patreon</a></u></b>
+                        <u><b><a href="https://www.patreon.com/wtversus" class="font10pt text-danger">Patreon</a></b></u>
                         <div class="font10pt">Also you can help us by telling your friends about this site or use information on your youtube channel</div>
                     </div>
                 </div>
