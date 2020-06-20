@@ -2,10 +2,10 @@
    
  @foreach (Tank item in Model)
      {
-    <div class="@item.Type div-hover">
+    <div class="@item.Type div-hover" itemscope itemtype = "https://schema.org/Vehicle">
         @String.Format("[{0:F1}] ", item.BR)
         <a class="text-dark" asp-controller="Tanks" asp-action="Compare"
-           asp-route-vehicle1="@item.VehicleId" asp-route-vehicle2="0">
+           asp-route-vehicle1="@item.VehicleId" asp-route-vehicle2="0" itemprop="url">
             @item.Name
         </a>
         <br />

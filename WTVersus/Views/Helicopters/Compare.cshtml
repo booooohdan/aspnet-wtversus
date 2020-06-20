@@ -4,15 +4,23 @@
 }
 
 <div class="container-fluid">
+    @if (Model.ElementAt(0).Name != "Select helicopter" & Model.ElementAt(1).Name != "Select helicopter")
+    {
+        <h1>@Model.ElementAt(0).Name vs @Model.ElementAt(1).Name</h1>
+    }
+    else
+    {
+        <h1>Tanks comparison</h1>
+    }
     <table class="table table-hover table-bordered table-sm text-center sticky-row">
         <tbody>
             <tr>
                 <th style="width: 20%"></th>
                 <td style="width: 15%">
                     <div class="dropdown @Model.ElementAt(0).Type">
-                        <button class="btn dropdown-toggle text-wrap font10pt" type="button" data-toggle="dropdown">
+                        <button class="btn dropdown-toggle text-wrap font10pt" type="button" data-toggle="dropdown" itemscope itemtype="https://schema.org/Vehicle">
                             @{string img0name = Model.ElementAt(0).Nation + ".png";}
-                            <img src="~/images/@img0name" class="img-fluid" width="25">
+                            <img src="~/images/@img0name" class="img-fluid" width="25" alt="Helicopter">
                             [@String.Format("{0:F1}", Model.ElementAt(0).BR)]
                             @Model.ElementAt(0).Name
                             <span class="caret"></span>
@@ -25,7 +33,7 @@
                                     <a class="dropdown-item @item.Type" asp-controller="Helicopters" asp-action="Compare"
                                        asp-route-vehicle1="@item.VehicleId">
                                         @{string img0item = item.Nation + ".png";}
-                                        <img src="~/images/@img0item" class="img-fluid" width="25">
+                                        <img src="~/images/@img0item" class="img-fluid" width="25" alt="Helicopter">
                                         [@String.Format("{0:F1}", item.BR)] @item.Name
                                     </a>
                                 </li>
@@ -35,9 +43,9 @@
                 </td>
                 <td style="width: 15%">
                     <div class="dropdown @Model.ElementAt(1).Type">
-                        <button class="btn dropdown-toggle  text-wrap font10pt" type="button" data-toggle="dropdown">
+                        <button class="btn dropdown-toggle  text-wrap font10pt" type="button" data-toggle="dropdown" itemscope itemtype="https://schema.org/Vehicle">
                             @{string img1name = Model.ElementAt(1).Nation + ".png";}
-                            <img src="~/images/@img1name" class="img-fluid" width="25">
+                            <img src="~/images/@img1name" class="img-fluid" width="25" alt="Helicopter">
                             [@String.Format("{0:F1}", Model.ElementAt(1).BR)]
                             @Model.ElementAt(1).Name
                             <span class="caret"></span>
@@ -50,7 +58,7 @@
                                     <a class="dropdown-item @item.Type" asp-controller="Helicopters" asp-action="Compare"
                                        asp-route-vehicle2="@item.VehicleId">
                                         @{string img1item = item.Nation + ".png";}
-                                        <img src="~/images/@img1item" class="img-fluid" width="25">
+                                        <img src="~/images/@img1item" class="img-fluid" width="25" alt="Helicopter">
                                         [@String.Format("{0:F1}", item.BR)] @item.Name
                                     </a>
                                 </li>
@@ -60,9 +68,9 @@
                 </td>
                 <td style="width: 15%">
                     <div class="dropdown @Model.ElementAt(2).Type">
-                        <button class="btn dropdown-toggle  text-wrap font10pt" type="button" data-toggle="dropdown">
+                        <button class="btn dropdown-toggle  text-wrap font10pt" type="button" data-toggle="dropdown" itemscope itemtype="https://schema.org/Vehicle">
                             @{string img2name = Model.ElementAt(2).Nation + ".png";}
-                            <img src="~/images/@img2name" class="img-fluid" width="25">
+                            <img src="~/images/@img2name" class="img-fluid" width="25" alt="Helicopter">
                             [@String.Format("{0:F1}", Model.ElementAt(2).BR)]
                             @Model.ElementAt(2).Name
                             <span class="caret"></span>
@@ -75,7 +83,7 @@
                                     <a class="dropdown-item @item.Type" asp-controller="Helicopters" asp-action="Compare"
                                        asp-route-vehicle3="@item.VehicleId">
                                         @{string img2item = item.Nation + ".png";}
-                                        <img src="~/images/@img2item" class="img-fluid" width="25">
+                                        <img src="~/images/@img2item" class="img-fluid" width="25" alt="Helicopter">
                                         [@String.Format("{0:F1}", item.BR)] @item.Name
                                     </a>
                                 </li>
@@ -85,9 +93,9 @@
                 </td>
                 <td style="width: 15%">
                     <div class="dropdown @Model.ElementAt(3).Type">
-                        <button class="btn dropdown-toggle  text-wrap font10pt" type="button" data-toggle="dropdown">
+                        <button class="btn dropdown-toggle  text-wrap font10pt" type="button" data-toggle="dropdown" itemscope itemtype="https://schema.org/Vehicle">
                             @{string img3name = Model.ElementAt(3).Nation + ".png";}
-                            <img src="~/images/@img3name" class="img-fluid" width="25">
+                            <img src="~/images/@img3name" class="img-fluid" width="25" alt="Helicopter">
                             [@String.Format("{0:F1}", Model.ElementAt(3).BR)]
                             @Model.ElementAt(3).Name
                             <span class="caret"></span>
@@ -100,7 +108,7 @@
                                     <a class="dropdown-item @item.Type" asp-controller="Helicopters" asp-action="Compare"
                                        asp-route-vehicle4="@item.VehicleId">
                                         @{string img3item = item.Nation + ".png";}
-                                        <img src="~/images/@img3item" class="img-fluid" width="25">
+                                        <img src="~/images/@img3item" class="img-fluid" width="25" alt="Helicopter">
                                         [@String.Format("{0:F1}", item.BR)] @item.Name
                                     </a>
                                 </li>
@@ -172,31 +180,31 @@
                         @{
                             if (Model.ElementAt(i).AGMissile)
                             {
-                                <img src="~/images/AGMissile.png" alt="" title="Air-to-Ground missile" class="img-fluid" width="40">
+                                <img src="~/images/AGMissile.png" alt="Air-to-Ground missile" title="Air-to-Ground missile" class="img-fluid" width="40">
                             }
                             if (Model.ElementAt(i).AutoAGMissile)
                             {
-                                <img src="~/images/AutoAGMissile.png" alt="" title="Air-to-Ground auto aim missile" class="img-fluid" width="40">
+                                <img src="~/images/AutoAGMissile.png" alt="Fire and Forget Air-to-Ground missile" title="Fire and Forget Air-to-Ground missile" class="img-fluid" width="40">
                             }
                             if (Model.ElementAt(i).AAMissile)
                             {
-                                <img src="~/images/AAMissile.png" alt="" title="Air-to-Air missile" class="img-fluid" width="40">
+                                <img src="~/images/AAMissile.png" alt="Air-to-Air missile" title="Air-to-Air missile" class="img-fluid" width="40">
                             }
                             if (Model.ElementAt(i).ASMissile)
                             {
-                                <img src="~/images/ASMissile.png" alt="" title="Air-to-Surface (unguided) missile" class="img-fluid" width="40">
+                                <img src="~/images/ASMissile.png" alt="Air-to-Surface (unguided) missile" title="Air-to-Surface (unguided) missile" class="img-fluid" width="40">
                             }
                             if (Model.ElementAt(i).Bomb)
                             {
-                                <img src="~/images/HBomb.png" alt="" title="Just a bomb" class="img-fluid" width="40">
+                                <img src="~/images/HBomb.png" alt="Just a bomb" title="Just a bomb" class="img-fluid" width="40">
                             }
                             if (Model.ElementAt(i).TurningCannon)
                             {
-                                <img src="~/images/TurningCannon.png" alt="" title="Turning turret with cannon or machine gun" class="img-fluid" width="40">
+                                <img src="~/images/TurningCannon.png" alt="Turning turret with cannon or machine gun" title="Turning turret with cannon or machine gun" class="img-fluid" width="40">
                             }
                             if (Model.ElementAt(i).FixedCannon)
                             {
-                                <img src="~/images/FixedCannon.png" alt="" title="Fixed (unturnable) cannon or machine gun" class="img-fluid" width="40">
+                                <img src="~/images/FixedCannon.png" alt="Fixed (unturnable) cannon or machine gun" title="Fixed (unturnable) cannon or machine gun" class="img-fluid" width="40">
                             }
                         }
                     </td>
@@ -255,60 +263,60 @@
                 <th style="width: 20%" class="align-middle" title="Description of safety systems like a RWR, IRCM, flares, etc">Safety systems</th>
                 @for (int i = 0; i < 4; i++)
                 {
-            <td style="width: 15%">
-                @{
-                    if (Model.ElementAt(i).RWR)
-                    {
-                        <img src="~/images/RWRHeli.png" alt="" title="Radar warning receiver" class="img-fluid" width="40">
-                    }
-                    if (Model.ElementAt(i).IRCM)
-                    {
-                        <img src="~/images/IRCM.png" alt="" title="InfraRed CounterMeasure" class="img-fluid" width="40">
-                    }
-                    if (Model.ElementAt(i).Flares)
-                    {
-                        <img src="~/images/Flares.png" alt="" title="Just a flares" class="img-fluid" width="40">
-                    }
-                    if (Model.ElementAt(i).HIRSS)
-                    {
-                        <img src="~/images/HIRSS.png" alt="" title="Hover InfraRed Suppression System" class="img-fluid" width="40">
-                    }
-                }
-            </td>
+                    <td style="width: 15%">
+                        @{
+                            if (Model.ElementAt(i).RWR)
+                            {
+                                <img src="~/images/RWRHeli.png" alt="Radar warning receiver" title="Radar warning receiver" class="img-fluid" width="40">
+                            }
+                            if (Model.ElementAt(i).IRCM)
+                            {
+                                <img src="~/images/IRCM.png" alt="InfraRed CounterMeasure" title="InfraRed CounterMeasure" class="img-fluid" width="40">
+                            }
+                            if (Model.ElementAt(i).Flares)
+                            {
+                                <img src="~/images/Flares.png" alt="Just a flares" title="Just a flares" class="img-fluid" width="40">
+                            }
+                            if (Model.ElementAt(i).HIRSS)
+                            {
+                                <img src="~/images/HIRSS.png" alt="Hover InfraRed Suppression System" title="Hover InfraRed Suppression System" class="img-fluid" width="40">
+                            }
+                        }
+                    </td>
                 }
             </tr>
             <tr class="hideifempty">
                 <th style="width: 20%" class="align-middle" title="Additional systems like a radar, CCIP, etc">Other systems</th>
                 @for (int i = 0; i < 4; i++)
                 {
-            <td style="width: 15%">
-                @{
-                    if (Model.ElementAt(i).LaserDesignator)
-                    {
-                        <img src="~/images/LaserDesignator.png" alt="" title="Laser Designator" class="img-fluid" width="40">
-                    }
-                    if (Model.ElementAt(i).OpticalTracking)
-                    {
-                        <img src="~/images/LockTank.png" alt="" title="Optical tracking device" class="img-fluid" width="40">
-                    }
-                    if (Model.ElementAt(i).CCIP)
-                    {
-                        <img src="~/images/CCIPHeli.png" alt="" title="Constantly computed impact point" class="img-fluid" width="40">
-                    }
-                    if (Model.ElementAt(i).AirRadar)
-                    {
-                        <img src="~/images/AirToAirRadar.png" alt="" title="Avia search radar" class="img-fluid" width="40">
-                    }
-                    if (Model.ElementAt(i).ThermalGunner)
-                    {
-                        <img src="~/images/ThermalCommander.png" alt="" title="Thermal sight" class="img-fluid" width="40">
-                    }
-                    if (Model.ElementAt(i).GroundRadar)
-                    {
-                        <img src="~/images/AirToTankRadar.png" alt="" title="Ground vehicle search radar" class="img-fluid" width="40">
-                    }
-                }
-            </td>
+                    <td style="width: 15%">
+                        @{
+                            if (Model.ElementAt(i).LaserDesignator)
+                            {
+                                <img src="~/images/LaserDesignator.png" alt="Laser Designator" title="Laser Designator" class="img-fluid" width="40">
+                            }
+                            if (Model.ElementAt(i).OpticalTracking)
+                            {
+                                <img src="~/images/LockTank.png" alt="Optical tracking device" title="Optical tracking device" class="img-fluid" width="40">
+                            }
+                            if (Model.ElementAt(i).CCIP)
+                            {
+                                <img src="~/images/CCIPHeli.png" alt="Constantly computed impact point" title="Constantly computed impact point" class="img-fluid" width="40">
+                            }
+                            if (Model.ElementAt(i).AirRadar)
+                            {
+                                <img src="~/images/AirToAirRadar.png" alt="Air search radar" title="Air search radar" class="img-fluid" width="40">
+                            }
+                            if (Model.ElementAt(i).ThermalGunner)
+                            {
+                                <img src="~/images/ThermalCommander.png" alt="Thermal sight" title="Thermal sight" class="img-fluid" width="40">
+                            }
+                            if (Model.ElementAt(i).GroundRadar)
+                            {
+                                <img src="~/images/AirToTankRadar.png" alt="Ground vehicle search radar" title="Ground vehicle search radar" class="img-fluid" width="40">
+                            }
+                        }
+                    </td>
                 }
             </tr>
         </tbody>

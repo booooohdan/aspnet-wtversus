@@ -126,5 +126,8 @@ table {
         background-color: lightgray;
     }
 
-
+    h1 {
+        font-size: 16pt !important;
+        color:gray;
+    }
 }
