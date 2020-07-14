@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using EntityFrameworkCore.Testing.Moq;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using Moq;
@@ -14,25 +15,19 @@ namespace WTVersus.Tests
 {
     public class AircraftsControllerTests
     {
-        /// <summary>
-        /// Okay second methid
-        /// </summary>
-        /// <param name="gfgf">this is parametereeeeeers</param>
-        /// <returns>ITS my return</returns>
-      public string themethod2(int gfgf)
-        {
-            int a = gfgf;
-            return a.ToString();
-        }
+        [Fact]
         public void IndexReturnsAViewResultWithAListOfUsers()
         {
             // Arrange
-            var mock = new Mock<AircraftsController>();
-    //        var controller = new AircraftsController(/*params*/);
+            var mockedDbContext = Create.MockedDbContextFor<AppDbContext>();
+            var mockedLogger = Mock.Of<ILogger<AircraftsController>>();
+            AircraftsController aircraftsController = new AircraftsController(mockedDbContext, mockedLogger);
 
             // Act
+            ViewResult result = aircraftsController.Tree() as ViewResult;
 
             // Assert
+            Assert.Equal("Tree", result?.ViewName);
         }
 
         /// <summary>

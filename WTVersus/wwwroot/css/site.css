@@ -6,18 +6,6 @@
     background: #fc918e;
 }
 
-.Fighter {
-    background-color: #fff5d1 !important;
-}
-
-.Attacker {
-    background-color: #caffca !important;
-}
-
-.Bomber {
-    background-color: #e4e4ff !important;
-}
-
 .Premium, .Promotional {
     background-color: #fffe99 !important;
 }

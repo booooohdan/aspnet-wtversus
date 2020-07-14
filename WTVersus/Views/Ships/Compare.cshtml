@@ -1,12 +1,11 @@
 ﻿@model IEnumerable<WTVersus.Models.Ship>;
-@{
-    ViewData["Title"] = "Fleet compare";
-}
+@{string title = @Model.ElementAt(0).Name + " vs " + @Model.ElementAt(1).Name;}
+@{ ViewData["Title"] = title;}
 
 <div class="container-fluid">
     @if (Model.ElementAt(0).Name != "Select ship" & Model.ElementAt(1).Name != "Select ship")
     {
-        <h1>@Model.ElementAt(0).Name vs @Model.ElementAt(1).Name</h1>
+        <h1>@title</h1>
     }
     else
     {
@@ -18,7 +17,7 @@
                 <th style="width: 20%"></th>
                 <td style="width: 15%">
                     <div class="dropdown @Model.ElementAt(0).Type">
-                        <button class="btn dropdown-toggle text-wrap font10pt" type="button" data-toggle="dropdown" itemscope itemtype="https://schema.org/Vehicle">
+                        <button class="btn dropdown-toggle text-wrap font10pt" type="button" data-toggle="dropdown">
                             @{string img0name = Model.ElementAt(0).Nation + ".png";}
                             <img src="~/images/@img0name" class="img-fluid" width="25">
                             [@String.Format("{0:F1}", Model.ElementAt(0).BR)]
@@ -43,9 +42,9 @@
                 </td>
                 <td style="width: 15%">
                     <div class="dropdown @Model.ElementAt(1).Type">
-                        <button class="btn dropdown-toggle  text-wrap font10pt" type="button" data-toggle="dropdown" itemscope itemtype="https://schema.org/Vehicle">
+                        <button class="btn dropdown-toggle  text-wrap font10pt" type="button" data-toggle="dropdown">
                             @{string img1name = Model.ElementAt(1).Nation + ".png";}
-                            <img src="~/images/@img1name" class="img-fluid" width="25"alt="Ship">
+                            <img src="~/images/@img1name" class="img-fluid" width="25" alt="Ship">
                             [@String.Format("{0:F1}", Model.ElementAt(1).BR)]
                             @Model.ElementAt(1).Name
                             <span class="caret"></span>
@@ -58,7 +57,7 @@
                                     <a class="dropdown-item @item.Type" asp-controller="Ships" asp-action="Compare"
                                        asp-route-vehicle2="@item.VehicleId">
                                         @{string img1item = item.Nation + ".png";}
-                                        <img src="~/images/@img1item" class="img-fluid" width="25"alt="Ship">
+                                        <img src="~/images/@img1item" class="img-fluid" width="25" alt="Ship">
                                         [@String.Format("{0:F1}", item.BR)] @item.Name
                                     </a>
                                 </li>
@@ -68,9 +67,9 @@
                 </td>
                 <td style="width: 15%">
                     <div class="dropdown @Model.ElementAt(2).Type">
-                        <button class="btn dropdown-toggle  text-wrap font10pt" type="button" data-toggle="dropdown" itemscope itemtype="https://schema.org/Vehicle">
+                        <button class="btn dropdown-toggle  text-wrap font10pt" type="button" data-toggle="dropdown">
                             @{string img2name = Model.ElementAt(2).Nation + ".png";}
-                            <img src="~/images/@img2name" class="img-fluid" width="25"alt="Ship">
+                            <img src="~/images/@img2name" class="img-fluid" width="25" alt="Ship">
                             [@String.Format("{0:F1}", Model.ElementAt(2).BR)]
                             @Model.ElementAt(2).Name
                             <span class="caret"></span>
@@ -83,7 +82,7 @@
                                     <a class="dropdown-item @item.Type" asp-controller="Ships" asp-action="Compare"
                                        asp-route-vehicle3="@item.VehicleId">
                                         @{string img2item = item.Nation + ".png";}
-                                        <img src="~/images/@img2item" class="img-fluid" width="25"alt="Ship">
+                                        <img src="~/images/@img2item" class="img-fluid" width="25" alt="Ship">
                                         [@String.Format("{0:F1}", item.BR)] @item.Name
                                     </a>
                                 </li>
@@ -93,9 +92,9 @@
                 </td>
                 <td style="width: 15%">
                     <div class="dropdown @Model.ElementAt(3).Type">
-                        <button class="btn dropdown-toggle  text-wrap font10pt" type="button" data-toggle="dropdown" itemscope itemtype="https://schema.org/Vehicle">
+                        <button class="btn dropdown-toggle  text-wrap font10pt" type="button" data-toggle="dropdown">
                             @{string img3name = Model.ElementAt(3).Nation + ".png";}
-                            <img src="~/images/@img3name" class="img-fluid" width="25"alt="Ship">
+                            <img src="~/images/@img3name" class="img-fluid" width="25" alt="Ship">
                             [@String.Format("{0:F1}", Model.ElementAt(3).BR)]
                             @Model.ElementAt(3).Name
                             <span class="caret"></span>
@@ -108,7 +107,7 @@
                                     <a class="dropdown-item @item.Type" asp-controller="Ships" asp-action="Compare"
                                        asp-route-vehicle4="@item.VehicleId">
                                         @{string img3item = item.Nation + ".png";}
-                                        <img src="~/images/@img3item" class="img-fluid" width="25"alt="Ship">
+                                        <img src="~/images/@img3item" class="img-fluid" width="25" alt="Ship">
                                         [@String.Format("{0:F1}", item.BR)] @item.Name
                                     </a>
                                 </li>
@@ -204,7 +203,7 @@
                             }
                             if (Model.ElementAt(i).MC_HEDF)
                             {
-                                <img src="~/images/ShellHEVT.png" alt="High-Explosive distanse fuze shell (self-destroying)" title="High-Explosive distanse fuze shell (self-destroying)" class="img-fluid img-horizontal-align">
+                                <img src="~/images/ShellHEDF.png" alt="High-Explosive distanse fuze shell (self-destroying)" title="High-Explosive distanse fuze shell (self-destroying)" class="img-fluid img-horizontal-align">
                             }
                             if (Model.ElementAt(i).MC_Shrapnel)
                             {
@@ -234,42 +233,42 @@
                 <th style="width: 20%" class="align-middle" title="Available shell type for auxiliary armament">Auxiliary shell type</th>
                 @for (int i = 0; i < 4; i++)
                 {
-            <td style="width: 15%">
-                @{
-                    if (Model.ElementAt(i).AU_AP)
-                    {
-                        <img src="~/images/ShellAP.png" alt="Armour-Piercing" title="Armour-Piercing" class="img-fluid img-horizontal-align">
-                    }
-                    if (Model.ElementAt(i).AU_APHE)
-                    {
-                        <img src="~/images/ShellAPHE.png" alt="Armour-Piercing High-Explosive" title="Armour-Piercing High-Explosive" class="img-fluid img-horizontal-align">
-                    }
-                    if (Model.ElementAt(i).AU_HE)
-                    {
-                        <img src="~/images/ShellHE.png" alt="High-Explosive" title="High-Explosive" class="img-fluid img-horizontal-align">
-                    }
-                    if (Model.ElementAt(i).AU_SAP)
-                    {
-                        <img src="~/images/ShellSAP.png" alt="Semi armour-Piercing" title="Semi armour-Piercing" class="img-fluid img-horizontal-align">
-                    }
-                    if (Model.ElementAt(i).AU_APCR)
-                    {
-                        <img src="~/images/ShellAPCR.png" alt="Armour-Piercing Composite Rigid" title="Armour-Piercing Composite Rigid" class="img-fluid img-horizontal-align">
-                    }
-                    if (Model.ElementAt(i).AU_HEVT)
-                    {
-                        <img src="~/images/ShellHEVT.png" alt="High-Explosive variable time fuze shell (self-destroying)" title="High-Explosive variable time fuze shell (self-destroying)" class="img-fluid img-horizontal-align">
-                    }
-                    if (Model.ElementAt(i).AU_HEDF)
-                    {
-                        <img src="~/images/ShellHEVT.png" alt="High-Explosive distanse fuze shell (self-destroying)" title="High-Explosive distanse fuze shell (self-destroying)" class="img-fluid img-horizontal-align">
-                    }
-                    if (Model.ElementAt(i).AU_Shrapnel)
-                    {
-                        <img src="~/images/ShellShrapnel.png" alt="Rare Shrapnel shell" title="Rare Shrapnel shell" class="img-fluid img-horizontal-align">
-                    }
-                    }
-            </td>
+                    <td style="width: 15%">
+                        @{
+                            if (Model.ElementAt(i).AU_AP)
+                            {
+                                <img src="~/images/ShellAP.png" alt="Armour-Piercing" title="Armour-Piercing" class="img-fluid img-horizontal-align">
+                            }
+                            if (Model.ElementAt(i).AU_APHE)
+                            {
+                                <img src="~/images/ShellAPHE.png" alt="Armour-Piercing High-Explosive" title="Armour-Piercing High-Explosive" class="img-fluid img-horizontal-align">
+                            }
+                            if (Model.ElementAt(i).AU_HE)
+                            {
+                                <img src="~/images/ShellHE.png" alt="High-Explosive" title="High-Explosive" class="img-fluid img-horizontal-align">
+                            }
+                            if (Model.ElementAt(i).AU_SAP)
+                            {
+                                <img src="~/images/ShellSAP.png" alt="Semi armour-Piercing" title="Semi armour-Piercing" class="img-fluid img-horizontal-align">
+                            }
+                            if (Model.ElementAt(i).AU_APCR)
+                            {
+                                <img src="~/images/ShellAPCR.png" alt="Armour-Piercing Composite Rigid" title="Armour-Piercing Composite Rigid" class="img-fluid img-horizontal-align">
+                            }
+                            if (Model.ElementAt(i).AU_HEVT)
+                            {
+                                <img src="~/images/ShellHEVT.png" alt="High-Explosive variable time fuze shell (self-destroying)" title="High-Explosive variable time fuze shell (self-destroying)" class="img-fluid img-horizontal-align">
+                            }
+                            if (Model.ElementAt(i).AU_HEDF)
+                            {
+                                <img src="~/images/ShellHEVT.png" alt="High-Explosive distanse fuze shell (self-destroying)" title="High-Explosive distanse fuze shell (self-destroying)" class="img-fluid img-horizontal-align">
+                            }
+                            if (Model.ElementAt(i).AU_Shrapnel)
+                            {
+                                <img src="~/images/ShellShrapnel.png" alt="Rare Shrapnel shell" title="Rare Shrapnel shell" class="img-fluid img-horizontal-align">
+                            }
+                        }
+                    </td>
                 }
             </tr>
             <tr class="high">
@@ -283,42 +282,42 @@
                 <th style="width: 20%" class="align-middle" title="Available shell type for anti-aircraft armament">Anti-aircraft shell type</th>
                 @for (int i = 0; i < 4; i++)
                 {
-            <td style="width: 15%">
-                @{
-                    if (Model.ElementAt(i).AAA_AP)
-                    {
-                        <img src="~/images/ShellAP.png" alt="Armour-Piercing" title="Armour-Piercing" class="img-fluid img-horizontal-align">
-                    }
-                    if (Model.ElementAt(i).AAA_APHE)
-                    {
-                        <img src="~/images/ShellAPHE.png" alt="Armour-Piercing High-Explosive" title="Armour-Piercing High-Explosive" class="img-fluid img-horizontal-align">
-                    }
-                    if (Model.ElementAt(i).AAA_HE)
-                    {
-                        <img src="~/images/ShellHE.png" alt="High-Explosive" title="High-Explosive" class="img-fluid img-horizontal-align">
-                    }
-                    if (Model.ElementAt(i).AAA_SAP)
-                    {
-                        <img src="~/images/ShellSAP.png" alt="Semi armour-Piercing" title="Semi armour-Piercing" class="img-fluid img-horizontal-align">
-                    }
-                    if (Model.ElementAt(i).AAA_APCR)
-                    {
-                        <img src="~/images/ShellAPCR.png" alt="Armour-Piercing Composite Rigid" title="Armour-Piercing Composite Rigid" class="img-fluid img-horizontal-align">
-                    }
-                    if (Model.ElementAt(i).AAA_HEVT)
-                    {
-                        <img src="~/images/ShellHEVT.png" alt="High-Explosive variable time fuze shell (self-destroying)" title="High-Explosive variable time fuze shell (self-destroying)" class="img-fluid img-horizontal-align">
-                    }
-                    if (Model.ElementAt(i).AAA_HEDF)
-                    {
-                        <img src="~/images/ShellHEVT.png" alt="High-Explosive distanse fuze shell (self-destroying)" title="High-Explosive distanse fuze shell (self-destroying)" class="img-fluid img-horizontal-align">
-                    }
-                    if (Model.ElementAt(i).AAA_Shrapnel)
-                    {
-                        <img src="~/images/ShellShrapnel.png" alt="Rare Shrapnel shell" title="Rare Shrapnel shell" class="img-fluid img-horizontal-align">
-                    }
-                }
-            </td>
+                    <td style="width: 15%">
+                        @{
+                            if (Model.ElementAt(i).AAA_AP)
+                            {
+                                <img src="~/images/ShellAP.png" alt="Armour-Piercing" title="Armour-Piercing" class="img-fluid img-horizontal-align">
+                            }
+                            if (Model.ElementAt(i).AAA_APHE)
+                            {
+                                <img src="~/images/ShellAPHE.png" alt="Armour-Piercing High-Explosive" title="Armour-Piercing High-Explosive" class="img-fluid img-horizontal-align">
+                            }
+                            if (Model.ElementAt(i).AAA_HE)
+                            {
+                                <img src="~/images/ShellHE.png" alt="High-Explosive" title="High-Explosive" class="img-fluid img-horizontal-align">
+                            }
+                            if (Model.ElementAt(i).AAA_SAP)
+                            {
+                                <img src="~/images/ShellSAP.png" alt="Semi armour-Piercing" title="Semi armour-Piercing" class="img-fluid img-horizontal-align">
+                            }
+                            if (Model.ElementAt(i).AAA_APCR)
+                            {
+                                <img src="~/images/ShellAPCR.png" alt="Armour-Piercing Composite Rigid" title="Armour-Piercing Composite Rigid" class="img-fluid img-horizontal-align">
+                            }
+                            if (Model.ElementAt(i).AAA_HEVT)
+                            {
+                                <img src="~/images/ShellHEVT.png" alt="High-Explosive variable time fuze shell (self-destroying)" title="High-Explosive variable time fuze shell (self-destroying)" class="img-fluid img-horizontal-align">
+                            }
+                            if (Model.ElementAt(i).AAA_HEDF)
+                            {
+                                <img src="~/images/ShellHEVT.png" alt="High-Explosive distanse fuze shell (self-destroying)" title="High-Explosive distanse fuze shell (self-destroying)" class="img-fluid img-horizontal-align">
+                            }
+                            if (Model.ElementAt(i).AAA_Shrapnel)
+                            {
+                                <img src="~/images/ShellShrapnel.png" alt="Rare Shrapnel shell" title="Rare Shrapnel shell" class="img-fluid img-horizontal-align">
+                            }
+                        }
+                    </td>
                 }
             </tr>
 

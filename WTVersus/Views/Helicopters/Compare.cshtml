@@ -1,12 +1,11 @@
 ﻿@model IEnumerable<WTVersus.Models.Heli>;
-@{
-    ViewData["Title"] = "Helicopters compare";
-}
+@{string title = @Model.ElementAt(0).Name + " vs " + @Model.ElementAt(1).Name;}
+@{ ViewData["Title"] = title;}
 
 <div class="container-fluid">
     @if (Model.ElementAt(0).Name != "Select helicopter" & Model.ElementAt(1).Name != "Select helicopter")
     {
-        <h1>@Model.ElementAt(0).Name vs @Model.ElementAt(1).Name</h1>
+        <h1>@title</h1>
     }
     else
     {
@@ -18,7 +17,7 @@
                 <th style="width: 20%"></th>
                 <td style="width: 15%">
                     <div class="dropdown @Model.ElementAt(0).Type">
-                        <button class="btn dropdown-toggle text-wrap font10pt" type="button" data-toggle="dropdown" itemscope itemtype="https://schema.org/Vehicle">
+                        <button class="btn dropdown-toggle text-wrap font10pt" type="button" data-toggle="dropdown">
                             @{string img0name = Model.ElementAt(0).Nation + ".png";}
                             <img src="~/images/@img0name" class="img-fluid" width="25" alt="Helicopter">
                             [@String.Format("{0:F1}", Model.ElementAt(0).BR)]
@@ -43,7 +42,7 @@
                 </td>
                 <td style="width: 15%">
                     <div class="dropdown @Model.ElementAt(1).Type">
-                        <button class="btn dropdown-toggle  text-wrap font10pt" type="button" data-toggle="dropdown" itemscope itemtype="https://schema.org/Vehicle">
+                        <button class="btn dropdown-toggle  text-wrap font10pt" type="button" data-toggle="dropdown">
                             @{string img1name = Model.ElementAt(1).Nation + ".png";}
                             <img src="~/images/@img1name" class="img-fluid" width="25" alt="Helicopter">
                             [@String.Format("{0:F1}", Model.ElementAt(1).BR)]
@@ -68,7 +67,7 @@
                 </td>
                 <td style="width: 15%">
                     <div class="dropdown @Model.ElementAt(2).Type">
-                        <button class="btn dropdown-toggle  text-wrap font10pt" type="button" data-toggle="dropdown" itemscope itemtype="https://schema.org/Vehicle">
+                        <button class="btn dropdown-toggle  text-wrap font10pt" type="button" data-toggle="dropdown">
                             @{string img2name = Model.ElementAt(2).Nation + ".png";}
                             <img src="~/images/@img2name" class="img-fluid" width="25" alt="Helicopter">
                             [@String.Format("{0:F1}", Model.ElementAt(2).BR)]
@@ -93,7 +92,7 @@
                 </td>
                 <td style="width: 15%">
                     <div class="dropdown @Model.ElementAt(3).Type">
-                        <button class="btn dropdown-toggle  text-wrap font10pt" type="button" data-toggle="dropdown" itemscope itemtype="https://schema.org/Vehicle">
+                        <button class="btn dropdown-toggle  text-wrap font10pt" type="button" data-toggle="dropdown">
                             @{string img3name = Model.ElementAt(3).Nation + ".png";}
                             <img src="~/images/@img3name" class="img-fluid" width="25" alt="Helicopter">
                             [@String.Format("{0:F1}", Model.ElementAt(3).BR)]
