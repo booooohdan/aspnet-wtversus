@@ -32,11 +32,11 @@ namespace DbMaintenance.ParserHelpers
         private static string ImageParser(string[] srcStartAt, IDocument document)
         {
             var resultImage = from element in document.All
-                              from attribute in element.Attributes
-                              where srcStartAt.Any(e => attribute.Value.StartsWith(e))
-                              select attribute;
-            string result = resultImage.FirstOrDefault().Value.ToString();
-            return result;
+                                  from attribute in element.Attributes
+                                  where srcStartAt.Any(e => attribute.Value.StartsWith(e))
+                                  select attribute;
+
+            return resultImage.FirstOrDefault()?.Value.ToString();
         }
 
         /// <summary>Get repair cost value </summary>

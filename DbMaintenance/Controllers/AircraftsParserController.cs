@@ -30,7 +30,7 @@ namespace DbMaintenance.Controllers
         {
             var planesCollection = Context.Planes.ToList(); //Get colllection from DB
 
-            for (int i = 600; i < Context.Planes.Count(); i++)
+            for (int i = 0; i < Context.Planes.Count(); i++)
             {
                 string wikiLink = planesCollection.ElementAt(i).WikiLink;
                 string[] arrayResult = aircraftsParserHelper.WikiPageParser(wikiLink).Result; //Call parser method who's take loop index as parameter

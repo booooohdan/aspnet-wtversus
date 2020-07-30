@@ -49,7 +49,7 @@ namespace WTVersus.Controllers
         }
 
         /// <summary>
-        /// Controller show list ofal vehicles
+        /// Controller show list of all vehicles
         /// </summary>
         /// <returns>Return vehicle collection from DB to View</returns>
         public IActionResult Tree()
@@ -58,5 +58,12 @@ namespace WTVersus.Controllers
 
             return View(planesFromDb);
         }
+        
+        public IActionResult HeatMap()
+        {
+            var planesFromDb = Context.Planes.ToList();
+            return View(planesFromDb);
+        }
+
     }
 }

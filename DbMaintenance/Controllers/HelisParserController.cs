@@ -30,7 +30,7 @@ namespace DbMaintenance.Controllers
         {
             var helisCollection = Context.Helis.ToList(); //Get colllection from DB
 
-            for (int i = 40; i < Context.Helis.Count(); i++)
+            for (int i = 0; i < Context.Helis.Count(); i++)
             {
                 string wikiLink = helisCollection.ElementAt(i).WikiLink;
                 string[] arrayResult = helisParserHelper.WikiPageParser(wikiLink).Result; //Call parser method who's take loop index as parameter

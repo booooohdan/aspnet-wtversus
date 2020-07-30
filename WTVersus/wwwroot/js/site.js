@@ -39,8 +39,7 @@ window.onload = function () {
     /* Тута ID таблицы */
     /* В строках где нужно подсвечивать зелёным большее пишешь класс high, где меньшее low */
     var table = document.querySelectorAll('table');
-    for (let i = 0; i < table.length; i++)
-    {
+    for (let i = 0; i < table.length; i++) {
         if (table !== null) {
             /* Перебираю все строки */
             var rows = table[i].querySelectorAll('tr');
@@ -118,21 +117,72 @@ window.onload = function () {
 }
 
 
-//window.onload = function () {
-//    var table = document.getElementById('PlaneTable');
-//    if (table !== null) {
-//        var rows = table.querySelectorAll('.hideifempty');
-//        rows.forEach(function (row, i, rows) {
-//            var cells = row.querySelectorAll('td');
-//            var isEmpty = true;
-//            cells.forEach(function (cell, j, cells) {
-//                if (cell.innerHtml != '') {
-//                    isEmpty = false;
-//                }
-//            });
-//            if (isEmpty) {
-//                row.style.display = 'none';
-//            }
-//        });
-//    }
-//}
+var tables = document.querySelectorAll('.heatmap');
+tables.forEach(table => {
+    var tbody = table.getElementsByTagName('tbody')[0];
+    var cells = tbody.getElementsByTagName('td');
+
+    var arrMin = 1000000;
+    var arrMax = 0;
+
+    for (var i = 0, len = cells.length; i < len; i++) {
+        var tdData = parseInt(cells[i].innerHTML, 10);
+
+        if (tdData == 0) { } else
+            if (tdData < arrMin) {
+                arrMin = tdData;
+            } else
+                if (tdData > arrMax) {
+                    arrMax = tdData;
+                }
+    }
+
+    var step = (arrMax - arrMin) / 10;
+
+    for (var i = 0, len = cells.length; i < len; i++) {
+        if (parseInt(cells[i].innerHTML, 10) == 0) {
+            cells[i].style.backgroundColor = '#ffffff';
+            cells[i].style.color = '#ffffff';
+        }
+
+        if (parseInt(cells[i].innerHTML, 10) >= (arrMin)) {
+            cells[i].style.backgroundColor = '#60b675';
+        }
+
+        if (parseInt(cells[i].innerHTML, 10) > (arrMin + step)) {
+            cells[i].style.backgroundColor = '77d390';
+        }
+
+        if (parseInt(cells[i].innerHTML, 10) > (arrMin + step * 2)) {
+            cells[i].style.backgroundColor = '#acc461';
+        }
+
+        if (parseInt(cells[i].innerHTML, 10) > (arrMin + step * 3)) {
+            cells[i].style.backgroundColor = '#d6eb77';
+        }
+
+        if (parseInt(cells[i].innerHTML, 10) > (arrMin + step * 4)) {
+            cells[i].style.backgroundColor = '#f3ed64';
+        }
+
+        if (parseInt(cells[i].innerHTML, 10) > (arrMin + step * 5)) {
+            cells[i].style.backgroundColor = '#ffe184';
+        }
+
+        if (parseInt(cells[i].innerHTML, 10) > (arrMin + step * 6)) {
+            cells[i].style.backgroundColor = 'fbcb74';
+        }
+
+        if (parseInt(cells[i].innerHTML, 10) > (arrMin + step * 7)) {
+            cells[i].style.backgroundColor = '#fda769';
+        }
+
+        if (parseInt(cells[i].innerHTML, 10) > (arrMin + step * 8)) {
+            cells[i].style.backgroundColor = '#f98468';
+        }
+
+        if (parseInt(cells[i].innerHTML, 10) > (arrMin + step * 9)) {
+            cells[i].style.backgroundColor = '#e75b5e';
+        }
+    }
+});

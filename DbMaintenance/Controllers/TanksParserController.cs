@@ -30,7 +30,7 @@ namespace DbMaintenance.Controllers
         {
             var tanksCollection = Context.Tanks.ToList(); //Get colllection from DB
 
-            for (int i = 600; i < Context.Tanks.Count(); i++)
+            for (int i = 0; i < Context.Tanks.Count(); i++)
             {
                 string wikiLink = tanksCollection.ElementAt(i).WikiLink;
                 string[] arrayResult = aircraftsParserHelper.WikiPageParser(wikiLink).Result; //Call parser method who's take loop index as parameter
@@ -58,8 +58,7 @@ namespace DbMaintenance.Controllers
             Context.Tanks.AddRange
              (
 
-
-              );
+             );
             Context.SaveChanges();
 
             return View();
