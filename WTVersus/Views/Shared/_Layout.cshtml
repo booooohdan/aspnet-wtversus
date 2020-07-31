@@ -89,22 +89,22 @@
                             </li>
                             <li class="nav-item">
                                 <a asp-controller="Aircrafts" asp-action="Compare" class="nav-link">
-                                    <img src="~/images/menuAir.svg" class="img-fluid menu-icon"  alt="Aircrafts"/> Aircrafts <span class="badge badge-primary float-right">Done</span>
+                                    <img src="~/images/menuAir.svg" class="img-fluid menu-icon" alt="Aircrafts" /> Aircrafts <span class="badge badge-primary float-right">Done</span>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a asp-controller="Tanks" asp-action="Compare" class="nav-link">
-                                    <img src="~/images/menuGround.svg" class="img-fluid menu-icon"  alt="Army"/> Army <span class="badge badge-primary float-right">Done</span>
+                                    <img src="~/images/menuGround.svg" class="img-fluid menu-icon" alt="Army" /> Army <span class="badge badge-primary float-right">Done</span>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a asp-controller="Helicopters" asp-action="Compare" class="nav-link">
-                                    <img src="~/images/menuHeli.svg" class="img-fluid menu-icon"  alt="Heli"/> Heli <span class="badge badge-primary float-right">Done</span>
+                                    <img src="~/images/menuHeli.svg" class="img-fluid menu-icon" alt="Heli" /> Heli <span class="badge badge-primary float-right">Done</span>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a asp-controller="Ships" asp-action="Compare" class="nav-link">
-                                    <img src="~/images/menuNavy.svg" class="img-fluid menu-icon"  alt="Fleet"/> Fleet <span class="badge badge-primary float-right">Done</span>
+                                    <img src="~/images/menuNavy.svg" class="img-fluid menu-icon" alt="Fleet" /> Fleet <span class="badge badge-primary float-right">Done</span>
                                 </a>
                             </li>
 
@@ -113,12 +113,12 @@
                             </li>
                             <li class="nav-item">
                                 <a asp-controller="InDev" asp-action="Index" class="nav-link">
-                                    <img src="~/images/menuAir.svg" class="img-fluid menu-icon"  alt="Aircrafts"/> Aircrafts <span class="badge badge-danger float-right">Dev</span>
+                                    <img src="~/images/menuAir.svg" class="img-fluid menu-icon" alt="Aircrafts" /> Aircrafts <span class="badge badge-danger float-right">Dev</span>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a asp-controller="InDev" asp-action="Index" class="nav-link">
-                                    <img src="~/images/menuGround.svg" class="img-fluid menu-icon"  alt="Army"/> Army <span class="badge badge-danger float-right">Dev</span>
+                                    <img src="~/images/menuGround.svg" class="img-fluid menu-icon" alt="Army" /> Army <span class="badge badge-danger float-right">Dev</span>
                                 </a>
                             </li>
                             <li class="nav-item">
@@ -128,7 +128,32 @@
                             </li>
                             <li class="nav-item">
                                 <a asp-controller="InDev" asp-action="Index" class="nav-link">
-                                    <img src="~/images/menuNavy.svg" class="img-fluid menu-icon"  alt="Fleet"/> Fleet <span class="badge badge-danger float-right">Dev</span>
+                                    <img src="~/images/menuNavy.svg" class="img-fluid menu-icon" alt="Fleet" /> Fleet <span class="badge badge-danger float-right">Dev</span>
+                                </a>
+                            </li>
+
+
+                            <li class="navbar-text font-weight-bold">
+                                <span>Heatmap</span>
+                            </li>
+                            <li class="nav-item">
+                                <a asp-controller="Aircrafts" asp-action="HeatMap" class="nav-link">
+                                    <img src="~/images/menuAir.svg" class="img-fluid menu-icon" alt="Aircrafts" /> Aircrafts <span class="badge badge-primary float-right">Done</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a asp-controller="Tanks" asp-action="HeatMap" class="nav-link">
+                                    <img src="~/images/menuGround.svg" class="img-fluid menu-icon" alt="Army" /> Army <span class="badge badge-primary float-right">Done</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a asp-controller="Helicopters" asp-action="HeatMap" class="nav-link">
+                                    <img src="~/images/menuHeli.svg" class="img-fluid menu-icon" alt="Heli" /> Heli <span class="badge badge-primary float-right">Done</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a asp-controller="Ships" asp-action="HeatMap" class="nav-link">
+                                    <img src="~/images/menuNavy.svg" class="img-fluid menu-icon" alt="Fleet" /> Fleet <span class="badge badge-primary float-right">Done</span>
                                 </a>
                             </li>
 
@@ -162,10 +187,10 @@
                 <div class="col ml-3">
                     <h5>List of vehicles</h5>
                     <div class="list-group">
-                        <a class="text-dark" asp-controller="Aircrafts" asp-action="Tree">Aircrafts</a>
-                        <a class="text-dark" asp-controller="Tanks" asp-action="Tree">Tanks</a>
-                        <a class="text-dark" asp-controller="Helicopters" asp-action="Tree">Helicopters</a>
-                        <a class="text-dark" asp-controller="Ships" asp-action="Tree">Ships</a>
+                        <a class="text-dark" asp-controller="Aircrafts" asp-action="Tree"><u>Aircrafts</u></a>
+                        <a class="text-dark" asp-controller="Tanks" asp-action="Tree"><u>Tanks</u></a>
+                        <a class="text-dark" asp-controller="Helicopters" asp-action="Tree"><u>Helicopters</u></a>
+                        <a class="text-dark" asp-controller="Ships" asp-action="Tree"><u>Ships</u></a>
                     </div>
                 </div>
                 <div class="col">
