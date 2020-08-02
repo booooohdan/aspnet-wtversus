@@ -1,0 +1,129 @@
+﻿@model IEnumerable<WTVersus.Models.Plane>;
+@{
+    ViewData["Title"] = "Heatmap of aircrafts missiles";
+    double[] numbers = new double[] { 1.0, 1.3, 1.7, 2.0, 2.3, 2.7, 3.0, 3.3, 3.7, 4.0, 4.3, 4.7, 5.0, 5.3, 5.7, 6.0, 6.3, 6.7, 7.0, 7.3, 7.7, 8.0, 8.3, 8.7, 9.0, 9.3, 9.7, 10.0, 10.3 };
+    double[] shortnumbers = new double[] { 7.0, 7.3, 7.7, 8.0, 8.3, 8.7, 9.0, 9.3, 9.7, 10.0, 10.3 };
+    string[] nations = new string[] { "USA", "Germany", "USSR", "Britain", "Japan", "China", "Italy", "France", "Sweden" };
+
+    bool LeftTableHandler(double BR, string Nation)
+    {
+        if (Model.Where(p => p.BR == BR & p.Nation == Nation & p.ASMissile == true).Count() == 0)
+        {
+            return false;
+        }
+        else return true;
+    }
+
+    bool RightTableHandler(double BR, string Nation)
+    {
+        if (Model.Where(p => p.BR == BR & p.Nation == Nation & p.AAMissile == true).Count() == 0)
+        {
+            return false;
+        }
+        else return true;
+    }
+
+    bool RightTableHandler2(double BR, string Nation)
+    {
+        if (Model.Where(p => p.BR == BR & p.Nation == Nation & p.AGMissile == true).Count() == 0)
+        {
+            return false;
+        }
+        else return true;
+    }
+}
+
+
+    <div class="container-fluid">
+        <h1>
+            Heatmap of aircrafts*
+        </h1>
+        <a asp-controller="Aircrafts" asp-action="Count" class="btn btn-outline-danger">Counts</a>
+        <a asp-controller="Aircrafts" asp-action="Repair" class="btn btn-outline-danger">Repair cost</a>
+        <a asp-controller="Aircrafts" asp-action="MaxSpeed" class="btn btn-outline-danger">Max speed</a>
+        <a asp-controller="Aircrafts" asp-action="ClimbAndTurn" class="btn btn-outline-danger">Climb & turn time</a>
+        <a asp-controller="Aircrafts" asp-action="BombAndBurstMass" class="btn btn-outline-danger">Payload & burst mass</a>
+        <a asp-controller="Aircrafts" asp-action="Rocket" class="btn btn-outline-danger active">Types of missiles </a>
+        <hr class="my-2">
+        <div class="row">
+            <div class="col-sm-6">
+                <h1>Air to surface missile (unguided)</h1>
+                <table class="table table-bordered table-sm heatmap-planes-count">
+                    @await Html.PartialAsync("_FlagsRow")
+                    <tbody>
+                        @{
+                            foreach (double number in numbers)
+                            {
+                                <tr>
+                                    <th class="font-weight-bolder text-center">@number.ToString("0.0#")</th>
+                                    @{
+                                        foreach (string nation in nations)
+                                        {
+                                            <td>
+                                                @if (LeftTableHandler(number, nation))
+                                                {
+                                                    <img class="mx-auto d-block" src="~/images/ASMissile.png" alt="Unguided missile" title="Unguided missile" width="20">
+                                                }
+                                            </td>
+                                        }
+                                    }
+                                </tr>
+                            } }
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-sm-6">
+                <h1>Air to air missiles</h1>
+                <table class="table table-bordered table-sm heatmap-planes-count">
+                    @await Html.PartialAsync("_FlagsRow")
+                    <tbody>
+                        @{
+                            foreach (double number in shortnumbers)
+                            {
+                                <tr>
+                                    <th class="font-weight-bolder text-center">@number.ToString("0.0#")</th>
+                                    @{
+                                        foreach (string nation in nations)
+                                        {
+                                            <td>
+                                                @if (RightTableHandler(number, nation))
+                                                {
+                                                    <img class="mx-auto d-block" src="~/images/AAMissile.png" alt="Air to air missile" title="Air to air missile" width="25">
+                                                }
+                                            </td>
+                                        }
+                                    }
+                                </tr>
+                            } }
+                    </tbody>
+                </table>
+                <br />
+                <h1>Air to ground missiles</h1>
+                <table class="table table-bordered table-sm heatmap-planes-count">
+                    @await Html.PartialAsync("_FlagsRow")
+                    <tbody>
+                        @{
+                            foreach (double number in shortnumbers)
+                            {
+                                <tr>
+                                    <th class="font-weight-bolder text-center">@number.ToString("0.0#")</th>
+                                    @{
+                                        foreach (string nation in nations)
+                                        {
+                                            <td>
+                                                @if (RightTableHandler2(number, nation))
+                                                {
+                                                    <img class="mx-auto d-block" src="~/images/AGMissile.png" alt="Air to ground missile" title="Air to ground missile" width="25">
+                                                }
+                                            </td>
+                                        }
+                                    }
+                                </tr>
+                            } }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <br />
+        <p>* Bombers I-III tiers will be added later</p>
+    </div>

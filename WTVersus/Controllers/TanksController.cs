@@ -57,5 +57,51 @@ namespace WTVersus.Controllers
             return View(tanksFromDb);
         }
 
+        /// <summary>
+        /// Send models for View
+        /// </summary>
+        /// <returns>Return vehicle collection from DB to View</returns>
+        public IActionResult Count()
+        {
+            var tanksFromDb = Context.Tanks.ToList();
+            return View(tanksFromDb);
+        }
+
+        public IActionResult Repair()
+        {
+            var tanksFromDb = Context.Tanks.ToList();
+            return View(tanksFromDb);
+        }
+
+        public IActionResult MaxSpeed()
+        {
+            var tanksFromDb = Context.Tanks.ToList();
+            return View(tanksFromDb);
+        }
+
+        public IActionResult ReloadAndPenetration()
+        {
+            var tanksFromDb = Context.Tanks.ToList();
+            return View(tanksFromDb);
+        }
+
+        public IActionResult ThermalAndStab()
+        {
+            var tanksFromDb = Context.Tanks.ToList();
+            return View(tanksFromDb);
+        }
+
+        public IActionResult NVDAndSmoke()
+        {
+            var tanksFromDb = Context.Tanks.ToList();
+            return View(tanksFromDb);
+        }
+
+        public IActionResult Shells()
+        {
+            var tanksFromDb = Context.Tanks.ToList();
+            return View(tanksFromDb);
+        }
+
     }
 }

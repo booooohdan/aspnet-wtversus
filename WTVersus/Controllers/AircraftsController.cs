@@ -58,12 +58,65 @@ namespace WTVersus.Controllers
 
             return View(planesFromDb);
         }
-        
-        public IActionResult HeatMap()
+
+        /// <summary>
+        /// Send models for View
+        /// </summary>
+        /// <returns>Return vehicle collection from DB to View</returns>
+        public IActionResult Count()
         {
             var planesFromDb = Context.Planes.ToList();
             return View(planesFromDb);
         }
 
+        /// <summary>
+        /// Send models for View
+        /// </summary>
+        /// <returns>Return vehicle collection from DB to View</returns>
+        public IActionResult Repair()
+        {
+            var planesFromDb = Context.Planes.ToList();
+            return View(planesFromDb);
+        }
+
+        /// <summary>
+        /// Send models for View
+        /// </summary>
+        /// <returns>Return vehicle collection from DB to View</returns>
+        public IActionResult MaxSpeed()
+        {
+            var planesFromDb = Context.Planes.ToList();
+            return View(planesFromDb);
+        }
+
+        /// <summary>
+        /// Send models for View
+        /// </summary>
+        /// <returns>Return vehicle collection from DB to View</returns>
+        public IActionResult Rocket()
+        {
+            var planesFromDb = Context.Planes.ToList();
+            return View(planesFromDb);
+        }
+
+        /// <summary>
+        /// Send models for View
+        /// </summary>
+        /// <returns>Return vehicle collection from DB to View</returns>
+        public IActionResult BombAndBurstMass()
+        {
+            var planesFromDb = Context.Planes.ToList();
+            return View(planesFromDb);
+        }
+
+        /// <summary>
+        /// Send models for View
+        /// </summary>
+        /// <returns>Return vehicle collection from DB to View</returns>
+        public IActionResult ClimbAndTurn()
+        {
+            var planesFromDb = Context.Planes.ToList();
+            return View(planesFromDb);
+        }
     }
 }

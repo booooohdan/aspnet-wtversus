@@ -1,0 +1,226 @@
+﻿@model IEnumerable<WTVersus.Models.Tank>;
+@{
+    ViewData["Title"] = "Heatmap of shell types";
+    double[] shortnumbers = new double[] { 6.0, 6.3, 6.7, 7.0, 7.3, 7.7, 8.0, 8.3, 8.7, 9.0, 9.3, 9.7, 10.0, 10.3, 10.7 };
+    string[] nations = new string[] { "USA", "Germany", "USSR", "Britain", "Japan", "China", "Italy", "France", "Sweden" };
+
+    bool LeftTableHandler(double BR, string Nation)
+    {
+        if (Model.Where(p => p.BR == BR & p.Nation == Nation & p.ShellAPFSDS == true).Count() == 0)
+        {
+            return false;
+        }
+        else return true;
+    }
+
+    bool LeftTableHandler2(double BR, string Nation)
+    {
+        if (Model.Where(p => p.BR == BR & p.Nation == Nation & p.ShellHEATFS == true).Count() == 0)
+        {
+            return false;
+        }
+        else return true;
+    }
+
+    bool LeftTableHandler3(double BR, string Nation)
+    {
+        if (Model.Where(p => p.BR == BR & p.Nation == Nation & p.ShellHEVT == true).Count() == 0)
+        {
+            return false;
+        }
+        else return true;
+    }
+
+    bool RightTableHandler(double BR, string Nation)
+    {
+        if (Model.Where(p => p.BR == BR & p.Nation == Nation & p.ShellSAM == true).Count() == 0)
+        {
+            return false;
+        }
+        else return true;
+    }
+
+    bool RightTableHandler2(double BR, string Nation)
+    {
+        if (Model.Where(p => p.BR == BR & p.Nation == Nation & p.ShellATGM == true).Count() == 0)
+        {
+            return false;
+        }
+        else return true;
+    }
+
+    bool RightTableHandler3(double BR, string Nation)
+    {
+        if (Model.Where(p => p.BR == BR & p.Nation == Nation & p.ShellATGMTandem == true).Count() == 0)
+        {
+            return false;
+        }
+        else return true;
+    }
+}
+
+
+    <div class="container-fluid">
+        <h1>
+            Heatmap of tanks
+        </h1>
+        <a asp-controller="Tanks" asp-action="Count" class="btn btn-outline-danger">Counts</a>
+        <a asp-controller="Tanks" asp-action="Repair" class="btn btn-outline-danger">Repair cost</a>
+        <a asp-controller="Tanks" asp-action="MaxSpeed" class="btn btn-outline-danger">Max speed</a>
+        <a asp-controller="Tanks" asp-action="ReloadAndPenetration" class="btn btn-outline-danger">Reload & penetration</a>
+        <a asp-controller="Tanks" asp-action="ThermalAndStab" class="btn btn-outline-danger">Thermal & stab</a>
+        <a asp-controller="Tanks" asp-action="NVDAndSmoke" class="btn btn-outline-danger">NVD & smoke </a>
+        <a asp-controller="Tanks" asp-action="Shells" class="btn btn-outline-danger active">Types of shells </a>
+        <hr class="my-2">
+        <div class="row">
+            <div class="col-sm-6">
+                <h1>APFSDS</h1>
+                <table class="table table-bordered table-sm">
+                    @await Html.PartialAsync("_FlagsRow")
+                    <tbody>
+                        @{
+                            foreach (double number in shortnumbers)
+                            {
+                                <tr>
+                                    <th class="font-weight-bolder text-center">@number.ToString("0.0#")</th>
+                                    @{
+                                        foreach (string nation in nations)
+                                        {
+                                            <td>
+                                                @if (LeftTableHandler(number, nation))
+                                                {
+                                                    <img class="mx-auto d-block" src="~/images/ShellAPFSDS.png" alt="ShellAPFSDS" title="ShellAPFSDS" height="30">
+                                                }
+                                            </td>
+                                        }
+                                    }
+                                </tr>
+                            } }
+                    </tbody>
+                </table>
+                <h1>HEATFS</h1>
+                <table class="table table-bordered table-sm">
+                    @await Html.PartialAsync("_FlagsRow")
+                    <tbody>
+                        @{
+                            foreach (double number in shortnumbers)
+                            {
+                                <tr>
+                                    <th class="font-weight-bolder text-center">@number.ToString("0.0#")</th>
+                                    @{
+                                        foreach (string nation in nations)
+                                        {
+                                            <td>
+                                                @if (LeftTableHandler2(number, nation))
+                                                {
+                                                    <img class="mx-auto d-block" src="~/images/ShellHEATFS.png" alt="HEATFS" title="HEATFS" height="30">
+                                                }
+                                            </td>
+                                        }
+                                    }
+                                </tr>
+                            } }
+                    </tbody>
+                </table>
+                <h1>HEVT</h1>
+                <table class="table table-bordered table-sm">
+                    @await Html.PartialAsync("_FlagsRow")
+                    <tbody>
+                        @{
+                            foreach (double number in shortnumbers)
+                            {
+                                <tr>
+                                    <th class="font-weight-bolder text-center">@number.ToString("0.0#")</th>
+                                    @{
+                                        foreach (string nation in nations)
+                                        {
+                                            <td>
+                                                @if (LeftTableHandler3(number, nation))
+                                                {
+                                                    <img class="mx-auto d-block" src="~/images/ShellHEVT.png" alt="HEVT" title="HEVT" height="30">
+                                                }
+                                            </td>
+                                        }
+                                    }
+                                </tr>
+                            } }
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-sm-6">
+                <h1>Surface to air missile</h1>
+                <table class="table table-bordered table-sm">
+                    @await Html.PartialAsync("_FlagsRow")
+                    <tbody>
+                        @{
+                            foreach (double number in shortnumbers)
+                            {
+                                <tr>
+                                    <th class="font-weight-bolder text-center">@number.ToString("0.0#")</th>
+                                    @{
+                                        foreach (string nation in nations)
+                                        {
+                                            <td>
+                                                @if (RightTableHandler(number, nation))
+                                                {
+                                                    <img class="mx-auto d-block" src="~/images/ShellSAM.png" alt="Surface to air missile" title="Surface to air missile" height="30">
+                                                }
+                                            </td>
+                                        }
+                                    }
+                                </tr>
+                            } }
+                    </tbody>
+                </table>
+                <h1>ATGM</h1>
+                <table class="table table-bordered table-sm">
+                    @await Html.PartialAsync("_FlagsRow")
+                    <tbody>
+                        @{
+                            foreach (double number in shortnumbers)
+                            {
+                                <tr>
+                                    <th class="font-weight-bolder text-center">@number.ToString("0.0#")</th>
+                                    @{
+                                        foreach (string nation in nations)
+                                        {
+                                            <td>
+                                                @if (RightTableHandler2(number, nation))
+                                                {
+                                                    <img class="mx-auto d-block" src="~/images/ShellATGM.png" alt="ATGM" title="ATGM" height="30">
+                                                }
+                                            </td>
+                                        }
+                                    }
+                                </tr>
+                            } }
+                    </tbody>
+                </table>
+                <h1>ATGM Tandem</h1>
+                <table class="table table-bordered table-sm">
+                    @await Html.PartialAsync("_FlagsRow")
+                    <tbody>
+                        @{
+                            foreach (double number in shortnumbers)
+                            {
+                                <tr>
+                                    <th class="font-weight-bolder text-center">@number.ToString("0.0#")</th>
+                                    @{
+                                        foreach (string nation in nations)
+                                        {
+                                            <td>
+                                                @if (RightTableHandler3(number, nation))
+                                                {
+                                                    <img class="mx-auto d-block" src="~/images/ShellATGMTandem.png" alt="ATGM Tandem" title="ATGM Tandem" height="30">
+                                                }
+                                            </td>
+                                        }
+                                    }
+                                </tr>
+                            } }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <br />
+    </div>

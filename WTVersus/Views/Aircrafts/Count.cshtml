@@ -1,0 +1,179 @@
+﻿@model IEnumerable<WTVersus.Models.Plane>;
+@{
+    ViewData["Title"] = "Heatmap of aircrafts count";
+    double[] numbers = new double[] { 1.0, 1.3, 1.7, 2.0, 2.3, 2.7, 3.0, 3.3, 3.7, 4.0, 4.3, 4.7, 5.0, 5.3, 5.7, 6.0, 6.3, 6.7, 7.0, 7.3, 7.7, 8.0, 8.3, 8.7, 9.0, 9.3, 9.7, 10.0, 10.3 };
+    string[] nations = new string[] { "USA", "Germany", "USSR", "Britain", "Japan", "China", "Italy", "France", "Sweden" };
+
+    double LeftTableHandler(double BR, string Nation)
+    {
+        var filteredIEnum = Model.Where(p => p.BR == BR & p.Nation == Nation).Count();
+        return filteredIEnum;
+    }
+
+    double RightTableHandler(double BR, string Nation)
+    {
+        var filteredIEnum = Model.Where(p => p.BR == BR & p.Nation == Nation & (p.Type == "Premium" | p.Type == "Promotional")).Count();
+        return filteredIEnum;
+    }
+}
+
+
+<div class="container-fluid">
+    <h1>
+        Heatmap of aircrafts*
+    </h1>
+    <a asp-controller="Aircrafts" asp-action="Count" class="btn btn-outline-danger active">Counts</a>
+    <a asp-controller="Aircrafts" asp-action="Repair" class="btn btn-outline-danger">Repair cost</a>
+    <a asp-controller="Aircrafts" asp-action="MaxSpeed" class="btn btn-outline-danger">Max speed</a>
+    <a asp-controller="Aircrafts" asp-action="ClimbAndTurn" class="btn btn-outline-danger">Climb & turn time</a>
+    <a asp-controller="Aircrafts" asp-action="BombAndBurstMass" class="btn btn-outline-danger">Payload & burst mass</a>
+    <a asp-controller="Aircrafts" asp-action="Rocket" class="btn btn-outline-danger">Types of missiles </a>
+    <hr class="my-2">
+    <div class="row">
+        <div class="col-sm-6">
+            <h1>Total count of aircrafts</h1>
+            <table class="table table-borderless table-sm heatmap-planes">
+                @await Html.PartialAsync("_FlagsRow")
+                <tbody>
+                    @{
+                        foreach (double number in numbers)
+                        {
+                            <tr>
+                                <th class="font-weight-bolder text-center">@number.ToString("0.0#")</th>
+                                @{
+                                    foreach (string nation in nations)
+                                    {
+                                        <td class="font-weight-normal text-center" onmouseover="this.style.color='black'">@LeftTableHandler(number, nation)</td>
+                                    }
+                                }
+                            </tr>
+                        } }
+                </tbody>
+            </table>
+        </div>
+        <div class="col-sm-6">
+            <h1>Premium and promotional aircrafts</h1>
+            <table class="table table-borderless table-sm heatmap-planes">
+                @await Html.PartialAsync("_FlagsRow")
+                <tbody>
+                    @{
+                        foreach (double number in numbers)
+                        {
+                            <tr>
+                                <th class="font-weight-bolder text-center">@number.ToString("0.0#")</th>
+                                @{
+                                    foreach (string nation in nations)
+                                    {
+                                        <td class="font-weight-normal text-center" onmouseover="this.style.color='black'">@RightTableHandler(number, nation)</td>
+                                    }
+                                }
+                            </tr>
+                        } }
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col"></div>
+        <div class="col">
+            <table class="table table-borderless table-sm text-center">
+                <tr>
+                    <td style="background-color:#ffffff">&#160;</td>
+                    <td style="background-color:#e35756">&#160;</td>
+                    <td style="background-color:#f96969">&#160;</td>
+                    <td style="background-color:#fb8b73">&#160;</td>
+                    <td style="background-color:#fcaf77">&#160;</td>
+                    <td style="background-color:#ffd281">&#160;</td>
+                    <td style="background-color:#f4e882">&#160;</td>
+                    <td style="background-color:#e1e181">&#160;</td>
+                    <td style="background-color:#b6d683">&#160;</td>
+                    <td style="background-color:#8cca7d">&#160;</td>
+                    <td style="background-color:#5fbf78">&#160;</td>
+                </tr>
+                <tr>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>6</td>
+                    <td>6+</td>
+                </tr>
+            </table>
+        </div>
+        <div class="col"></div>
+    </div>
+    <p>* Bombers I-III tiers will be added later</p>
+</div>
+
+
+<script>
+    var tables = document.querySelectorAll('.heatmap-planes');
+    tables.forEach(table => {
+        var tbody = table.getElementsByTagName('tbody')[0];
+        var cells = tbody.getElementsByTagName('td');
+
+        for (var i = 0, len = cells.length; i < len; i++) {
+
+            if (parseInt(cells[i].innerHTML, 10) == 0) {
+                cells[i].style.backgroundColor = '#ffffff';
+                cells[i].style.color = '#ffffff';
+            }
+
+            if (parseInt(cells[i].innerHTML, 10) > 0) {
+                cells[i].style.backgroundColor = '#e35756';
+                cells[i].style.color = '#e35756';
+            }
+
+            if (parseInt(cells[i].innerHTML, 10) > 1) {
+                cells[i].style.backgroundColor = '#f96969';
+                cells[i].style.color = '#f96969';
+            }
+
+            if (parseInt(cells[i].innerHTML, 10) > 2) {
+                cells[i].style.backgroundColor = '#fb8b73';
+                cells[i].style.color = '#fb8b73';
+            }
+
+            if (parseInt(cells[i].innerHTML, 10) > 2) {
+                cells[i].style.backgroundColor = '#fcaf77';
+                cells[i].style.color = '#fcaf77';
+            }
+
+            if (parseInt(cells[i].innerHTML, 10) > 3) {
+                cells[i].style.backgroundColor = '#ffd281';
+                cells[i].style.color = '#ffd281';
+            }
+
+            if (parseInt(cells[i].innerHTML, 10) > 3) {
+                cells[i].style.backgroundColor = '#f4e882';
+                cells[i].style.color = '#f4e882';
+            }
+
+            if (parseInt(cells[i].innerHTML, 10) > 4) {
+                cells[i].style.backgroundColor = '#e1e181';
+                cells[i].style.color = '#e1e181';
+            }
+
+            if (parseInt(cells[i].innerHTML, 10) > 4) {
+                cells[i].style.backgroundColor = '#b6d683';
+                cells[i].style.color = '#b6d683';
+            }
+
+            if (parseInt(cells[i].innerHTML, 10) > 5) {
+                cells[i].style.backgroundColor = '#8cca7d';
+                cells[i].style.color = '#8cca7d';
+            }
+
+            if (parseInt(cells[i].innerHTML, 10) > 6) {
+                cells[i].style.backgroundColor = '#5fbf78';
+                cells[i].style.color = '#5fbf78';
+            }
+        }
+    });
+</script>
