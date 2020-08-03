@@ -58,5 +58,25 @@ namespace WTVersus.Controllers
 
             return View(shipsFromDb);
         }
+
+        /// <summary>
+        /// Send models for View
+        /// </summary>
+        /// <returns>Return vehicle collection from DB to View</returns>
+        public IActionResult Count()
+        {
+            var shipsFromDb = Context.Ships.ToList();
+            return View(shipsFromDb);
+        }
+
+        /// <summary>
+        /// Send models for View
+        /// </summary>
+        /// <returns>Return vehicle collection from DB to View</returns>
+        public IActionResult Repair()
+        {
+            var shipsFromDb = Context.Ships.ToList();
+            return View(shipsFromDb);
+        }
     }
 }

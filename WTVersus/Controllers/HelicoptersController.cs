@@ -58,5 +58,35 @@ namespace WTVersus.Controllers
 
             return View(helisFromDb);
         }
+
+        /// <summary>
+        /// Send models for View
+        /// </summary>
+        /// <returns>Return vehicle collection from DB to View</returns>
+        public IActionResult Count()
+        {
+            var helisFromDb = Context.Helis.ToList();
+            return View(helisFromDb);
+        }
+
+        /// <summary>
+        /// Send models for View
+        /// </summary>
+        /// <returns>Return vehicle collection from DB to View</returns>
+        public IActionResult Repair()
+        {
+            var helisFromDb = Context.Helis.ToList();
+            return View(helisFromDb);
+        }
+
+        /// <summary>
+        /// Send models for View
+        /// </summary>
+        /// <returns>Return vehicle collection from DB to View</returns>
+        public IActionResult Features()
+        {
+            var helisFromDb = Context.Helis.ToList();
+            return View(helisFromDb);
+        }
     }
 }

@@ -459,6 +459,46 @@
                 <td style="width: 15%">@Model.ElementAt(2).Weight t</td>
                 <td style="width: 15%">@Model.ElementAt(3).Weight t</td>
             </tr>
+            <tr class="high">
+                <th style="width: 20%" title="Engine power divided to weight">Power to weight ratio</th>
+                @{if (Model.ElementAt(0).EnginePower.HasValue)
+                    {
+                        double PTW1 = Math.Round((double)Model.ElementAt(0).EnginePower.Value / (double)Model.ElementAt(0).Weight.Value, 1);
+                        <td style="width: 15%">@PTW1 h.p/t</td>
+                    }
+                    else
+                    {
+                        <td style="width: 15%"></td>
+                    }}
+                @{if (Model.ElementAt(1).EnginePower.HasValue)
+                    {
+                        double PTW2 = Math.Round((double)Model.ElementAt(1).EnginePower.Value / (double)Model.ElementAt(1).Weight.Value, 1);
+                                <td style="width: 15%">@PTW2 h.p/t</td>
+                    }
+                    else
+                    {
+                        <td style="width: 15%"></td>
+                    }}
+                @{if (Model.ElementAt(2).EnginePower.HasValue)
+                    {
+                        double PTW3 = Math.Round((double)Model.ElementAt(2).EnginePower.Value / (double)Model.ElementAt(2).Weight.Value, 1);
+                                <td style="width: 15%">@PTW3 h.p/t</td>
+                    }
+                    else
+                    {
+                        <td style="width: 15%"></td>
+                    }}
+                @{if (Model.ElementAt(3).EnginePower.HasValue)
+                    {
+                        double PTW4 = Math.Round((double)Model.ElementAt(3).EnginePower.Value / (double)Model.ElementAt(3).Weight.Value, 1);
+                                <td style="width: 15%">@PTW4 h.p/t</td>
+                    }
+                    else
+                    {
+                        <td style="width: 15%"></td>
+                    }}
+            </tr>
+
         </tbody>
     </table>
 

@@ -1,0 +1,377 @@
+﻿@model IEnumerable<WTVersus.Models.Heli>;
+@{
+    ViewData["Title"] = "Heatmap of helicopters count";
+    double[] numbers = new double[] { 8.0, 8.3, 8.7, 9.0, 9.3, 9.7, 10.0, 10.3, 10.7 };
+    string[] nations = new string[] { "USA", "Germany", "USSR", "Britain", "Japan", "China", "Italy", "France", "Sweden" };
+
+    double LeftTableHandler(double BR, string Nation)
+    {
+        var filteredIEnum = Model.Where(p => p.BR == BR & p.Nation == Nation).Select(p => p.AGMCount.Value);
+        double result;
+        if (filteredIEnum.Count() != 0)
+        {
+            result = (filteredIEnum.Max());
+        }
+        else result = 0;
+
+        return result;
+    }
+
+    double LeftTableHandler2(double BR, string Nation)
+    {
+        var filteredIEnum = Model.Where(p => p.BR == BR & p.Nation == Nation).Select(p => p.AGMRange.Value);
+        double result;
+        if (filteredIEnum.Count() != 0)
+        {
+            result = (filteredIEnum.Max());
+        }
+        else result = 0;
+
+        return result;
+    }
+
+    double LeftTableHandler3(double BR, string Nation)
+    {
+        var filteredIEnum = Model.Where(p => p.BR == BR & p.Nation == Nation).Select(p => p.AGMArmorPenetration.Value);
+        double result;
+        if (filteredIEnum.Count() != 0)
+        {
+            result = (filteredIEnum.Max());
+        }
+        else result = 0;
+
+        return result;
+    }
+
+    bool RightTableHandler(double BR, string Nation)
+    {
+        if (Model.Where(p => p.BR == BR & p.Nation == Nation & p.AAMissile == true).Count() == 0)
+        {
+            return false;
+        }
+        else return true;
+    }
+
+    bool RightTableHandler2(double BR, string Nation)
+    {
+        if (Model.Where(p => p.BR == BR & p.Nation == Nation & p.ThermalGunner == true).Count() == 0)
+        {
+            return false;
+        }
+        else return true;
+    }
+
+    bool RightTableHandler3(double BR, string Nation)
+    {
+        if (Model.Where(p => p.BR == BR & p.Nation == Nation & p.OpticalTracking == true).Count() == 0)
+        {
+            return false;
+        }
+        else return true;
+    }
+}
+
+
+<div class="container-fluid">
+    <h1>
+        Heatmap of helicopters
+    </h1>
+    <a asp-controller="Helicopters" asp-action="Count" class="btn btn-outline-danger ">Counts</a>
+    <a asp-controller="Helicopters" asp-action="Repair" class="btn btn-outline-danger">Repair cost</a>
+    <a asp-controller="Helicopters" asp-action="Features" class="btn btn-outline-danger active">Features & armament</a>
+    <hr class="my-2">
+    <div class="row">
+        <div class="col-sm-6">
+            <h1>ATGM count</h1>
+            <table class="table table-borderless table-sm heatmap-count">
+                @await Html.PartialAsync("_FlagsRow")
+                <tbody>
+                    @{
+                        foreach (double number in numbers)
+                        {
+                            <tr>
+                                <th class="font-weight-bolder text-center">@number.ToString("0.0#")</th>
+                                @{
+                                    foreach (string nation in nations)
+                                    {
+                                        <td class="font-weight-normal text-center" onmouseover="this.style.color='black'">@LeftTableHandler(number, nation)</td>
+                                    }
+                                }
+                            </tr>
+                        } }
+                </tbody>
+            </table>
+            <h1>ATGM range</h1>
+            <table class="table table-borderless table-sm heatmap-range">
+                @await Html.PartialAsync("_FlagsRow")
+                <tbody>
+                    @{
+                        foreach (double number in numbers)
+                        {
+                            <tr>
+                                <th class="font-weight-bolder text-center">@number.ToString("0.0#")</th>
+                                @{
+                                    foreach (string nation in nations)
+                                    {
+                                        <td class="font-weight-normal text-center" onmouseover="this.style.color='black'">@LeftTableHandler2(number, nation)</td>
+                                    }
+                                }
+                            </tr>
+                        } }
+                </tbody>
+            </table>
+            <h1>ATGM armor penetration</h1>
+            <table class="table table-borderless table-sm heatmap-penetration">
+                @await Html.PartialAsync("_FlagsRow")
+                <tbody>
+                    @{
+                        foreach (double number in numbers)
+                        {
+                            <tr>
+                                <th class="font-weight-bolder text-center">@number.ToString("0.0#")</th>
+                                @{
+                                    foreach (string nation in nations)
+                                    {
+                                        <td class="font-weight-normal text-center" onmouseover="this.style.color='black'">@LeftTableHandler3(number, nation)</td>
+                                    }
+                                }
+                            </tr>
+                        } }
+                </tbody>
+            </table>
+        </div>
+        <div class="col-sm-6">
+            <h1>Air to air missile</h1>
+            <table class="table table-bordered table-sm">
+                @await Html.PartialAsync("_FlagsRow")
+                <tbody>
+                    @{
+                        foreach (double number in numbers)
+                        {
+                            <tr>
+                                <th class="font-weight-bolder text-center">@number.ToString("0.0#")</th>
+                                @{
+                                    foreach (string nation in nations)
+                                    {
+                                        <td>
+                                            @if (RightTableHandler(number, nation))
+                                            {
+                                                <img class="mx-auto d-block" src="~/images/AAMissile.png" alt="Air to air missile" title="Air to air missile" height="30">
+                                            }
+                                        </td>
+                                    }
+                                }
+                            </tr>
+                        } }
+                </tbody>
+            </table>
+            <h1>Thermal sight</h1>
+            <table class="table table-bordered table-sm">
+                @await Html.PartialAsync("_FlagsRow")
+                <tbody>
+                    @{
+                        foreach (double number in numbers)
+                        {
+                            <tr>
+                                <th class="font-weight-bolder text-center">@number.ToString("0.0#")</th>
+                                @{
+                                    foreach (string nation in nations)
+                                    {
+                                        <td>
+                                            @if (RightTableHandler2(number, nation))
+                                            {
+                                                <img class="mx-auto d-block" src="~/images/ThermalCommander.png" alt="Thermal sight" title="Thermal sight" height="30">
+                                            }
+                                        </td>
+                                    }
+                                }
+                            </tr>
+                        } }
+                </tbody>
+            </table>
+            <h1>Optical tracking</h1>
+            <table class="table table-bordered table-sm">
+                @await Html.PartialAsync("_FlagsRow")
+                <tbody>
+                    @{
+                        foreach (double number in numbers)
+                        {
+                            <tr>
+                                <th class="font-weight-bolder text-center">@number.ToString("0.0#")</th>
+                                @{
+                                    foreach (string nation in nations)
+                                    {
+                                        <td>
+                                            @if (RightTableHandler3(number, nation))
+                                            {
+                                                <img class="mx-auto d-block" src="~/images/LockTank2.png" alt="Optical tracking" title="Optical tracking" height="30">
+                                            }
+                                        </td>
+                                    }
+                                }
+                            </tr>
+                        } }
+                </tbody>
+            </table>
+
+
+        </div>
+    </div>
+</div>
+
+
+<script>
+    var tables = document.querySelectorAll('.heatmap-count');
+    tables.forEach(table => {
+        var tbody = table.getElementsByTagName('tbody')[0];
+        var cells = tbody.getElementsByTagName('td');
+
+        for (var i = 0, len = cells.length; i < len; i++) {
+
+            if (parseInt(cells[i].innerHTML, 10) == 0) {
+                cells[i].style.backgroundColor = '#ffffff';
+                cells[i].style.color = '#ffffff';
+            }
+
+            if (parseInt(cells[i].innerHTML, 10) > 0) {
+                cells[i].style.backgroundColor = '#f96969';
+                cells[i].style.color = '#f96969';
+            }
+
+            if (parseInt(cells[i].innerHTML, 10) > 2) {
+                cells[i].style.backgroundColor = '#fb8b73';
+                cells[i].style.color = '#fb8b73';
+            }
+
+            if (parseInt(cells[i].innerHTML, 10) > 4) {
+                cells[i].style.backgroundColor = '#fcaf77';
+                cells[i].style.color = '#fcaf77';
+            }
+
+            if (parseInt(cells[i].innerHTML, 10) > 6) {
+                cells[i].style.backgroundColor = '#f4e882';
+                cells[i].style.color = '#f4e882';
+            }
+
+
+            if (parseInt(cells[i].innerHTML, 10) > 8) {
+                cells[i].style.backgroundColor = '#b6d683';
+                cells[i].style.color = '#b6d683';
+            }
+
+            if (parseInt(cells[i].innerHTML, 10) > 10) {
+                cells[i].style.backgroundColor = '#8cca7d';
+                cells[i].style.color = '#8cca7d';
+            }
+
+            if (parseInt(cells[i].innerHTML, 10) > 12) {
+                cells[i].style.backgroundColor = '#5fbf78';
+                cells[i].style.color = '#5fbf78';
+            }
+        }
+    });
+</script>
+
+<script>
+    var tables = document.querySelectorAll('.heatmap-range');
+    tables.forEach(table => {
+        var tbody = table.getElementsByTagName('tbody')[0];
+        var cells = tbody.getElementsByTagName('td');
+
+        for (var i = 0, len = cells.length; i < len; i++) {
+
+            if (parseInt(cells[i].innerHTML, 10) == 0) {
+                cells[i].style.backgroundColor = '#ffffff';
+                cells[i].style.color = '#ffffff';
+            }
+
+            if (parseInt(cells[i].innerHTML, 10) > 1000) {
+                cells[i].style.backgroundColor = '#f96969';
+                cells[i].style.color = '#f96969';
+            }
+
+            if (parseInt(cells[i].innerHTML, 10) > 2000) {
+                cells[i].style.backgroundColor = '#fb8b73';
+                cells[i].style.color = '#fb8b73';
+            }
+
+            if (parseInt(cells[i].innerHTML, 10) > 3000) {
+                cells[i].style.backgroundColor = '#fcaf77';
+                cells[i].style.color = '#fcaf77';
+            }
+
+            if (parseInt(cells[i].innerHTML, 10) > 4000) {
+                cells[i].style.backgroundColor = '#f4e882';
+                cells[i].style.color = '#f4e882';
+            }
+
+
+            if (parseInt(cells[i].innerHTML, 10) > 5000) {
+                cells[i].style.backgroundColor = '#b6d683';
+                cells[i].style.color = '#b6d683';
+            }
+
+            if (parseInt(cells[i].innerHTML, 10) > 6000) {
+                cells[i].style.backgroundColor = '#8cca7d';
+                cells[i].style.color = '#8cca7d';
+            }
+
+            if (parseInt(cells[i].innerHTML, 10) > 8000) {
+                cells[i].style.backgroundColor = '#5fbf78';
+                cells[i].style.color = '#5fbf78';
+            }
+        }
+    });
+</script>
+
+<script>
+    var tables = document.querySelectorAll('.heatmap-penetration');
+    tables.forEach(table => {
+        var tbody = table.getElementsByTagName('tbody')[0];
+        var cells = tbody.getElementsByTagName('td');
+
+        for (var i = 0, len = cells.length; i < len; i++) {
+
+            if (parseInt(cells[i].innerHTML, 10) == 0) {
+                cells[i].style.backgroundColor = '#ffffff';
+                cells[i].style.color = '#ffffff';
+            }
+
+            if (parseInt(cells[i].innerHTML, 10) > 0) {
+                cells[i].style.backgroundColor = '#f96969';
+                cells[i].style.color = '#f96969';
+            }
+
+            if (parseInt(cells[i].innerHTML, 10) > 300) {
+                cells[i].style.backgroundColor = '#fb8b73';
+                cells[i].style.color = '#fb8b73';
+            }
+
+            if (parseInt(cells[i].innerHTML, 10) > 400) {
+                cells[i].style.backgroundColor = '#fcaf77';
+                cells[i].style.color = '#fcaf77';
+            }
+
+            if (parseInt(cells[i].innerHTML, 10) > 500) {
+                cells[i].style.backgroundColor = '#f4e882';
+                cells[i].style.color = '#f4e882';
+            }
+
+
+            if (parseInt(cells[i].innerHTML, 10) > 600) {
+                cells[i].style.backgroundColor = '#b6d683';
+                cells[i].style.color = '#b6d683';
+            }
+
+            if (parseInt(cells[i].innerHTML, 10) > 700) {
+                cells[i].style.backgroundColor = '#8cca7d';
+                cells[i].style.color = '#8cca7d';
+            }
+
+            if (parseInt(cells[i].innerHTML, 10) > 800) {
+                cells[i].style.backgroundColor = '#5fbf78';
+                cells[i].style.color = '#5fbf78';
+            }
+        }
+    });
+</script>
