@@ -41,7 +41,7 @@ namespace WTVersus
             }
             else
             {
-                app.UseExceptionHandler("/Home/Error");
+                app.UseExceptionHandler("/Feedback/Error404");
                 app.UseHsts();
             }
 

@@ -57,10 +57,11 @@ namespace DbMaintenance.Controllers
         public IActionResult AddPlane()
         {
             Context.Planes.AddRange
-                (
+            (
 
-                );
+            );
             Context.SaveChanges();
+
             return View();
         }
     }
