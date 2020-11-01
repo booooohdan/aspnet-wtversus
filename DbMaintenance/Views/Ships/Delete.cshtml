@@ -1,0 +1,399 @@
+﻿@model WTVersus.Models.Ship
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Ship</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.VehicleId)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.VehicleId)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Image)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Image)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Nation)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Nation)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Rank)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Rank)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.BR)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.BR)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Type)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Type)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Class)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Class)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FirstLaunchYear)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FirstLaunchYear)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.RepairCost)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.RepairCost)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ViewCount)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ViewCount)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.WikiLink)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.WikiLink)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.WikiDescription)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.WikiDescription)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.MaxSpeed)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.MaxSpeed)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ReverseSpeed)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ReverseSpeed)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Acceleration)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Acceleration)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.BrakingTime)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.BrakingTime)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Turn360)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Turn360)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Displacement)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Displacement)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CrewCount)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CrewCount)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ArmorTower)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ArmorTower)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ArmorHull)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ArmorHull)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.MainCaliberSize)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.MainCaliberSize)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.MainCaliberReload)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.MainCaliberReload)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.MainCaliberName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.MainCaliberName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.AUCaliberName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.AUCaliberName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.AACaliberName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.AACaliberName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TorpedoItem)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TorpedoItem)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TorpedoMaxSpeed)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TorpedoMaxSpeed)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TorpedoTNT)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TorpedoTNT)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IsHaveDepthCharge)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IsHaveDepthCharge)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IsHaveTorpedo)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IsHaveTorpedo)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IsHaveRocket)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IsHaveRocket)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IsHaveMine)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IsHaveMine)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IsHaveAirRadar)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IsHaveAirRadar)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IsHaveShipRadar)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IsHaveShipRadar)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.MC_SAP)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.MC_SAP)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.MC_AP)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.MC_AP)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.MC_APHE)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.MC_APHE)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.MC_APCR)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.MC_APCR)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.MC_HE)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.MC_HE)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.MC_HEVT)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.MC_HEVT)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.MC_HEDF)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.MC_HEDF)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.MC_FOG)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.MC_FOG)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.MC_Shrapnel)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.MC_Shrapnel)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.AU_SAP)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.AU_SAP)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.AU_AP)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.AU_AP)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.AU_APHE)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.AU_APHE)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.AU_APCR)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.AU_APCR)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.AU_HE)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.AU_HE)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.AU_HEVT)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.AU_HEVT)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.AU_HEDF)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.AU_HEDF)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.AU_FOG)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.AU_FOG)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.AU_Shrapnel)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.AU_Shrapnel)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.AAA_SAP)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.AAA_SAP)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.AAA_AP)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.AAA_AP)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.AAA_APHE)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.AAA_APHE)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.AAA_APCR)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.AAA_APCR)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.AAA_HE)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.AAA_HE)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.AAA_HEVT)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.AAA_HEVT)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.AAA_HEDF)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.AAA_HEDF)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.AAA_FOG)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.AAA_FOG)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.AAA_Shrapnel)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.AAA_Shrapnel)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

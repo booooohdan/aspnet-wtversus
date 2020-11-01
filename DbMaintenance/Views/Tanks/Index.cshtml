@@ -1,0 +1,443 @@
+﻿@model IEnumerable<WTVersus.Models.Tank>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.VehicleId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Image)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rank)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BR)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Type)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Class)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstRideYear)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RepairCost)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ViewCount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WikiLink)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WikiDescription)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MaxSpeedAtRoad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MaxSpeedAtTerrain)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MaxReverseSpeed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AccelerationTo100)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TurnTurretTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TurnHullTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EnginePower)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Weight)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cannon)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Penetration)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ShellSpeed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ReloadTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UpAimAngle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DownAimAngle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ReducedArmorFrontTurret)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ReducedArmorTopSheet)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ReducedArmorBottomSheet)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ShellAP)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ShellAPHE)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ShellHE)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ShellAPCR)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ShellAPDS)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ShellAPFSDS)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ShellHEAT)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ShellHEATFS)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ShellShrapnel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ShellHESH)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ShellATGM)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ShellSSM)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ShellHEATGRENADE)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ShellHEVT)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ShellSAM)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ShellSmoke)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ShellATGMHE)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ShellATGMTandem)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ShellATGMHEVT)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ShellVOG)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AddOnArmor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ReactiveArmor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Hydropneumatic)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IRSpotlight)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AirSearchRadar)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AirLockRadar)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TankSearchRadar)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GrenadeSmoke)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ExhaustSmoke)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Amphibious)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AutoLoader)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AAMachineGun)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Stabilizer)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HullBreak)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NVDGunner)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ThermalGunner)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NVDCommander)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ThermalCommander)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RWR)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.VehicleId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Image)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rank)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BR)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Class)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstRideYear)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RepairCost)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ViewCount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WikiLink)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WikiDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaxSpeedAtRoad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaxSpeedAtTerrain)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaxReverseSpeed)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AccelerationTo100)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TurnTurretTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TurnHullTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EnginePower)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Weight)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cannon)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Penetration)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShellSpeed)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReloadTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UpAimAngle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DownAimAngle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReducedArmorFrontTurret)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReducedArmorTopSheet)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReducedArmorBottomSheet)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShellAP)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShellAPHE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShellHE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShellAPCR)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShellAPDS)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShellAPFSDS)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShellHEAT)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShellHEATFS)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShellShrapnel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShellHESH)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShellATGM)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShellSSM)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShellHEATGRENADE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShellHEVT)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShellSAM)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShellSmoke)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShellATGMHE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShellATGMTandem)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShellATGMHEVT)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShellVOG)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AddOnArmor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReactiveArmor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Hydropneumatic)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IRSpotlight)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AirSearchRadar)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AirLockRadar)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TankSearchRadar)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GrenadeSmoke)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ExhaustSmoke)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Amphibious)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AutoLoader)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AAMachineGun)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Stabilizer)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HullBreak)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NVDGunner)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ThermalGunner)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NVDCommander)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ThermalCommander)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RWR)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

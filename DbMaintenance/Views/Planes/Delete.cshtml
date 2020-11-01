@@ -1,0 +1,297 @@
+﻿@model WTVersus.Models.Plane
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Plane</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.VehicleId)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.VehicleId)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Image)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Image)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Nation)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Nation)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Rank)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Rank)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.BR)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.BR)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Type)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Type)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Class)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Class)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FirstFlyYear)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FirstFlyYear)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.RepairCost)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.RepairCost)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ViewCount)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ViewCount)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.WikiLink)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.WikiLink)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.WikiDescription)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.WikiDescription)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.MaxSpeedAt0)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.MaxSpeedAt0)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.MaxSpeedAt5000)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.MaxSpeedAt5000)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Climb)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Climb)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.BombLoad)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.BombLoad)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TurnAt0)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TurnAt0)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.EnginePower)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.EnginePower)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Weight)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Weight)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Flutter)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Flutter)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.BurstMass)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.BurstMass)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CourseWeapon)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CourseWeapon)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.OptimalAilerons)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.OptimalAilerons)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.OptimalElevator)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.OptimalElevator)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.OptimalAlitude)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.OptimalAlitude)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ASMissile)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ASMissile)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.AAMissile)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.AAMissile)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.AAFoxOneMissile)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.AAFoxOneMissile)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.AGMissile)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.AGMissile)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.HCannon)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.HCannon)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.HBomb)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.HBomb)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.HTorpedo)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.HTorpedo)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.HMine)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.HMine)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.WrongMusic)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.WrongMusic)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Turrel)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Turrel)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.RWR)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.RWR)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Flares)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Flares)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.AirBrake)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.AirBrake)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Parachute)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Parachute)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Tailhook)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Tailhook)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.AirRadar)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.AirRadar)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.GroundRadar)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.GroundRadar)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CCIP)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CCIP)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.GSuit)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.GSuit)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CCRP)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CCRP)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

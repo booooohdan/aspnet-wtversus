@@ -75,5 +75,6 @@
         public bool ThermalGunner { get; set; }
         public bool NVDCommander { get; set; }
         public bool ThermalCommander { get; set; }
+        public bool RWR { get; set; }
     }
 }

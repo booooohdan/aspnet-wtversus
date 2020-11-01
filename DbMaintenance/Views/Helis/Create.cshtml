@@ -1,0 +1,248 @@
+﻿@model WTVersus.Models.Heli
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Heli</h4>
+<hr />
+<div class="row">
+    <div class="col-md-12">
+        <form asp-action="Create">
+            <div class="row">
+                <div class="col-md-4">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="VehicleId" class="control-label"></label>
+                        <input asp-for="VehicleId" class="form-control" />
+                        <span asp-validation-for="VehicleId" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Image" class="control-label"></label>
+                        <input asp-for="Image" class="form-control" />
+                        <span asp-validation-for="Image" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Name" class="control-label"></label>
+                        <input asp-for="Name" class="form-control" />
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Nation" class="control-label"></label>
+                        <input asp-for="Nation" class="form-control" />
+                        <span asp-validation-for="Nation" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Rank" class="control-label"></label>
+                        <input asp-for="Rank" class="form-control" />
+                        <span asp-validation-for="Rank" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="BR" class="control-label"></label>
+                        <input asp-for="BR" class="form-control" />
+                        <span asp-validation-for="BR" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Type" class="control-label"></label>
+                        <input asp-for="Type" class="form-control" />
+                        <span asp-validation-for="Type" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Class" class="control-label"></label>
+                        <input asp-for="Class" class="form-control" />
+                        <span asp-validation-for="Class" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="FirstFlyYear" class="control-label"></label>
+                        <input asp-for="FirstFlyYear" class="form-control" />
+                        <span asp-validation-for="FirstFlyYear" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="RepairCost" class="control-label"></label>
+                        <input asp-for="RepairCost" class="form-control" />
+                        <span asp-validation-for="RepairCost" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ViewCount" class="control-label"></label>
+                        <input asp-for="ViewCount" class="form-control" />
+                        <span asp-validation-for="ViewCount" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="WikiLink" class="control-label"></label>
+                        <input asp-for="WikiLink" class="form-control" />
+                        <span asp-validation-for="WikiLink" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="WikiDescription" class="control-label"></label>
+                        <input asp-for="WikiDescription" class="form-control" />
+                        <span asp-validation-for="WikiDescription" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label asp-for="MaxSpeed" class="control-label"></label>
+                        <input asp-for="MaxSpeed" class="form-control" />
+                        <span asp-validation-for="MaxSpeed" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ClimbTo1000" class="control-label"></label>
+                        <input asp-for="ClimbTo1000" class="form-control" />
+                        <span asp-validation-for="ClimbTo1000" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Turn360" class="control-label"></label>
+                        <input asp-for="Turn360" class="form-control" />
+                        <span asp-validation-for="Turn360" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="EnginePower" class="control-label"></label>
+                        <input asp-for="EnginePower" class="form-control" />
+                        <span asp-validation-for="EnginePower" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Weight" class="control-label"></label>
+                        <input asp-for="Weight" class="form-control" />
+                        <span asp-validation-for="Weight" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="AGMCount" class="control-label"></label>
+                        <input asp-for="AGMCount" class="form-control" />
+                        <span asp-validation-for="AGMCount" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="AGMArmorPenetration" class="control-label"></label>
+                        <input asp-for="AGMArmorPenetration" class="form-control" />
+                        <span asp-validation-for="AGMArmorPenetration" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="AGMSpeed" class="control-label"></label>
+                        <input asp-for="AGMSpeed" class="form-control" />
+                        <span asp-validation-for="AGMSpeed" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="AGMRange" class="control-label"></label>
+                        <input asp-for="AGMRange" class="form-control" />
+                        <span asp-validation-for="AGMRange" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="AAMCount" class="control-label"></label>
+                        <input asp-for="AAMCount" class="form-control" />
+                        <span asp-validation-for="AAMCount" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ASMCount" class="control-label"></label>
+                        <input asp-for="ASMCount" class="form-control" />
+                        <span asp-validation-for="ASMCount" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="BombLoad" class="control-label"></label>
+                        <input asp-for="BombLoad" class="form-control" />
+                        <span asp-validation-for="BombLoad" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="OffensiveWeapon" class="control-label"></label>
+                        <input asp-for="OffensiveWeapon" class="form-control" />
+                        <span asp-validation-for="OffensiveWeapon" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" asp-for="AGMissile" /> @Html.DisplayNameFor(model => model.AGMissile)
+                        </label>
+                    </div>
+                    <div class="form-group form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" asp-for="AutoAGMissile" /> @Html.DisplayNameFor(model => model.AutoAGMissile)
+                        </label>
+                    </div>
+                    <div class="form-group form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" asp-for="AAMissile" /> @Html.DisplayNameFor(model => model.AAMissile)
+                        </label>
+                    </div>
+                    <div class="form-group form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" asp-for="ASMissile" /> @Html.DisplayNameFor(model => model.ASMissile)
+                        </label>
+                    </div>
+                    <div class="form-group form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" asp-for="Bomb" /> @Html.DisplayNameFor(model => model.Bomb)
+                        </label>
+                    </div>
+                    <div class="form-group form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" asp-for="TurningCannon" /> @Html.DisplayNameFor(model => model.TurningCannon)
+                        </label>
+                    </div>
+                    <div class="form-group form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" asp-for="FixedCannon" /> @Html.DisplayNameFor(model => model.FixedCannon)
+                        </label>
+                    </div>
+                    <div class="form-group form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" asp-for="IRCM" /> @Html.DisplayNameFor(model => model.IRCM)
+                        </label>
+                    </div>
+                    <div class="form-group form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" asp-for="HIRSS" /> @Html.DisplayNameFor(model => model.HIRSS)
+                        </label>
+                    </div>
+                    <div class="form-group form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" asp-for="Flares" /> @Html.DisplayNameFor(model => model.Flares)
+                        </label>
+                    </div>
+                    <div class="form-group form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" asp-for="RWR" /> @Html.DisplayNameFor(model => model.RWR)
+                        </label>
+                    </div>
+                    <div class="form-group form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" asp-for="LaserDesignator" /> @Html.DisplayNameFor(model => model.LaserDesignator)
+                        </label>
+                    </div>
+                    <div class="form-group form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" asp-for="CCIP" /> @Html.DisplayNameFor(model => model.CCIP)
+                        </label>
+                    </div>
+                    <div class="form-group form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" asp-for="ThermalGunner" /> @Html.DisplayNameFor(model => model.ThermalGunner)
+                        </label>
+                    </div>
+                    <div class="form-group form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" asp-for="AirRadar" /> @Html.DisplayNameFor(model => model.AirRadar)
+                        </label>
+                    </div>
+                    <div class="form-group form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" asp-for="GroundRadar" /> @Html.DisplayNameFor(model => model.GroundRadar)
+                        </label>
+                    </div>
+                    <div class="form-group form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" asp-for="OpticalTracking" /> @Html.DisplayNameFor(model => model.OpticalTracking)
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Create" class="btn btn-primary" />
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

@@ -1,0 +1,305 @@
+﻿@model IEnumerable<WTVersus.Models.Plane>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.VehicleId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Image)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rank)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BR)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Type)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Class)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstFlyYear)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RepairCost)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ViewCount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WikiLink)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WikiDescription)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MaxSpeedAt0)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MaxSpeedAt5000)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Climb)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BombLoad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TurnAt0)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EnginePower)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Weight)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Flutter)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BurstMass)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CourseWeapon)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OptimalAilerons)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OptimalElevator)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OptimalAlitude)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ASMissile)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AAMissile)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AAFoxOneMissile)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AGMissile)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HCannon)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HBomb)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HTorpedo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HMine)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WrongMusic)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Turrel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RWR)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Flares)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AirBrake)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Parachute)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tailhook)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AirRadar)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GroundRadar)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CCIP)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GSuit)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CCRP)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.VehicleId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Image)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rank)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BR)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Class)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstFlyYear)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RepairCost)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ViewCount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WikiLink)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WikiDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaxSpeedAt0)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaxSpeedAt5000)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Climb)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BombLoad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TurnAt0)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EnginePower)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Weight)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Flutter)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BurstMass)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CourseWeapon)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OptimalAilerons)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OptimalElevator)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OptimalAlitude)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ASMissile)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AAMissile)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AAFoxOneMissile)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AGMissile)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HCannon)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HBomb)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HTorpedo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HMine)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WrongMusic)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Turrel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RWR)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Flares)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AirBrake)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Parachute)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tailhook)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AirRadar)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GroundRadar)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CCIP)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GSuit)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CCRP)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
