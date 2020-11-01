@@ -176,38 +176,46 @@
                 <th style="width: 20%" class="align-middle" title="Lethal suspended armament like a bombs, torpedo, rocket, etc">Attack systems</th>
                 @for (int i = 0; i < 4; i++)
                 {
-                    <td style="width: 15%">
-                        @{
-                            if (Model.ElementAt(i).ASMissile)
-                            {
-                                <img src="~/images/ASMissile.png" alt="Air to surface missile" title="Air to surface missile" class="img-fluid" width="40">
-                            }
-                            if (Model.ElementAt(i).AAMissile)
-                            {
-                                <img src="~/images/AAMissile.png" alt="Air to air missile" title="Air to air missile" class="img-fluid" width="40">
-                            }
-                            if (Model.ElementAt(i).AGMissile)
-                            {
-                                <img src="~/images/AGMissile.png" alt="Air-to-ground command guided missile" title="Air-to-ground command guided missile" class="img-fluid" width="40">
-                            }
-                            if (Model.ElementAt(i).HBomb)
-                            {
-                                <img src="~/images/HBomb.png" alt="Just a bomb" title="Just a bomb" class="img-fluid" width="40">
-                            }
-                            if (Model.ElementAt(i).HCannon)
-                            {
-                                <img src="~/images/HCannon.png" alt="Gun pod" title="Gun pod" class="img-fluid" width="40">
-                            }
-                            if (Model.ElementAt(i).HTorpedo)
-                            {
-                                <img src="~/images/HTorpedo.png" alt="Just a torpedo" title="Just a torpedo" class="img-fluid" width="40">
-                            }
-                            if (Model.ElementAt(i).WrongMusic)
-                            {
-                                <img src="~/images/WrongMusic.png" alt="Schräge Musik" title="Schräge Musik" class="img-fluid" width="40">
-                            }
-                        }
-                    </td>
+            <td style="width: 15%">
+                @{
+                    if (Model.ElementAt(i).ASMissile)
+                    {
+                        <img src="~/images/ASMissile.png" alt="Air to surface missile" title="Air to surface missile" class="img-fluid" width="40">
+                    }
+                    if (Model.ElementAt(i).AAMissile)
+                    {
+                        <img src="~/images/AAMissile.png" alt="Air to air missile (Fox-2)" title="Air to air missile (Fox-2)" class="img-fluid" width="40">
+                    }
+                    if (Model.ElementAt(i).AAFoxOneMissile)
+                    {
+                        <img src="~/images/AAFoxOneMissile.png" alt="Air to air missile (Fox-1)" title="Air to air missile (Fox-1)" class="img-fluid" width="40">
+                    }
+                    if (Model.ElementAt(i).AGMissile)
+                    {
+                        <img src="~/images/AGMissile.png" alt="Air-to-ground command guided missile" title="Air-to-ground command guided missile" class="img-fluid" width="40">
+                    }
+                    if (Model.ElementAt(i).HBomb)
+                    {
+                        <img src="~/images/HBomb.png" alt="Just a bomb" title="Just a bomb" class="img-fluid" width="40">
+                    }
+                    if (Model.ElementAt(i).HMine)
+                    {
+                        <img src="~/images/Mine.png" alt="Just a mine" title="Just a mine" class="img-fluid" width="40">
+                    }
+                    if (Model.ElementAt(i).HCannon)
+                    {
+                        <img src="~/images/HCannon.png" alt="Gun pod" title="Gun pod" class="img-fluid" width="40">
+                    }
+                    if (Model.ElementAt(i).HTorpedo)
+                    {
+                        <img src="~/images/HTorpedo.png" alt="Just a torpedo" title="Just a torpedo" class="img-fluid" width="40">
+                    }
+                    if (Model.ElementAt(i).WrongMusic)
+                    {
+                        <img src="~/images/WrongMusic.png" alt="Schräge Musik" title="Schräge Musik" class="img-fluid" width="40">
+                    }
+                }
+            </td>
                 }
             </tr>
             <tr class="high">

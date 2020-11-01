@@ -295,82 +295,86 @@
                 <th style="width: 20%" title="Description of various ground vehicle systems">Safety systems</th>
                 @for (int i = 0; i < 4; i++)
                 {
-                    <td style="width: 15%">
-                        @{
-                            if (Model.ElementAt(i).NVDCommander)
-                            {
-                                <img src="~/images/NVDCommander.png" alt="Commander infrared night vision devices" title="Commander infrared night vision devices" class="img-fluid" width="40">
-                            }
-                            if (Model.ElementAt(i).ThermalCommander)
-                            {
-                                <img src="~/images/ThermalCommander.png" alt="Commander thermal night vision devices" title="Commander thermal night vision devices" class="img-fluid" width="40">
-                            }
-                            if (Model.ElementAt(i).NVDGunner)
-                            {
-                                <img src="~/images/NVDGunner.png" alt="Gunner infrared night vision devices" title="Gunner infrared night vision devices" class="img-fluid" width="40">
-                            }
-                            if (Model.ElementAt(i).ThermalGunner)
-                            {
-                                <img src="~/images/ThermalGunner.png" alt="Gunner thermal night vision devices" title="Gunner thermal night vision devices" class="img-fluid" width="40">
-                            }
-                            if (Model.ElementAt(i).IRSpotlight)
-                            {
-                                <img src="~/images/IRSpotlight.png" alt="Infrared Spotlight" title="Infrared Spotlight" class="img-fluid" width="40">
-                            }
-                            if (Model.ElementAt(i).ExhaustSmoke)
-                            {
-                                <img src="~/images/ExhaustSmoke.png" alt="Exhaust smoke system" title="Exhaust smoke system" class="img-fluid" width="40">
-                            }
-                            if (Model.ElementAt(i).GrenadeSmoke)
-                            {
-                                <img src="~/images/GrenadeSmoke.png" alt="Smoke grenade" title="Smoke grenade" class="img-fluid" width="40">
-                            }
-                            if (Model.ElementAt(i).AddOnArmor)
-                            {
-                                <img src="~/images/AddOnArmor.png" alt="Additional armor like track, side screens and others" title="Additional armor like track, side screens and others" class="img-fluid" width="40">
-                            }
-                            if (Model.ElementAt(i).ReactiveArmor)
-                            {
-                                <img src="~/images/ReactiveArmor.png" alt="Explosive reactive armour" title="Explosive reactive armour" class="img-fluid" width="40">
-                            }
-                            if (Model.ElementAt(i).AutoLoader)
-                            {
-                                <img src="~/images/AutoLoader.png" alt="Just auto loader" title="Just auto loader" class="img-fluid" width="40">
-                            }
-                            if (Model.ElementAt(i).Stabilizer)
-                            {
-                                <img src="~/images/Stabilizer.png" alt="Gun stabilizer" title="Gun stabilizer" class="img-fluid" width="40">
-                            }
-                            if (Model.ElementAt(i).AAMachineGun)
-                            {
-                                <img src="~/images/AAMachineGun.png" alt="Anti aircraft machine gun" title="Anti aircraft machine gun" class="img-fluid" width="40">
-                            }
-                            if (Model.ElementAt(i).HullBreak)
-                            {
-                                <img src="~/images/HullBreak.png" alt="Vehicles with hull break mechanics" title="Vehicles with hull break mechanics" class="img-fluid" width="40">
-                            }
-                            if (Model.ElementAt(i).Hydropneumatic)
-                            {
-                                <img src="~/images/Hydropneumatic.png" alt="Hydropneumatic suspension" title="Hydropneumatic suspension" class="img-fluid" width="40">
-                            }
-                            if (Model.ElementAt(i).Amphibious)
-                            {
-                                <img src="~/images/Amphibious.png" alt="Amphibious" title="Amphibious" class="img-fluid" width="40">
-                            }
-                            if (Model.ElementAt(i).AirSearchRadar)
-                            {
-                                <img src="~/images/GroundToAirRadar.png" alt="Air search Radar" title="Air search Radar" class="img-fluid" width="40">
-                            }
-                            if (Model.ElementAt(i).AirLockRadar)
-                            {
-                                <img src="~/images/LockAir.png" alt="Tracking radar" title="Tracking radar" class="img-fluid" width="40">
-                            }
-                            if (Model.ElementAt(i).TankSearchRadar)
-                            {
-                                <img src="~/images/GroundToTankRadar.png" alt="Ground vehicle search radar" title="Ground vehicle search radar" class="img-fluid" width="40">
-                            }
-                        }
-                    </td>
+            <td style="width: 15%">
+                @{
+                    if (Model.ElementAt(i).NVDCommander)
+                    {
+                        <img src="~/images/NVDCommander.png" alt="Commander infrared night vision devices" title="Commander infrared night vision devices" class="img-fluid" width="40">
+                    }
+                    if (Model.ElementAt(i).ThermalCommander)
+                    {
+                        <img src="~/images/ThermalCommander.png" alt="Commander thermal night vision devices" title="Commander thermal night vision devices" class="img-fluid" width="40">
+                    }
+                    if (Model.ElementAt(i).NVDGunner)
+                    {
+                        <img src="~/images/NVDGunner.png" alt="Gunner infrared night vision devices" title="Gunner infrared night vision devices" class="img-fluid" width="40">
+                    }
+                    if (Model.ElementAt(i).ThermalGunner)
+                    {
+                        <img src="~/images/ThermalGunner.png" alt="Gunner thermal night vision devices" title="Gunner thermal night vision devices" class="img-fluid" width="40">
+                    }
+                    if (Model.ElementAt(i).IRSpotlight)
+                    {
+                        <img src="~/images/IRSpotlight.png" alt="Infrared Spotlight" title="Infrared Spotlight" class="img-fluid" width="40">
+                    }
+                    if (Model.ElementAt(i).ExhaustSmoke)
+                    {
+                        <img src="~/images/ExhaustSmoke.png" alt="Exhaust smoke system" title="Exhaust smoke system" class="img-fluid" width="40">
+                    }
+                    if (Model.ElementAt(i).GrenadeSmoke)
+                    {
+                        <img src="~/images/GrenadeSmoke.png" alt="Smoke grenade" title="Smoke grenade" class="img-fluid" width="40">
+                    }
+                    if (Model.ElementAt(i).RWR)
+                    {
+                        <img src="~/images/RWRTank.png" alt="Laser detection warning" title="Laser detection warning" class="img-fluid" width="40">
+                    }
+                    if (Model.ElementAt(i).AddOnArmor)
+                    {
+                        <img src="~/images/AddOnArmor.png" alt="Additional armor like track, side screens and others" title="Additional armor like track, side screens and others" class="img-fluid" width="40">
+                    }
+                    if (Model.ElementAt(i).ReactiveArmor)
+                    {
+                        <img src="~/images/ReactiveArmor.png" alt="Explosive reactive armour" title="Explosive reactive armour" class="img-fluid" width="40">
+                    }
+                    if (Model.ElementAt(i).AutoLoader)
+                    {
+                        <img src="~/images/AutoLoader.png" alt="Just auto loader" title="Just auto loader" class="img-fluid" width="40">
+                    }
+                    if (Model.ElementAt(i).Stabilizer)
+                    {
+                        <img src="~/images/Stabilizer.png" alt="Gun stabilizer" title="Gun stabilizer" class="img-fluid" width="40">
+                    }
+                    if (Model.ElementAt(i).AAMachineGun)
+                    {
+                        <img src="~/images/AAMachineGun.png" alt="Anti aircraft machine gun" title="Anti aircraft machine gun" class="img-fluid" width="40">
+                    }
+                    if (Model.ElementAt(i).HullBreak)
+                    {
+                        <img src="~/images/HullBreak.png" alt="Vehicles with hull break mechanics" title="Vehicles with hull break mechanics" class="img-fluid" width="40">
+                    }
+                    if (Model.ElementAt(i).Hydropneumatic)
+                    {
+                        <img src="~/images/Hydropneumatic.png" alt="Hydropneumatic suspension" title="Hydropneumatic suspension" class="img-fluid" width="40">
+                    }
+                    if (Model.ElementAt(i).Amphibious)
+                    {
+                        <img src="~/images/Amphibious.png" alt="Amphibious" title="Amphibious" class="img-fluid" width="40">
+                    }
+                    if (Model.ElementAt(i).AirSearchRadar)
+                    {
+                        <img src="~/images/GroundToAirRadar.png" alt="Air search Radar" title="Air search Radar" class="img-fluid" width="40">
+                    }
+                    if (Model.ElementAt(i).AirLockRadar)
+                    {
+                        <img src="~/images/LockAir.png" alt="Tracking radar" title="Tracking radar" class="img-fluid" width="40">
+                    }
+                    if (Model.ElementAt(i).TankSearchRadar)
+                    {
+                        <img src="~/images/GroundToTankRadar.png" alt="Ground vehicle search radar" title="Ground vehicle search radar" class="img-fluid" width="40">
+                    }
+                }
+            </td>
                 }
             </tr>
 
