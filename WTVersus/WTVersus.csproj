@@ -5,6 +5,7 @@
     <SignAssembly>false</SignAssembly>
     <AspNetCoreModuleName>AspNetCoreModuleV2</AspNetCoreModuleName>
 	<AspNetCoreHostingModel>OutOfProcess</AspNetCoreHostingModel>
+	<UserSecretsId>f1e02cee-a87c-4f88-a13a-3dba44ccc52e</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>

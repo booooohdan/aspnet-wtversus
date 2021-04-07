@@ -11,7 +11,7 @@
     {
         <h1>Tanks comparison</h1>
     }
-    <table class="table table-hover table-bordered table-sm text-center sticky-row">
+    <table class="table table-borderless table-sm text-center sticky-row">
         <tbody>
             <tr>
                 <th style="width: 20%"></th>
@@ -119,7 +119,7 @@
         </tbody>
     </table>
 
-    <table class="table table-hover table-bordered table-sm text-center">
+    <table class="table table-hover table-borderless overflow-hidden table-sm text-center">
         <tbody>
             <tr>
                 <th style="width: 20%"></th>
@@ -142,17 +142,10 @@
                 <td style="width: 15%">@Model.ElementAt(2).RepairCost s.l.</td>
                 <td style="width: 15%">@Model.ElementAt(3).RepairCost s.l.</td>
             </tr>
-            <tr class="high">
-                <th style="width: 20%" title="Vehicle user review">Review (Dev)</th>
-                <td style="width: 15%">N/A</td>
-                <td style="width: 15%">N/A</td>
-                <td style="width: 15%">N/A</td>
-                <td style="width: 15%">N/A</td>
-            </tr>
         </tbody>
     </table>
 
-    <table class="table table-hover table-bordered table-sm text-center">
+    <table class="table table-hover table-borderless overflow-hidden table-sm text-center">
         <tbody>
             <tr class="red-table-label no-hover">
                 <td style="width: 100%" colspan="5">Weapon specifications</td>
@@ -285,7 +278,7 @@
         </tbody>
     </table>
 
-    <table class="table table-hover table-bordered table-sm text-center">
+    <table class="table table-hover table-borderless overflow-hidden table-sm text-center">
         <tbody>
             <tr class="red-table-label no-hover">
                 <td style="width: 100%" colspan="5">Armor specifications</td>
@@ -349,10 +342,6 @@
                     {
                         <img src="~/images/AAMachineGun.png" alt="Anti aircraft machine gun" title="Anti aircraft machine gun" class="img-fluid" width="40">
                     }
-                    if (Model.ElementAt(i).HullBreak)
-                    {
-                        <img src="~/images/HullBreak.png" alt="Vehicles with hull break mechanics" title="Vehicles with hull break mechanics" class="img-fluid" width="40">
-                    }
                     if (Model.ElementAt(i).Hydropneumatic)
                     {
                         <img src="~/images/Hydropneumatic.png" alt="Hydropneumatic suspension" title="Hydropneumatic suspension" class="img-fluid" width="40">
@@ -402,7 +391,7 @@
         </tbody>
     </table>
 
-    <table class="table table-hover table-bordered table-sm text-center">
+    <table class="table table-hover table-borderless overflow-hidden table-sm text-center">
         <tbody>
             <tr class="red-table-label no-hover">
                 <td style="width: 100%" colspan="5">Riding specifications</td>
