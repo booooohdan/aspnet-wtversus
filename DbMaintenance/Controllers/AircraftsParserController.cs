@@ -5,16 +5,14 @@ using AngleSharp.Dom;
 using WTVersus.Models;
 using System.Diagnostics;
 using DbMaintenance.ParserHelpers;
+using System.Threading.Tasks;
+using AngleSharp;
 
 namespace DbMaintenance.Controllers
 {
     /// <summary>Controller for writing plane data to the database</summary>
     public class AircraftsParserController : Controller
     {
-        #region Creating needed instances
-        WikiParserHelper aircraftsParserHelper = new WikiParserHelper();
-        #endregion
-
         #region DbContext
         public AppDbContext Context { get; }
         public AircraftsParserController(AppDbContext context)
@@ -24,8 +22,6 @@ namespace DbMaintenance.Controllers
         }
         #endregion
 
-        /// <summary>Load aircrafts parses page</summary>
-        /// <returns>View</returns>
         public IActionResult ParsePlane()
         {
             var planesCollection = Context.Planes.ToList(); //Get colllection from DB
@@ -33,27 +29,71 @@ namespace DbMaintenance.Controllers
             for (int i = 0; i < Context.Planes.Count(); i++)
             {
                 string wikiLink = planesCollection.ElementAt(i).WikiLink;
-                string[] arrayResult = aircraftsParserHelper.WikiPageParser(wikiLink).Result; //Call parser method who's take loop index as parameter
+                string[] arrayResult = WikiPageParser(wikiLink).Result; //Call parser method who's take loop index as parameter
 
-                //Splitting raw string and get needed value
-                string rawRepairCosе = arrayResult[2].ToCharArray().Contains('/') ? arrayResult[2].Split("/")[1].Replace(" ", "") : arrayResult[2].Split("/")[0].Replace(" ", "");
+                //Operation with string and get needed value
+                string rawBr = arrayResult[0];
+                string rawRepairCost = arrayResult[1].ToCharArray().Contains('→') ?
+                    new string(arrayResult[1].Split("→")[1].Where(Char.IsDigit).ToArray()) :
+                    new string(arrayResult[1].Split("→")[0].Where(Char.IsDigit).ToArray());
+                string rawFlutter = new string(arrayResult[2].Where(Char.IsDigit).ToArray());
 
-                planesCollection.ElementAt(i).Image = arrayResult[0];
-                planesCollection.ElementAt(i).BR = Convert.ToDouble(arrayResult[1]);
-                planesCollection.ElementAt(i).RepairCost = Convert.ToInt32(rawRepairCosе);
+                //Assignment of values to DB records
+                planesCollection.ElementAt(i).BR = Convert.ToDouble(rawBr);
+                planesCollection.ElementAt(i).RepairCost = string.IsNullOrEmpty(rawRepairCost) ? 0 : Convert.ToInt32(rawRepairCost);
+                planesCollection.ElementAt(i).Flutter = Convert.ToInt32(rawFlutter);
 
-                Debug.WriteLine(arrayResult[0]);
-                Debug.WriteLine(arrayResult[1]);
-                Debug.WriteLine(arrayResult[2]);
+                Debug.WriteLine(new string('-', 20));
+                Debug.WriteLine(planesCollection.ElementAt(i).Name);
+                Debug.WriteLine(rawBr);
+                Debug.WriteLine(rawRepairCost);
+                Debug.WriteLine(rawFlutter);
             }
 
             Context.SaveChanges();
             return View();
+        } 
+
+        public async Task<string[]> WikiPageParser(string wikiLink)
+        {
+            var config = Configuration.Default.WithDefaultLoader();
+            var document = await BrowsingContext.New(config).OpenAsync(wikiLink);
+
+            //Get data via LINQ
+            string resultBattleRating = BattleRatingParser(document);
+            string resultRepairCost = RepairCostParser(document);
+            string resultFlutter = FlutterParser(document);
+
+            return new string[] { resultBattleRating, resultRepairCost, resultFlutter };
         }
 
+        private string BattleRatingParser(IDocument document)
+        {
+            string br = document.QuerySelectorAll("td").Select(m => m.TextContent).ElementAt(5);
 
-        /// <summary>Add aircrafts from collection range to Db</summary>
-        /// <returns>View</returns>
+            return br;
+        }
+
+        private static string RepairCostParser(IDocument document)
+        {
+            string repairCost = document.All.Where(m =>
+                 m.LocalName == "div" &&
+                 m.HasAttribute("class") &&
+                 m.GetAttribute("class").Contains("specs_char_line")).ElementAt(14).TextContent.ToString();
+
+            return repairCost;
+        }
+        
+        private static string FlutterParser(IDocument document)
+        {
+            string flutter = document.All.Where(m =>
+                 m.LocalName == "div" &&
+                 m.HasAttribute("class") &&
+                 m.GetAttribute("class").Contains("specs_char_line")).ElementAt(10).TextContent.ToString();
+
+            return flutter;
+        }
+
         public IActionResult AddPlane()
         {
             Context.Planes.AddRange
