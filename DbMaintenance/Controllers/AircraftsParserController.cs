@@ -4,7 +4,6 @@ using Microsoft.AspNetCore.Mvc;
 using AngleSharp.Dom;
 using WTVersus.Models;
 using System.Diagnostics;
-using DbMaintenance.ParserHelpers;
 using System.Threading.Tasks;
 using AngleSharp;
 
@@ -94,6 +93,8 @@ namespace DbMaintenance.Controllers
             return flutter;
         }
 
+        /// <summary>Add aircrafts from collection range to Db</summary>
+        /// <returns>View</returns>
         public IActionResult AddPlane()
         {
             Context.Planes.AddRange
