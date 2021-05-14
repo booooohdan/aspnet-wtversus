@@ -80,7 +80,14 @@ namespace DbMaintenance.Controllers
                  m.HasAttribute("class") &&
                  m.GetAttribute("class").Contains("specs_char_line")).ElementAt(14).TextContent.ToString();
 
-            return repairCost;
+            if (repairCost.Contains("RB"))
+            {
+                return repairCost;
+            }
+            else
+            {
+                return repairCost;
+            }
         }
         
         private static string FlutterParser(IDocument document)

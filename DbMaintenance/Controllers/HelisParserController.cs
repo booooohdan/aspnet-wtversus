@@ -76,7 +76,22 @@ namespace DbMaintenance.Controllers
                  m.HasAttribute("class") &&
                  m.GetAttribute("class").Contains("specs_char_line")).ElementAt(12).TextContent.ToString();
 
-            return repairCost;
+            if (repairCost.Contains("RB"))
+            {
+                return repairCost;
+            }
+            if (repairCost.Contains("SB"))
+            {
+                repairCost = document.All.Where(m =>
+                 m.LocalName == "div" &&
+                 m.HasAttribute("class") &&
+                 m.GetAttribute("class").Contains("specs_char_line")).ElementAt(11).TextContent.ToString();
+                return repairCost;
+            }
+            else
+            {
+                return repairCost;
+            }
         }
 
         /// <summary>Add helis from collection range to Db</summary>
