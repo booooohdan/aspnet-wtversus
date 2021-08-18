@@ -1,8 +1,8 @@
 ﻿@model IEnumerable<WTVersus.Models.Tank>;
 @{
     ViewData["Title"] = "Heatmap of thermal sight and stabilizer";
-    double[] numbers = new double[] { 1.0, 1.3, 1.7, 2.0, 2.3, 2.7, 3.0, 3.3, 3.7, 4.0, 4.3, 4.7, 5.0, 5.3, 5.7, 6.0, 6.3, 6.7, 7.0, 7.3, 7.7, 8.0, 8.3, 8.7, 9.0, 9.3, 9.7, 10.0, 10.3, 10.7 };
-    double[] shortnumbers = new double[] { 7.0, 7.3, 7.7, 8.0, 8.3, 8.7, 9.0, 9.3, 9.7, 10.0, 10.3, 10.7 };
+    double[] numbers = new double[] { 1.0, 1.3, 1.7, 2.0, 2.3, 2.7, 3.0, 3.3, 3.7, 4.0, 4.3, 4.7, 5.0, 5.3, 5.7, 6.0, 6.3, 6.7, 7.0, 7.3, 7.7, 8.0, 8.3, 8.7, 9.0, 9.3, 9.7, 10.0, 10.3, 10.7, 11.0 };
+    double[] shortnumbers = new double[] { 7.0, 7.3, 7.7, 8.0, 8.3, 8.7, 9.0, 9.3, 9.7, 10.0, 10.3, 10.7, 11.0 };
     string[] nations = new string[] { "USA", "Germany", "USSR", "Britain", "Japan", "China", "Italy", "France", "Sweden" };
 
     bool LeftTableHandler(double BR, string Nation)

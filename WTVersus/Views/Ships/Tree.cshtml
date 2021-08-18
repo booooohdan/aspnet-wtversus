@@ -31,28 +31,24 @@
         <tbody>
             <tr>
                 <td style="width: 20%">
-                    <p>Ships 1 tier not added yet</p>
                     @*@{
                         var usaFirstTierShip = Model.Where(n => n.Nation == "USA" && n.Rank == "I");
                         @await Html.PartialAsync("_ShipTree", usaFirstTierShip)
                     }*@
                 </td>
                 <td style="width: 20%">
-                    <p>Ships 1 tier not added yet</p>
                     @{
                         var germanyFirstTierShip = Model.Where(n => n.Nation == "Germany" && n.Rank == "I");
                         @await Html.PartialAsync("_ShipTree", germanyFirstTierShip)
                     }
                 </td>
                 <td style="width: 20%">
-                    <p>Ships 1 tier not added yet</p>
                     @{
                         var ussrFirstTierShip = Model.Where(n => n.Nation == "USSR" && n.Rank == "I");
                         @await Html.PartialAsync("_ShipTree", ussrFirstTierShip)
                     }
                 </td>
                 <td style="width: 20%">
-                    <p>Ships 1 tier not added yet</p>
 
                     @{
                         var britainFirstTierShip = Model.Where(n => n.Nation == "Britain" && n.Rank == "I");
@@ -60,7 +56,6 @@
                     }
                 </td>
                 <td style="width: 20%">
-                    <p>Ships 1 tier not added yet</p>
                     @{
                         var japanFirstTierShip = Model.Where(n => n.Nation == "Japan" && n.Rank == "I");
                         @await Html.PartialAsync("_ShipTree", japanFirstTierShip)
@@ -70,35 +65,30 @@
 
             <tr>
                 <td style="width: 20%">
-                    <p>Ships 2 tier not added yet</p>
                     @{
                         var usaSecondTierShip = Model.Where(n => n.Nation == "USA" && n.Rank == "II");
                         @await Html.PartialAsync("_ShipTree", usaSecondTierShip)
                     }
                 </td>
                 <td style="width: 20%">
-                    <p>Ships 2 tier not added yet</p>
                     @{
                         var germanySecondTierShip = Model.Where(n => n.Nation == "Germany" && n.Rank == "II");
                         @await Html.PartialAsync("_ShipTree", germanySecondTierShip)
                     }
                 </td>
                 <td style="width: 20%">
-                    <p>Ships 2 tier not added yet</p>
                     @{
                         var ussrSecondTierShip = Model.Where(n => n.Nation == "USSR" && n.Rank == "II");
                         @await Html.PartialAsync("_ShipTree", ussrSecondTierShip)
                     }
                 </td>
                 <td style="width: 20%">
-                    <p>Ships 2 tier not added yet</p>
                     @{
                         var britainSecondTierShip = Model.Where(n => n.Nation == "Britain" && n.Rank == "II");
                         @await Html.PartialAsync("_ShipTree", britainSecondTierShip)
                     }
                 </td>
                 <td style="width: 20%">
-                    <p>Ships 2 tier not added yet</p>
                     @{
                         var japanSecondTierShip = Model.Where(n => n.Nation == "Japan" && n.Rank == "II");
                         @await Html.PartialAsync("_ShipTree", japanSecondTierShip)
